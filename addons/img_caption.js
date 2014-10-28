@@ -4,8 +4,10 @@ $(window).load(function(){
 	$('div.description').each(function(){
 		//...set the opacity to 0...
 		$(this).css('opacity', 0);
-		//..set width same as the image...
-		$(this).css('width', $(this).siblings('img').width());
+		//...find the horiz padding to ensure fit into parent
+		var padd = $(this).innerWidth()-$(this).width();
+		//..set width same as the image minus the padding...
+		$(this).css('width', $(this).siblings('img').width()- padd );		
 		//...get the parent (the wrapper) and set it's width same as the image width... '
 		$(this).parent().css('width', $(this).siblings('img').width());
 		//...set the display to block
