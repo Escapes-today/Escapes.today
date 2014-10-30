@@ -3,7 +3,9 @@
 <title>Escapes.today</title>
 <!--<link rel="stylesheet" href="data/main.css">-->
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="transit/jquery.transit.min.js"></script>
 <style>
+
 * {
 	box-sizing: border-box;
 }
@@ -49,13 +51,25 @@ h1 {
 	overflow: hidden;
 	text-shadow: 1px 1px 0px #000;
 }
-.box:hover .left {
+/*.box:hover .left {
 	-webkit-transition: all 0.4s cubic-bezier(.99, .99, 0, .61);
 	left: 0px;
+}*/
+
+.left:hover {
+-webkit-transition: all 0.4s cubic-bezier(.99, .99, 0, .61);
+	left: 0px;
+	 transition-delay:.5s;
 }
+
+
 .left {
-	left: -325px;
+
+	left: -320px;	
+transition-delay:.25s;
+-webkit-transition: all 0.4s cubic-bezier(.99, .99, 0, .61);
 }
+
 .info {
 	width: 325px;
 	height: 35px;
@@ -66,36 +80,94 @@ h1 {
 	background: rgba(0,0,0,0.45);
 }
 </style>
-<script>
-$(function() {
-	//$("#best").css("left", (-$("#best").width()+30));	
 
-});
-</script>
 </head>
 
 <body style="background-color: gray">
 Welcome to OHS BPA Travel Temp Website
 <div>Hello World</div>
-<div class="container">
-  <div class="box">
-    <div class="cover left"> Photo by DAVID ILIFF. License: <a href="#">CC-BY-SA 3.0</a></div>
-  </div>
-</div>
-</div>
-<div class="box" style="width:500px;position: relative; ">
-<div style="position:absolute; bottom: 0px">
-  <div class="info left" id="best" style="position:relative;display: table-cell;">
-    <div style="width: 300px;margin: 10px; margin-right: 40px;height: auto;color:#999; "> By 663highland (663highland) [<a href="http://www.gnu.org/copyleft/fdl.html">GFDL</a>, <a href="http://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA-3.0</a> or <a href="http://creativecommons.org/licenses/by/2.5">CC-BY-2.5</a>], <a href="http://commons.wikimedia.org/wiki/File%3AHoryu-ji11s3200.jpg">via Wikimedia Commons</a><br>
-      <img style="width:25px;right:3px; position:absolute;top:0px;bottom:0px;margin:auto;" src="../img/cc.svg" />
-  <br>
 <br>
-sdfsadf</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+<div class="box" style="width:500px;position: relative; ">
+
+<div  class="outer left " style="position:absolute; bottom: 0px" >
+  <div class="info" id="best" style="position:relative;display: table-cell;"  >
+    <div class="cen" style="width: 300px;margin: 10px; margin-right: 40px;height: auto;color:#999;" "> 
+    By 663highland (663highland) [<a href="http://www.gnu.org/copyleft/fdl.html">GFDL</a>, 
+    <a href="http://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA-3.0</a> or 
+    <a href="http://creativecommons.org/licenses/by/2.5">CC-BY-2.5</a>], 
+    <a href="http://commons.wikimedia.org/wiki/File%3AHoryu-ji11s3200.jpg">via Wikimedia Commons</a>
+    <img style="width:25px;right:3px; position:absolute;top:0px;bottom:0px;margin:auto;" src="../img/cc.svg" /> 
+    </div>
   </div>
-  <!-- <div class="info left"   style="position:relative;"> Photo by DAVID ILIFF. License: <a href="#">CC-BY-SA 3.0</a> <img style="width:25px;right:3px; position:absolute;top:0px;bottom:0px;margin:auto;" src="../img/cc.svg" /></div>--> 
-</div>
-<!--<div class="info " style="position:relative;display: table-cell;vertical-align: middle;">
-  <div style="margin: 10px; margin-right: 40px;"> Photo by DAVID ILIFF. License: <a href="#">CC-BY-SA 3.0</a></div>
-  <img style="width:25px;right:3px; position:absolute;top:0px;bottom:0px;margin:auto;" src="../img/cc.svg" /></div>-->
+ </div>
+ </div>
+ 
+ <br />
+ <br />
+ <br />
+ <br />
+ 
+
+ 
+ <div style="position: relative;
+	
+	overflow: hidden;
+	margin: 5px;
+	border: 1px solid #000;
+	box-shadow: 0px 0px 15px 0px #666, 0px 5px 15px 0px #000;">
+<img id="img1" src="../img/Batman Freeman.jpg" />
+<div  class="outer left " style="position:absolute; bottom: 0px;" >
+  <div class="info" id="best" style="position:relative;display: table-cell;"  >
+    <div class="cen" style="width: 300px;margin: 10px; margin-right: 40px;height: auto;color:#999;" "> 
+    By 663highland (663highland) [<a href="http://www.gnu.org/copyleft/fdl.html">GFDL</a>, 
+    <a href="http://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA-3.0</a> or 
+    <a href="http://creativecommons.org/licenses/by/2.5">CC-BY-2.5</a>], 
+    <a href="http://commons.wikimedia.org/wiki/File%3AHoryu-ji11s3200.jpg">via Wikimedia Commons</a>
+    <img style="width:25px;right:3px; position:absolute;top:0px;bottom:0px;margin:auto;" src="../img/cc.svg" /> 
+    </div>
+  </div>
+ </div>
+ </div>
+ 
+  <div style="position: relative;
+	
+	overflow: hidden;
+	margin: 5px;
+	border: 1px solid #000;
+	box-shadow: 0px 0px 15px 0px #666, 0px 5px 15px 0px #000;">
+<img id="img1" src="../img/Colosseum_in_Rome.jpg"  width="99%"/>
+<div  class="outer left " style="position:absolute; bottom: 0px;" >
+  <div class="info" id="best" style="position:relative;display: table-cell;"  >
+    <div class="cen" style="width: 300px;margin: 10px; margin-right: 40px;height: auto;color:#FFF;" "> 
+   asdksadblksadjbsadkjsadjkl fj
+    <img style="width:25px;right:3px; position:absolute;top:0px;bottom:0px;margin:auto;" src="../img/cc.svg" /> 
+    </div>
+  </div>
+ </div>
+ </div>
+ 
+ 
+ 
 </body>
+
+ <script>
+ var img = $("#img1"); // Get my img elem
+var pic_real_width, pic_real_height;
+$("<img/>") // Make in memory copy of image to avoid css issues
+    .attr("src", $(img).attr("src"))
+    .load(function() {
+      $(img).parent().width(this.width);   // Note: $(this).width() will not
+        
+    });
+ </script>
+ 
 </html>
