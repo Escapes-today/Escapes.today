@@ -3,19 +3,53 @@
 <title>Escapes.today</title>
 <!--<link rel="stylesheet" href="data/main.css">-->
 <link rel="stylesheet" href="addons/img_caption.css">
-<script src="addons/jquery-1.11.1.min.js"></script>
+<link href="addons/jquery.bxslider/jquery.bxslider.css" rel="stylesheet" />
+<script src="addons/jquery/jquery-1.11.1.min.js"></script>
+<script src="http://unslider.com/unslider.min.js"></script>
 <script src="addons/img_caption.js"></script>
-
+<link rel="stylesheet" type="text/css" href="http://unslider.com/style.css">
+<style></style>
+<script>
+$(function() {
+if(window.chrome) {
+				$('.banner li').css('background-size', '100% 100%');
+			}
+			$('.banner').unslider({
+				arrows: true,
+				fluid: true,
+				dots: true
+			});
+			});
+</script>
 </head>
-
 <body style="background-color: gray">
-Welcome to OHS BPA Travel Temp Website
-<div>Hello World</div>
+<!--<div class="banner">
+  <ul >
+    <li>This is a slide.</li>
+        <li>This is another slide.</li>
+        <li>This is a final slide.</li>
+   <li style="width: 25%; background-image: url('img/Batman Freeman.jpg'); background-size: 100% 100%;"></li>
+    <li style="width: 25%; background-image: url('img/Colosseum_in_Rome.jpg'); background-size: 100% 100%;"></li>
+  </ul>
+</div>--> 
 
-<div class="wrapper">
-<img src="img/Batman Freeman.jpg">
+<!--<div class="banner">
+    <ul>
+     <li style=" background-image: url('img/Batman Freeman.jpg'); background-size: 100% 100%;"></li>
+    <li style=" background-image: url('img/Colosseum_in_Rome.jpg'); background-size: 100% 100%;"></li>
   
-  <div class="description padded">Yes this is Batman Freeman. Yes this is Batman Freeman. Yes this is Batman Freeman. Yes this is Batman Freeman. Yes this is Batman Freeman. Yes this is Batman Freeman.</div>
+    
+        <li><img src="http://s3.firstpost.in/wp-content/uploads/2012/11/300vsSA-Getty.jpg"></li>
+
+    </ul>
+</div>-->
+
+<div class="banner">
+  <ul>
+    <li style="height: 160px"><img src="img/Batman Freeman.jpg" style="width: 100%"></li>
+    <li style="height: 160px"><img src="img/Colosseum_in_Rome.jpg" style="width: 100%"></li>
+    <li style="height: 160px">This is a final slide.</li>
+  </ul>
 </div>
 </body>
 </html>
