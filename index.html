@@ -3,22 +3,34 @@
 <title>Escapes.today</title>
 <!--<link rel="stylesheet" href="data/main.css">-->
 <link rel="stylesheet" href="addons/img_caption.css">
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<link href="addons/jquery.bxslider/jquery.bxslider.css" rel="stylesheet" />
+<script src="addons/jquery/jquery-1.11.1.min.js"></script>
+<script src="http://unslider.com/unslider.min.js"></script>
 <script src="addons/img_caption.js"></script>
-
+<!--<! --<link rel="stylesheet" type="text/css" href="http://unslider.com/style.css"> -->-->
+<style></style>
+<script>
+$(function() {
+if(window.chrome) {
+			//	$('.banner li').css('background-size', '100% 100%');
+			}
+			$('.banner').unslider({
+				arrows: true,
+				fluid: true,
+				dots: true
+			});
+			});
+</script>
 </head>
-
 <body style="background-color: gray">
-Welcome to OHS BPA Travel Temp Website
-<div>
-  <p>Hello World</p>
-  <p>One of our site dev's was kind enough to provide this picture</p>
+<div class="wrapper" style="style="height: 100%"">
+<div class="banner" style="height: 80%">
+  <ul>
+    <li style="height: 100%"><img src="img/Batman Freeman.jpg" style="width: 100%"></li>
+    <li style="height: 100%"><img src="img/Colosseum_in_Rome.jpg" style="width: 100%; height: 100%"></li>
+    <li style="height: 100%">This is a final slide.</li>
+  </ul>
 </div>
-
-<div class="wrapper">
-<img src="img/Batman Freeman.jpg">
-  
-  <div class="description padded">Yes this is Batman Freeman. Yes this is Batman Freeman. Yes this is Batman Freeman. Yes this is Batman Freeman. Yes this is Batman Freeman. Yes this is Batman Freeman.</div>
-</div>
+</
 </body>
 </html>
