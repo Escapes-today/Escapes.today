@@ -29,7 +29,11 @@ html, body {
 	left: 0;
 	right: 0; /* Make it fill the whole horizontal space */
 	z-index: 3;
-	opacity: 0.6;
+ 
+	 filter:alpha(opacity=60);
+  -moz-opacity:0.6;
+  -khtml-opacity: 0.6;
+  opacity: 0.6;
 	background-color: darkorange;
 }
 #footer {
@@ -70,11 +74,11 @@ html, body {
       });
 	  
 	  $( "#sadf" ).position({
-  my: "left bottom",
-  at: "left bottom",
-  of: "#slides",
+  		my: "left bottom",
+  		at: "left bottom",
+  		of: "#slides"
+	});
 });
-    });
   </script>
 </body>
 </html>
