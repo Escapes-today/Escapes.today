@@ -7,12 +7,12 @@
 <script src="addons/jquery/jquery-1.11.1.min.js"></script>
 <script src="http://unslider.com/unslider.min.js"></script>
 <script src="addons/img_caption.js"></script>
-<link rel="stylesheet" type="text/css" href="http://unslider.com/style.css">
+<!--<! --<link rel="stylesheet" type="text/css" href="http://unslider.com/style.css"> -->-->
 <style></style>
 <script>
 $(function() {
 if(window.chrome) {
-				$('.banner li').css('background-size', '100% 100%');
+			//	$('.banner li').css('background-size', '100% 100%');
 			}
 			$('.banner').unslider({
 				arrows: true,
@@ -23,33 +23,14 @@ if(window.chrome) {
 </script>
 </head>
 <body style="background-color: gray">
-<!--<div class="banner">
-  <ul >
-    <li>This is a slide.</li>
-        <li>This is another slide.</li>
-        <li>This is a final slide.</li>
-   <li style="width: 25%; background-image: url('img/Batman Freeman.jpg'); background-size: 100% 100%;"></li>
-    <li style="width: 25%; background-image: url('img/Colosseum_in_Rome.jpg'); background-size: 100% 100%;"></li>
-  </ul>
-</div>--> 
-
-<!--<div class="banner">
-    <ul>
-     <li style=" background-image: url('img/Batman Freeman.jpg'); background-size: 100% 100%;"></li>
-    <li style=" background-image: url('img/Colosseum_in_Rome.jpg'); background-size: 100% 100%;"></li>
-  
-    
-        <li><img src="http://s3.firstpost.in/wp-content/uploads/2012/11/300vsSA-Getty.jpg"></li>
-
-    </ul>
-</div>-->
-
-<div class="banner">
+<div class="wrapper" style="style="height: 100%"">
+<div class="banner" style="height: 80%">
   <ul>
-    <li style="height: 160px"><img src="img/Batman Freeman.jpg" style="width: 100%"></li>
-    <li style="height: 160px"><img src="img/Colosseum_in_Rome.jpg" style="width: 100%"></li>
-    <li style="height: 160px">This is a final slide.</li>
+    <li style="height: 100%"><img src="img/Batman Freeman.jpg" style="width: 100%"></li>
+    <li style="height: 100%"><img src="img/Colosseum_in_Rome.jpg" style="width: 100%; height: 100%"></li>
+    <li style="height: 100%">This is a final slide.</li>
   </ul>
 </div>
+</
 </body>
 </html>
