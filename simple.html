@@ -1,87 +1,72 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <title>Superslides - A fullscreen slider for jQuery</title>
-  <link rel="stylesheet" href="addons/superslides/dist/stylesheets/superslides.css">
-  
- <style>
-* { padding: 0; margin: 0; }
-html, body { height: 100%; width: 100%; }
-
-/******** + Sticky Footer including Header ********/
+<meta charset="utf-8">
+<title>Superslides - A fullscreen slider for jQuery</title>
+<link rel="stylesheet" href="addons/superslides/dist/stylesheets/superslides.css">
+<style>
+* {
+	padding: 0;
+	margin: 0;
+}
+html, body {
+	height: 100%;
+	width: 100%;
+}
 #content {
-    min-height: 100%;
-    margin-bottom: -100px; /* Equivalent to footer's height */
-    
-  /*  padding-top   : 50px;  /* Equivalent to header's height */
-    padding-bottom: 100px; /* Equivalent to footer's height */
-    
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
-
-#header {
-    height: 50px;
-    position: fixed;
-    top: 0;
-    left: 0; right: 0; /* Make it fill the whole horizontal space */
-}
-
-#footer {
-    height: 100px;
-    position: relative;
-    z-index: 1;
+	min-height: 100%;
+	margin-bottom: -100px; /* Equivalent to footer's height */
+	/*  padding-top   : 50px;  /* Equivalent to header's height */
+	padding-bottom: 100px; /* Equivalent to footer's height */
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 }
 #header {
+	height: 50px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0; /* Make it fill the whole horizontal space */
 	z-index: 3;
-	opacity:  0.6;
-
-	    background-color: darkorange;
+	opacity: 0.6;
+	background-color: darkorange;
 }
-
+#footer {
+	height: 100px;
+	position: relative;
+	z-index: 1;
+}
 </style>
 </head>
 <body>
 <div id="header" >Header</div>
 <div id="content">
-<div id="slides">
-  <ul class="slides-container">
-    <li>
-      <img src="img/Tokyo_View_from_Mori_Tower.jpg" alt="Cinelli">
-      <div class="container">
-        Slide one
-      </div>
-    </li>
-    <li id="out">
-     <img src="img/Colosseum_in_Rome.jpg" width="1024" height="682" alt="Surly">
-      <div class="container" id="sadf">
-        Slide two
-      </div>
-    </li>
-  </ul>
-  <nav class="slides-navigation">
-    <a href="#" class="next">Next</a>
-    <a href="#" class="prev">Previous</a>
-  </nav>
+  <div id="slides">
+    <ul class="slides-container">
+      <li> <img src="img/Tokyo_View_from_Mori_Tower.jpg" >
+        <div class="container"> Slide one </div>
+      </li>
+      <li> <img src="img/Colosseum_in_Rome.jpg">
+        <div class="container" id="sadf" style="width: 100px; height: 100px; background-color: red"> Slide two </div>
+      </li>
+    </ul>
+    <nav class="slides-navigation"> <a href="#" class="next">Next</a> <a href="#" class="prev">Previous</a> </nav>
+  </div>
 </div>
-</div>
-
 <div id="footer">Footer</div>
-
-  <script src="addons/jquery/jquery-1.11.1.min.js"></script>
-   <script src="addons/jquery-ui/jquery-ui.min.js"></script>
-  <script src="addons/superslides/examples/javascripts/jquery.animate-enhanced.min.js"></script>
-  <script src="addons/superslides/dist/jquery.superslides.min.js" type="text/javascript" charset="utf-8"></script>
-  <script>
+<script src="addons/jquery/jquery-1.11.1.min.js"></script> 
+<script src="addons/jquery-ui/jquery-ui.min.js"></script> 
+<script src="addons/superslides/examples/javascripts/jquery.animate-enhanced.min.js"></script> 
+<script src="addons/superslides/dist/jquery.superslides.min.js" type="text/javascript" charset="utf-8"></script> 
+<script>
     $(function() {
       $('#slides').superslides({
         hashchange: false,
 		animation: 'slide',
 		// animation: 'fade',
 		inherit_height_from: '#content',
-inherit_width_from: '#content'
+		inherit_width_from: '#content'
       });
 	  
 	  $( "#sadf" ).position({
