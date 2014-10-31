@@ -3,25 +3,14 @@
 <head>
 <meta charset="utf-8">
 <title>Superslides - A fullscreen slider for jQuery</title>
-<link rel="stylesheet" href="addons/superslides/dist/stylesheets/superslides.css">
+<link rel="stylesheet" href="addons/superslides/dist/stylesheets/custom.css">
 <style>
 * {
 	padding: 0;
 	margin: 0;
 }
-html, body {
-	height: 100%;
-	width: 100%;
-}
-#content {
-	min-height: 100%;
-	margin-bottom: -100px; /* Equivalent to footer's height */
-	/*  padding-top   : 50px;  /* Equivalent to header's height */
-	padding-bottom: 100px; /* Equivalent to footer's height */
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-}
+
+
 #header {
 	height: 50px;
 	position: fixed;
@@ -32,21 +21,31 @@ html, body {
  
 	 filter:alpha(opacity=60);
   -moz-opacity:0.6;
-  -khtml-opacity: 0.6;
+  -html-opacity: 0.6;
   opacity: 0.6;
 	background-color: darkorange;
 }
 #footer {
-	height: 100px;
-	position: relative;
-	z-index: 1;
+	height: 30px;
+	position: fixed;
+	
+	left: 0;
+	right: 0; /* Make it fill the whole horizontal space */
+	bottom: 0;
+	z-index: 3;
+ 
+	 filter:alpha(opacity=60);
+  -moz-opacity:0.6;
+  -html-opacity: 0.6;
+  opacity: 0.6;
+	background-color: #00FF00;
 }
 </style>
 </head>
 <body>
 <div id="header" >Header</div>
 <div id="content">
-  <div id="slides">
+  <div id="slides" style="-webkit-transform: translateZ(0);">
     <ul class="slides-container">
       <li> <img src="img/Tokyo_View_from_Mori_Tower.jpg" >
         <div class="container"> Slide one </div>
@@ -67,17 +66,17 @@ html, body {
     $(function() {
       $('#slides').superslides({
         hashchange: false,
-		animation: 'slide',
-		// animation: 'fade',
-		inherit_height_from: '#content',
-		inherit_width_from: '#content'
+		animation: 'slide'
+	//	 animation: 'fade'
+		//inherit_height_from: '#content',
+//		inherit_width_from: '#content'
       });
 	  
-	  $( "#sadf" ).position({
+	 /* $( "#sadf" ).position({
   		my: "left bottom",
   		at: "left bottom",
   		of: "#slides"
-	});
+	});*/
 });
   </script>
 </body>
