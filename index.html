@@ -1,36 +1,176 @@
+<!DOCTYPE html>
 <html>
 <head>
-<title>Escapes.today</title>
-<!--<link rel="stylesheet" href="data/main.css">-->
-<link rel="stylesheet" href="addons/img_caption.css">
-<link href="addons/jquery.bxslider/jquery.bxslider.css" rel="stylesheet" />
-<script src="addons/jquery/jquery-1.11.1.min.js"></script>
-<script src="http://unslider.com/unslider.min.js"></script>
-<script src="addons/img_caption.js"></script>
-<!--<! --<link rel="stylesheet" type="text/css" href="http://unslider.com/style.css"> -->-->
-<style></style>
-<script>
-$(function() {
-if(window.chrome) {
-			//	$('.banner li').css('background-size', '100% 100%');
-			}
-			$('.banner').unslider({
-				arrows: true,
-				fluid: true,
-				dots: true
-			});
-			});
-</script>
+<meta charset="utf-8">
+<title>Superslides - A fullscreen slider for jQuery</title>
+<link rel="stylesheet" href="addons/superslides/dist/stylesheets/custom.css">
+<style>
+* {
+	padding: 0;
+	margin: 0;
+}
+#header {
+	display: block;
+	margin: 0px 20%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0; /* Make it fill the whole horizontal space */
+	z-index: 3;
+	background-color: rgb(220, 232, 243);
+	background-color: rgba(220, 232, 243, .95);
+	height: 100px;
+	-webkit-box-shadow: 0 3px 15px rgba(220, 232, 243, .3);
+	border-radius: 3px
+}
+#footer {
+	height: 30px;
+	position: fixed;
+	left: 0;
+	right: 0; /* Make it fill the whole horizontal space */
+	bottom: 0;
+	z-index: 3;
+	background-color: rgb(220, 232, 243);
+	background-color: rgba(220, 232, 243, .95);
+}
+#footer a {
+	color: #000;
+	text-decoration: none;
+}
+#footer a:hover {
+	color: #333;
+	text-decoration: none;
+	font-weight: bold;
+}
+#links {
+	float: right;
+}
+#links a {
+	color: #4C9CF1;
+	text-decoration: none;
+	font-weight: bold;
+}
+#links a:hover {
+	color: #444;
+}
+#logo {
+	float: left;
+	display: block;
+}
+#links nav {
+	float: right;
+	padding: 20px;
+}
+#links a:hover#menu-icon {
+	background-color: #444;
+	border-radius: 4px 4px 0 0;
+}
+#links ul {
+	font-size: 1.15em;
+	line-height: 1.15em;
+	list-style: none;
+	overflow: hidden;
+}
+#links li {
+	float: left;
+	padding: 18px;
+}
+.current {
+	color: #2262AD;
+}
+.section {
+	margin: 80px auto 40px;
+	max-width: 980px;
+	position: relative;
+	padding: 20px
+}
+.container {
+	position: relative;
+	left: 0;
+	top: 40%;
+}
+.description {
+	width: 300px;
+	background-color: red;
+	float: right;
+	margin-right: 200px;
+	padding: 10px 20px;
+	background: rgb(0, 0, 0);
+	background: rgba(0, 0, 0, 0.8);
+	-webkit-box-shadow: 0 10px 15px rgba(0, 0, 0, .3);
+	border-radius: 3px;
+	color: rgb(220, 232, 243);
+}
+</style>
 </head>
-<body style="background-color: gray">
-<div class="wrapper" style="style="height: 100%"">
-<div class="banner" style="height: 80%">
-  <ul>
-    <li style="height: 100%"><img src="img/Batman Freeman.jpg" style="width: 100%"></li>
-    <li style="height: 100%"><img src="img/Colosseum_in_Rome.jpg" style="width: 100%; height: 100%"></li>
-    <li style="height: 100%">This is a final slide.</li>
-  </ul>
+<body>
+<div id="header">
+        <div style="margin-left: 0px; border:1px; border-color:red;">
+          <a href="http://www.escapes.today" id="logo"> 
+      <img style="height: 90px;" src="img/logo.svg" alt="Escapes Today logo">
+    </a>
 </div>
-</
+        <div id="links">
+            <ul >
+                <li><a href="#" class="current">Home</a></li>
+                <li><a href="#">Destinations</a></li>
+                <li><a href="#">Traveling Tips</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+</ul>
+</div>
+</div>
+
+<div id="content">
+  <div id="slides" style="-webkit-transform: translateZ(0);">
+    <ul class="slides-container">
+      <li> <img src="img/Tokyo_View_from_Mori_Tower.jpg" >
+        <div class="container">
+           <div class="description" style="background: rgba(0, 0, 0, 0.8);">
+           <h2>Tokyo, Japan</h2>
+           <p>Tokyo is the capital of Japan, the center of the Greater Tokyo Area, and the most populous metropolitan area in the world. It is the seat of the Japanese government and the Imperial Palace, and the home of the Japanese Imperial Family.</p>
+     </div>
+      
+  </div>
+</li>
+      <li> <img src="img/Colosseum_in_Rome.jpg">
+        <div class="container">
+          <div  class="description">
+            <h1>Roman Colosseum</h1>
+            <p>Built of concrete and stone, it was the largest amphitheatre of the Roman Empire, and is considered one of the greatest works of Roman architecture and engineering. It is the largest amphitheatre in the world.</p>
+        </div>
+  </div>
+</li>
+</ul>
+    <nav class="slides-navigation"> <a href="#" class="next">Next</a> <a href="#" class="prev">Previous</a> </nav>
+</div>
+</div>
+<div id="footer">
+  <div style="margin: 0 20%;">
+    <a href="#">Copyright Escapes.Today</a>
+</div>
+</div>
+<script src="addons/jquery/jquery-1.11.1.min.js"></script> 
+<script src="addons/jquery-ui/jquery-ui.min.js"></script> 
+<script src="addons/superslides/examples/javascripts/jquery.animate-enhanced.min.js"></script> 
+<script src="addons/superslides/dist/jquery.superslides.min.js" type="text/javascript" charset="utf-8"></script> 
+<script>
+    $(function() {
+      $('#slides').superslides({
+        hashchange: false,
+		animation: 'slide'
+	//	play: 8000
+	//	 animation: 'fade'
+		//inherit_height_from: '#content',
+//		inherit_width_from: '#content'
+      });
+	  
+	 /* $( "#sadf" ).position({
+  		my: "left bottom",
+  		at: "left bottom",
+  		of: "#slides"
+	});*/
+});
+  </script>
 </body>
 </html>
