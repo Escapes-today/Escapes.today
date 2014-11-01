@@ -29,9 +29,17 @@
 	right: 0; /* Make it fill the whole horizontal space */
 	bottom: 0;
 	z-index: 3;
-	background: rgb(0, 0, 0);
-	background: rgba(0, 0, 0, 0.6);
-	background-color: #00FF00;
+	background-color: rgb(220, 232, 243);
+	background-color: rgba(220, 232, 243, .95);
+}
+#footer a {
+	color: #000;
+	text-decoration: none;
+}
+#footer a:hover {
+	color: #333;
+	text-decoration: none;
+	font-weight: bold;
 }
 #links {
 	float: right;
@@ -75,6 +83,23 @@
 	position: relative;
 	padding: 20px
 }
+.container {
+	position: relative;
+	left: 0;
+	top: 40%;
+}
+.description {
+	width: 300px;
+	background-color: red;
+	float: right;
+	margin-right: 200px;
+	padding: 10px 20px;
+	background: rgb(0, 0, 0);
+	background: rgba(0, 0, 0, 0.8);
+	-webkit-box-shadow: 0 10px 15px rgba(0, 0, 0, .3);
+border-radius: 3px;
+	color: rgb(220, 232, 243);
+}
 </style>
 </head>
 <body>
@@ -91,7 +116,7 @@
                 <li><a href="#">Traveling Tips</a></li>
                 <li><a href="#">About</a></li>
                 <li><a href="#">Contact</a></li>
-  </ul>
+</ul>
 </div>
 </div>
 
@@ -100,20 +125,26 @@
     <ul class="slides-container">
       <li> <img src="img/Tokyo_View_from_Mori_Tower.jpg" >
         <div class="container">
-          Slide one
-        </div>
+           <div class="description" style="background: rgba(0, 0, 0, 0.8);">
+           <h2>Tokyo, Japan</h2>
+           <p>Tokyo is the capital of Japan, the center of the Greater Tokyo Area, and the most populous metropolitan area in the world. It is the seat of the Japanese government and the Imperial Palace, and the home of the Japanese Imperial Family.</p>
+       </div>
+      
+    </div>
 </li>
       <li> <img src="img/Colosseum_in_Rome.jpg">
-        <div class="container" id="sadf" style="width: 100px; height: 100px; background-color: red">
-          Slide two
-        </div>
+        <div class="container">
+          <div  class="description"><h1>Roman Colosseum</h1><p>Built of concrete and stone, it was the largest amphitheatre of the Roman Empire, and is considered one of the greatest works of Roman architecture and engineering. It is the largest amphitheatre in the world.</p></div>
+    </div>
 </li>
 </ul>
     <nav class="slides-navigation"> <a href="#" class="next">Next</a> <a href="#" class="prev">Previous</a> </nav>
 </div>
 </div>
 <div id="footer">
-  Footer
+  <div style="margin: 0 20%;">
+    <a href="#">Copyright Escapes.Today</a>
+</div>
 </div>
 <script src="addons/jquery/jquery-1.11.1.min.js"></script> 
 <script src="addons/jquery-ui/jquery-ui.min.js"></script> 
@@ -124,6 +155,7 @@
       $('#slides').superslides({
         hashchange: false,
 		animation: 'slide'
+	//	play: 8000
 	//	 animation: 'fade'
 		//inherit_height_from: '#content',
 //		inherit_width_from: '#content'
