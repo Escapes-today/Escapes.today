@@ -9,55 +9,112 @@
 	padding: 0;
 	margin: 0;
 }
-
-
 #header {
-	height: 50px;
+	display: block;
+	margin: 0px 20%;
 	position: fixed;
 	top: 0;
 	left: 0;
 	right: 0; /* Make it fill the whole horizontal space */
 	z-index: 3;
- 
-	 filter:alpha(opacity=60);
-  -moz-opacity:0.6;
-  -html-opacity: 0.6;
-  opacity: 0.6;
-	background-color: darkorange;
+	background-color: rgb(220, 232, 243);
+	background-color: rgba(220, 232, 243, .95);
+	height: 100px;
+	-webkit-box-shadow: 0 3px 15px rgba(220, 232, 243, .3);
 }
 #footer {
 	height: 30px;
 	position: fixed;
-	
 	left: 0;
 	right: 0; /* Make it fill the whole horizontal space */
 	bottom: 0;
 	z-index: 3;
- 
-	 filter:alpha(opacity=60);
-  -moz-opacity:0.6;
-  -html-opacity: 0.6;
-  opacity: 0.6;
+	background: rgb(0, 0, 0);
+	background: rgba(0, 0, 0, 0.6);
 	background-color: #00FF00;
+}
+#links {
+	float: right;
+}
+#links a {
+	color: #4C9CF1;
+	text-decoration: none;
+	font-weight: bold;
+}
+#links a:hover {
+	color: #444;
+}
+#logo {
+	float: left;
+	display: block;
+}
+#links nav {
+	float: right;
+	padding: 20px;
+}
+#links a:hover#menu-icon {
+	background-color: #444;
+	border-radius: 4px 4px 0 0;
+}
+#links ul {
+	font-size: 1.15em;
+	line-height: 1.15em;
+	list-style: none;
+	overflow: hidden;
+}
+#links li {
+	float: left;
+	padding: 18px;
+}
+.current {
+	color: #2262AD;
+}
+.section {
+	margin: 80px auto 40px;
+	max-width: 980px;
+	position: relative;
+	padding: 20px
 }
 </style>
 </head>
 <body>
-<div id="header" >Header</div>
+<div id="header">
+        <div style="margin-left: 0px; border:1px; border-color:red;">
+          <a href="http://www.escapes.today" id="logo"> 
+      <img style="height: 90px;" src="img/logo.svg" alt="Escapes Today logo">
+    </a>
+</div>
+        <div id="links">
+            <ul >
+                <li><a href="#" class="current">Home</a></li>
+                <li><a href="#">Destinations</a></li>
+                <li><a href="#">Traveling Tips</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+  </ul>
+</div>
+</div>
+
 <div id="content">
   <div id="slides" style="-webkit-transform: translateZ(0);">
     <ul class="slides-container">
       <li> <img src="img/Tokyo_View_from_Mori_Tower.jpg" >
-        <div class="container"> Slide one </div>
-      </li>
+        <div class="container">
+          Slide one
+        </div>
+</li>
       <li> <img src="img/Colosseum_in_Rome.jpg">
-        <div class="container" id="sadf" style="width: 100px; height: 100px; background-color: red"> Slide two </div>
-      </li>
-    </ul>
+        <div class="container" id="sadf" style="width: 100px; height: 100px; background-color: red">
+          Slide two
+        </div>
+</li>
+</ul>
     <nav class="slides-navigation"> <a href="#" class="next">Next</a> <a href="#" class="prev">Previous</a> </nav>
-  </div>
 </div>
-<div id="footer">Footer</div>
+</div>
+<div id="footer">
+  Footer
+</div>
 <script src="addons/jquery/jquery-1.11.1.min.js"></script> 
 <script src="addons/jquery-ui/jquery-ui.min.js"></script> 
 <script src="addons/superslides/examples/javascripts/jquery.animate-enhanced.min.js"></script> 
