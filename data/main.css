@@ -10,8 +10,10 @@
 	left: 0;
 	right: 0; /* Make it fill the whole horizontal space */
 	z-index: 3;
-	background-color: rgb(220, 232, 243);
-	background-color: rgba(220, 232, 243, .95);
+	background: rgba(0, 0, 0, 0.8);
+	color: rgb(220, 232, 243);
+	/*	background-color: rgb(220, 232, 243);
+	background-color: rgba(220, 232, 243, .95);*/
 	height: 100px;
 	-webkit-box-shadow: 0 3px 15px rgba(220, 232, 243, .3);
 	border-radius: 3px
@@ -23,8 +25,9 @@
 	right: 0; /* Make it fill the whole horizontal space */
 	bottom: 0;
 	z-index: 3;
-	background-color: rgb(220, 232, 243);
-	background-color: rgba(220, 232, 243, .95);
+	background: rgba(0, 0, 0, 0.8);
+	color: rgb(220, 232, 243);/*background-color: rgb(220, 232, 243);
+	background-color: rgba(220, 232, 243, .95);*/
 }
 #footer a {
 	color: #000;
@@ -37,22 +40,24 @@
 }
 #links {
 	float: right;
+	height: 100%;
 }
 #links a {
-	color: #4C9CF1;
+	color: rgb(220, 232, 243);
 	text-decoration: none;
 	font-weight: bold;
 }
 #links a:hover {
-	color: #444;
+	color: #4C9CF1;
 }
 #logo {
 	float: left;
 	display: block;
+	padding-top: 4px;
 }
 #links nav {
 	float: right;
-	padding: 20px;
+	padding: 16px;
 }
 #links a:hover#menu-icon {
 	background-color: #444;
@@ -63,10 +68,14 @@
 	line-height: 1.15em;
 	list-style: none;
 	overflow: hidden;
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
 }
 #links li {
 	float: left;
-	padding: 18px;
+	padding: 10px;
 }
 .current {
 	color: #2262AD;
