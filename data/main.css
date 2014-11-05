@@ -16,7 +16,8 @@
 	background-color: rgba(220, 232, 243, .95);*/
 	height: 100px;
 	-webkit-box-shadow: 0 3px 15px rgba(220, 232, 243, .3);
-	border-radius: 3px
+	border-bottom-right-radius: 6px;
+	border-bottom-left-radius: 6px;
 }
 #footer {
 	height: 30px;
@@ -42,26 +43,37 @@
 	float: right;
 	height: 100%;
 }
-#links a {
-	color: rgb(220, 232, 243);
+li a {
+	font-size: 1.1em;
 	text-decoration: none;
 	font-weight: bold;
-}
+	font-family: 'Quicksand', sans-serif;
+	border: 1px rgba(255, 255, 255, 0) solid;
+	padding-top: 6px;
+	padding-bottom: 6px;
+	padding-left: 3px;
+	padding-right: 3px;
+	border-radius: 3px;
+	transition: border 0.2s ease-in-out, color 0.2s ease-in-out, padding-left 0.2s ease-in-out;
+}	
 #links a:hover {
 	color: #4C9CF1;
+	padding-left: 18px;
+	border: 1px rgba(255, 255, 255, 1) solid;
+	transition: border 0.1s ease-in-out, color 0.1s ease-in-out, padding-left 0.1s ease-in-out;
+}
+.link a:hover {
+	color: yellow;
 }
 #logo {
 	float: left;
 	display: block;
 	padding-top: 4px;
 }
+
 #links nav {
 	float: right;
 	padding: 16px;
-}
-#links a:hover#menu-icon {
-	background-color: #444;
-	border-radius: 4px 4px 0 0;
 }
 #links ul {
 	font-size: 1.15em;
@@ -80,6 +92,18 @@
 .current {
 	color: #2262AD;
 }
+#links a {
+	color: white;
+	width: 3em;
+	z-index: 4;
+}
+#links span {
+	z-index: 5;
+	width: 5px;
+	background-color: #1A3275;
+
+}
+
 .section {
 	margin: 80px auto 40px;
 	max-width: 980px;
@@ -102,4 +126,15 @@
 	-webkit-box-shadow: 0 10px 15px rgba(0, 0, 0, .3);
 	border-radius: 3px;
 	color: rgb(220, 232, 243);
+}
+/* importing fonts */
+@font-face {
+    font-family: Quicksand;
+    src: url(../fonts/quicksand/Quicksand-Bold.otf);
+    font-weight: bold;
+}
+@font-face {
+    font-family: Quicksand;
+    src: url(../fonts/quicksand/Quicksand-Regular.otf);
+    font-weight: normal;
 }
