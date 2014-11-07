@@ -43,6 +43,9 @@
 	float: right;
 	height: 100%;
 }
+#links ul li {
+	min-width: 4em;
+}
 li a {
 	font-size: 1.1em;
 	text-decoration: none;
@@ -126,6 +129,8 @@ li a {
 	-webkit-box-shadow: 0 10px 15px rgba(0, 0, 0, .3);
 	border-radius: 3px;
 	color: rgb(220, 232, 243);
+	font-family: quicksand;
+	font-weight: normal;
 }
 /* importing fonts */
 @font-face {
