@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<head>
+  <title>Escapes.today</title>
+  <style>
+* {
+	padding: 0px;
+	margin: 0px;
+}
+.poi {
+	position: relative;
+	overflow: hidden;
+	width: 350px;
+	height: 350px;
+	margin: 20px;
+}
+.poi .cover:hover {
+	-webkit-transition: all 0.2s cubic-bezier(.99, .99, 0, .61);
+	-moz-transition: all 0.2s cubic-bezier(.99, .99, 0, .61);
+	-ms-transition: all 0.2s cubic-bezier(.99, .99, 0, .61);
+	top: 0px;
+}
+.poi .cover {
+	top: 250px;
+	overflow: hidden;
+	-webkit-transition: all 0.2s cubic-bezier(.99, .99, 0, .61);
+	-moz-transition: all 0.2s cubic-bezier(.99, .99, 0, .61);
+	-ms-transition: all 0.2s cubic-bezier(.99, .99, 0, .61);
+}
+.poi .cover:hover .rating {
+	position: absolute;
+	bottom: 30px;
+	top: auto;
+	right: 10px;
+	-webkit-transition: all 0.2s cubic-bezier(.99, .99, 0, .61);
+	-moz-transition: all 0.2s cubic-bezier(.99, .99, 0, .61);
+	-ms-transition: all 0.2s cubic-bezier(.99, .99, 0, .61);
+}
+.description .rating {
+	display: block;
+	position: absolute;
+	bottom: 280px;
+	right: 10px;
+	margin: 0;
+	text-align: right;
+	-webkit-transition: all 0.2s cubic-bezier(.99, .99, 0, .61);
+	-moz-transition: all 0.2s cubic-bezier(.99, .99, 0, .61);
+	-ms-transition: all 0.2s cubic-bezier(.99, .99, 0, .61);
+}
+.poi .cover:hover .info {
+	display: block;
+}
+.description .info {
+	display: none;
+	padding: 10px 0px;
+}
+.poi .cover .description {
+	height: 100%;
+	background: rgba(0,0,0,0.45);
+}
+.max {
+	height: 100%;
+	width: 100%;
+}
+</style>
+<link rel="stylesheet" href="font-awesome-4.2.0/css/font-awesome.min.css">
+</head>
+
+<body style="background-color: red">
+  <div class="poi">
+    <img class="max" src="../img/Batman Freeman.jpg">
+    <div class="cover max" style="position:absolute;">
+        <div class="description" style="position:relative;color: white;display: block; padding: 10px;">
+			<h2>This is Batman Freeman</h2>
+			<h4>Combination with Batman and Morgan Freeman</h4>
+            <p class="info">Batman Freeman is the preposterous brain child of Mr. Tyler Morris. Batman Freeman has been in existence for an unknown amount of time and is here to stay.</p>
+			<div class="rating">
+              <i class="fa fa-star"></i> 
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half-o"></i>
+              <i class="fa fa-star-o"></i>
+    		</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>
