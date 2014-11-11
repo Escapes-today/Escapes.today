@@ -155,3 +155,17 @@ li a {
 	src: url(../fonts/quicksand/Quicksand-Regular.otf);
 	font-weight: normal;
 }
+.visit_btn {
+	padding: 10px;
+	margin-top: 5px;
+	float: right;
+	background: rgba(135,176, 214,1);
+	display: inline-block;
+	transition: all 0.2s ease-in-out;
+}
+.visit_btn:hover {
+	font-weight: bold;
+	color: rgba(135,176, 214,1);
+	background: rgba(220,232, 243,1);
+	transition: all 0.2s ease-in-out;
+}
