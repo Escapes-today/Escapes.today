@@ -5,209 +5,58 @@
 <title>Superslides - A fullscreen slider for jQuery</title>
 <link rel="stylesheet" href="addons/superslides/dist/stylesheets/custom.css">
 <link rel="stylesheet" href="addons/font-awesome-4.2.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="data/main.css">
 
 <!--imported fonts -->
 <link href='http://fonts.googleapis.com/css?family=Quicksand:400,700' rel='stylesheet' type='text/css'>
 <style>
-* {
-	padding: 0;
-	margin: 0;
-}
-#navheader {
-	display: block;
-	margin: 0px 20%;
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0; /* Make it fill the whole horizontal space */
-	z-index: 3;
-	background: rgba(0, 0, 0, 0.8);
-	color: rgb(220, 232, 243);
-	/*	background-color: rgb(220, 232, 243);
-	background-color: rgba(220, 232, 243, .95);*/
-	height: 100px;
-	-webkit-box-shadow: 0 3px 15px rgba(220, 232, 243, .3);
-	border-bottom-right-radius: 6px;
-	border-bottom-left-radius: 6px;
-}
-#footer {
-	height: 30px;
-	position: fixed;
-	left: 0;
-	right: 0; /* Make it fill the whole horizontal space */
-	bottom: 0;
-	z-index: 3;
-	background: rgba(0, 0, 0, 0.8);
-	color: rgb(220, 232, 243);/*background-color: rgb(220, 232, 243);
-	background-color: rgba(220, 232, 243, .95);*/
-}
-#footer a {
-	color: #000;
-	text-decoration: none;
-}
-#footer a:hover {
-	color: #333;
-	text-decoration: none;
-	font-weight: bold;
-}
-#links {
-	float: right;
-	height: 100%;
-}
-#links ul li {
-	min-width: 4em;
-}
-li a {
-	font-size: 1.1em;
-	text-decoration: none;
-	font-weight: bold;
-	font-family: 'Quicksand', sans-serif;
-	border: 1px rgba(255, 255, 255, 0) solid;
-	padding-top: 6px;
-	padding-bottom: 6px;
-	padding-left: 3px;
-	padding-right: 3px;
-	border-radius: 3px;
-	margin-right: 0px;
-	transition: border 0.2s ease-in-out, color 0.2s ease-in-out, padding-left 0.2s ease-in-out, margin-right 0.2s ease-in-out;
-}
-#links a:hover {
-	color: #4C9CF1;
-	margin-right: -15px;
-	padding-left: 18px;
-	border: 1px rgba(255, 255, 255, 1) solid;
-	transition: border 0.1s ease-in-out, color 0.1s ease-in-out, padding-left 0.1s ease-in-out, margin-right 0.1s ease-in-out;
-}
-.link a:hover {
-	color: yellow;
-}
-#logo {
-	float: left;
-	display: block;
-	padding-top: 4px;
-}
-#links nav {
-	float: right;
-	padding: 16px;
-}
-#links ul {
-	font-size: 1.15em;
-	line-height: 1.15em;
-	list-style: none;
-	overflow: hidden;
-	position: relative;
-	top: 50%;
-	transform: translateY(-50%);
-	-webkit-transform: translateY(-50%);
-}
-#links li {
-	float: left;
-	padding: 10px;
-}
-.current {
-	color: #2262AD;
-}
-#links a {
-	color: white;
-	width: 3em;
-	z-index: 4;
-}
-#links span {
-	z-index: 5;
-	width: 5px;
-	background-color: #1A3275;
-}
-.section {
-	margin: 80px auto 40px;
-	max-width: 980px;
-	position: relative;
-	padding: 20px
-}
-.container {
-	position: relative;
-	left: 0;
-	top: 40%;
-}
-.description {
-	width: 300px;
-	background-color: red;
-	float: right;
-	margin-right: 200px;
-	padding: 10px 20px;
-	background: rgb(0, 0, 0);
-	background: rgba(0, 0, 0, 0.8);
-	-webkit-box-shadow: 0 10px 15px rgba(0, 0, 0, .3);
-	border-radius: 3px;
-	color: rgb(220, 232, 243);
-	font-family: quicksand;
-	font-weight: normal;
-}
-/* importing fonts */
-@font-face {
-	font-family: Quicksand;
-	src: url(../fonts/quicksand/Quicksand-Bold.otf);
-	font-weight: bold;
-}
-@font-face {
-	font-family: Quicksand;
-	src: url(../fonts/quicksand/Quicksand-Regular.otf);
-	font-weight: normal;
-}
+
 </style>
 </head>
 <body>
-        <div id="navheader">
-          <div style="margin-left: 0px; border:1px; border-color:red;">
-            <a href="http://www.escapes.today" id="logo"> 
-      <img style="height: 90px;" src="img/logo.svg" alt="Escapes Today logo" />
-    </a>
+<div id="navheader">
+  <div style="margin-left: 0px; border:1px; border-color:red;"> <a href="http://www.escapes.today" id="logo"> <img style="height: 90px;" src="img/logo.svg" alt="Escapes Today logo" /> </a> </div>
+  <div id="links">
+    <ul>
+      <li><span></span><a href="index.html" class="current">Home</a></li>
+      <li><a href="italy.html" class="link">Destinations</a></li>
+      <li><a href="#">Traveling Tips</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </div>
 </div>
-          <div id="links">
-            <ul>
-                <li><span></span><a href="index.html" class="current">Home</a></li>
-                <li><a href="italy.html" class="link">Destinations</a></li>
-                <li><a href="#">Traveling Tips</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
-</ul>
-</div>
-</div>
-
-        <div id="content">
-          <div id="slides" style="-webkit-transform: translateZ(0);">
+<div id="content">
+  <div id="slides" style="-webkit-transform: translateZ(0);">
     <ul class="slides-container">
       <li> <img src="img/Tokyo_View_from_Mori_Tower.jpg" alt="Tokyo, Japan">
         <div class="container">
-           <div class="description">
-           <h2>Tokyo, Japan</h2>
-           <p>Tokyo is the capital of Japan, the center of the Greater Tokyo Area, and the most populous metropolitan area in the world. It is the seat of the Japanese government and the Imperial Palace, and the home of the Japanese Imperial Family.</p>
- </div>
-      
-</div>
-</li>
+          <div class="description">
+            <h2>Tokyo, Japan</h2>
+            <p>Tokyo is the capital of Japan, the center of the Greater Tokyo Area, and the most populous metropolitan area in the world. It is the seat of the Japanese government and the Imperial Palace, and the home of the Japanese Imperial Family.</p>
+          </div>
+        </div>
+      </li>
       <li> <img src="img/Colosseum_in_Rome.jpg" alt="Roman Colosseum">
         <div class="container">
           <div  class="description">
             <h1>Roman Colosseum</h1>
             <p>Built of concrete and stone, it was the largest amphitheatre of the Roman Empire, and is considered one of the greatest works of Roman architecture and engineering. It is the largest amphitheatre in the world.</p>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <nav class="slides-navigation"> <a href="#" class="next"> <i class="fa fa-arrow-right"></i></a><a href="#" class="prev"><i class="fa fa-arrow-left"></i></a> </nav>
+  </div>
 </div>
+<div id="footer">
+  <div style="margin: 0 20%;"> <a href="#">Copyright Escapes.Today</a> </div>
 </div>
-</li>
-</ul>
-    <nav class="slides-navigation"> <a href="#" class="next">
-     <i class="fa fa-arrow-right"></i></a><a href="#" class="prev"><i class="fa fa-arrow-left"></i></a> </nav>
-</div>
-</div>
-        <div id="footer">
-          <div style="margin: 0 20%;">
-            <a href="#">Copyright Escapes.Today</a>
-</div>
-</div>
-        <script src="addons/jquery/jquery-1.11.1.min.js"></script> 
-        <script src="addons/jquery-ui-1.11.2/jquery-ui.min.js"></script> 
-        <script src="addons/superslides/examples/javascripts/jquery.animate-enhanced.min.js"></script> 
-        <script src="addons/superslides/dist/jquery.superslides.min.js" type="text/javascript" charset="utf-8"></script> 
-        <script>
+<script src="addons/jquery/jquery-1.11.1.min.js"></script> 
+<script src="addons/jquery-ui-1.11.2/jquery-ui.min.js"></script> 
+<script src="addons/superslides/examples/javascripts/jquery.animate-enhanced.min.js"></script> 
+<script src="addons/superslides/dist/jquery.superslides.min.js" type="text/javascript" charset="utf-8"></script> 
+<script>
 $(document).ready(function () {
     $('#slides').superslides({
         hashchange: false,
