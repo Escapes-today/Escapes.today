@@ -159,6 +159,7 @@ li a {
 	padding: 10px;
 	margin-top: 5px;
 	float: right;
+	color: inherit;
 	background: rgba(135,176, 214,1);
 	display: inline-block;
 	transition: all 0.2s ease-in-out;
