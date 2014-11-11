@@ -4,7 +4,7 @@
 }
 #navheader {
 	display: block;
-	margin: 0px 20%;
+	margin: 0px 10%;
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -57,13 +57,15 @@ li a {
 	padding-left: 3px;
 	padding-right: 3px;
 	border-radius: 3px;
-	transition: border 0.2s ease-in-out, color 0.2s ease-in-out, padding-left 0.2s ease-in-out;
-}	
+	margin-right: 0px;
+	transition: border 0.2s ease-in-out, color 0.2s ease-in-out, padding-left 0.2s ease-in-out, margin-right 0.2s ease-in-out;
+}
 #links a:hover {
 	color: #4C9CF1;
+	margin-right: -15px;
 	padding-left: 18px;
 	border: 1px rgba(255, 255, 255, 1) solid;
-	transition: border 0.1s ease-in-out, color 0.1s ease-in-out, padding-left 0.1s ease-in-out;
+	transition: border 0.1s ease-in-out, color 0.1s ease-in-out, padding-left 0.1s ease-in-out, margin-right 0.1s ease-in-out;
 }
 .link a:hover {
 	color: yellow;
@@ -73,12 +75,12 @@ li a {
 	display: block;
 	padding-top: 4px;
 }
-
 #links nav {
 	float: right;
 	padding: 16px;
 }
 #links ul {
+	padding-right: 10px;
 	font-size: 1.15em;
 	line-height: 1.15em;
 	list-style: none;
@@ -92,6 +94,18 @@ li a {
 	float: left;
 	padding: 10px;
 }
+@media screen and (max-width: 1180px) {
+#links {
+	font-size: .8em;
+}
+#links ul li {
+	display: block;
+}
+#navheader {
+	margin: 0px 10px;
+}
+}
+
 .current {
 	color: #2262AD;
 }
@@ -104,9 +118,7 @@ li a {
 	z-index: 5;
 	width: 5px;
 	background-color: #1A3275;
-
 }
-
 .section {
 	margin: 80px auto 40px;
 	max-width: 980px;
@@ -134,12 +146,12 @@ li a {
 }
 /* importing fonts */
 @font-face {
-    font-family: Quicksand;
-    src: url(../fonts/quicksand/Quicksand-Bold.otf);
-    font-weight: bold;
+	font-family: Quicksand;
+	src: url(../fonts/quicksand/Quicksand-Bold.otf);
+	font-weight: bold;
 }
 @font-face {
-    font-family: Quicksand;
-    src: url(../fonts/quicksand/Quicksand-Regular.otf);
-    font-weight: normal;
+	font-family: Quicksand;
+	src: url(../fonts/quicksand/Quicksand-Regular.otf);
+	font-weight: normal;
 }
