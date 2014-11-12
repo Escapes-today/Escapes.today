@@ -165,6 +165,7 @@ li a {
 	color: inherit;
 	background: rgb(81,141, 196);
 	display: inline-block;
+	border-radius: 4px;
 	transition: all 0.2s ease-in-out;
 }
 .visit_btn:hover {
