@@ -1,11 +1,83 @@
+<!DOCTYPE html>
 <html>
 <head>
-<title>Escapes.today</title>
+<meta charset="utf-8">
+<title>Superslides - A fullscreen slider for jQuery</title>
+<link rel="stylesheet" href="addons/superslides/dist/stylesheets/custom.css">
+<link rel="stylesheet" href="addons/font-awesome-4.2.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="data/main.css">
+<!--imported fonts -->
+<link href='http://fonts.googleapis.com/css?family=Quicksand:400,700' rel='stylesheet' type='text/css'>
+<style></style>
 </head>
+<body>
+<div id="navheader">
+  <div style="margin-left: 0px; border:1px; border-color:red;"> <a href="http://www.escapes.today" id="logo"> <img style="height: 90px;" src="img/logo.svg" alt="Escapes Today logo"> </a> </div>
+  <div id="links">
+    <ul >
+      <li><span></span><a href="index.html" class="current">Home</a></li>
+      <li><a href="italy.html" class="link">Destinations</a></li>
+      <li><a href="#">Traveling Tips</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </div>
+</div>
+<div id="content">
+  <div id="slides" style="-webkit-transform: translateZ(0);">
+    <ul class="slides-container">
+      <li> <img src="img/Italy/milan.jpg" alt="Milan Cathedral">
+        <div class="container">
+          <div class="description">
+            <h2>Milan Cathedral, Italy</h2>
+            <p>The Milan Cathedral is the fifth largest cathedral in the world and the largest in Italy.  Construction began in 1386, and took nearly six centuries to complete.  Come see the elaborate architecture of fourteenth century Italy.</p>
+            <a class="visit_btn" href="italy.html">Visit Italy</a> </div>
+        </div>
+      </li>
+      <li> <img src="img/Italy/trevi.jpg" alt="Trevi Fountain">
+        <div class="container">
+          <div  class="description">
+            <h2>Trevi Fountain, Italy</h2>
+            <p>In Rome's Trevi district the Trevi Fountain, designed by Nicola Salvi was finished in 1762. The fountain is the largest in the city and one of the most well-known around the world.  Take a trip and enjoy the beautiful sculptures dedicated to Rome's survival.</p>
+            <a class="visit_btn" href="italy.html">Visit Italy</a> </div>
+        </div>
+      </li>
+      <li> <img src="img/Japan/castle.jpg" alt="Himeji Castle">
+        <div class="container">
+          <div class="description">
+            <h2>Himeji Castle, Japan</h2>
+            <p>The Himeji Castle located in Himeji, Japan, has stood for over 650 years.  Travel to Japan to see the castle that has had two renovations and was once a fort. This castle is a fine example of Japanese medieval culture from the seventeenth century.</p>
+            <a class="visit_btn" href="#">Visit Japan</a> </div>
+        </div>
+      </li>
+      <li> <img src="img/Japan/fuji.jpg" alt="Himeji Castle">
+        <div class="container">
+          <div class="description">
+            <h2>Mt. Fuji, Japan</h2>
+            <p>Located on Honshu Island, Mt. Fuji is the tallest mountain in Japan.  This is one of three of the "Holy Mountains" in Japan.  Come see this natural and cultural landmark.  Experience the calming nature of this volcano mountain.  Take a trip to Japan today!</p>
+            <a class="visit_btn" href="#">Visit Japan</a> </div>
+        </div>
+      </li>
+    </ul>
+    <nav class="slides-navigation"> <a href="#" class="next"> <i class="fa fa-arrow-right"></i></a><a href="#" class="prev"><i class="fa fa-arrow-left"></i></a> </nav>
+  </div>
+</div>
+<div id="footer">
+  <div style="margin: 0 20%;"> <a href="#">Copyright Escapes.Today</a> </div>
+</div>
+<script src="addons/jquery/jquery-1.11.1.min.js"></script> 
+<script src="addons/jquery-ui-1.11.2/jquery-ui.min.js"></script> 
+<script src="addons/superslides/examples/javascripts/jquery.animate-enhanced.min.js"></script> 
+<script src="addons/superslides/dist/jquery.superslides.min.js" type="text/javascript" charset="utf-8"></script> 
+<script>
+$(document).ready(function () {
+    $('#slides').superslides({
+        hashchange: false,
+        animation: 'slide',
+        play: 60000
+    });
+});
 
-<body style="background-color: gray">
-Welcome to OHS BPA Travel Temp Website
-<div>Hello World</div>
+</script>
 </body>
 </html>

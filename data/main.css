@@ -1,11 +1,172 @@
-div {
-	width: 300px;
-	height: 100px;
-	font-size: 3em;
-	position: absolute;
-	margin: auto;
+* {
+	padding: 0;
+	margin: 0;
+}
+#navheader {
+	display: block;
+	margin: 0px 10%;
+	position: fixed;
 	top: 0;
-	bottom: 0;
 	left: 0;
-	right: 0;
+	right: 0; /* Make it fill the whole horizontal space */
+	z-index: 3;
+	background: rgba(0, 0, 0, 0.8);
+	color: rgb(220, 232, 243);
+	/*	background-color: rgb(220, 232, 243);
+	background-color: rgba(220, 232, 243, .95);*/
+	height: 100px;
+	-webkit-box-shadow: 0 3px 15px rgba(220, 232, 243, .3);
+	border-bottom-right-radius: 6px;
+	border-bottom-left-radius: 6px;
+}
+#footer {
+	height: 30px;
+	position: fixed;
+	left: 0;
+	right: 0; /* Make it fill the whole horizontal space */
+	bottom: 0;
+	z-index: 3;
+	background: rgba(0, 0, 0, 0.8);
+	color: rgb(220, 232, 243);/*background-color: rgb(220, 232, 243);
+	background-color: rgba(220, 232, 243, .95);*/
+}
+#footer a {
+	color: #000;
+	text-decoration: none;
+}
+#footer a:hover {
+	color: #333;
+	text-decoration: none;
+	font-weight: bold;
+}
+#links {
+	float: right;
+	height: 100%;
+}
+#links ul li {
+	min-width: 4em;
+}
+li a {
+	font-size: 1.1em;
+	text-decoration: none;
+	font-weight: bold;
+	font-family: 'Quicksand', sans-serif;
+	border: 1px rgba(255, 255, 255, 0) solid;
+	padding-top: 6px;
+	padding-bottom: 6px;
+	padding-left: 3px;
+	padding-right: 3px;
+	border-radius: 3px;
+	margin-right: 0px;
+	transition: border 0.2s ease-in-out, color 0.2s ease-in-out, padding-left 0.2s ease-in-out, margin-right 0.2s ease-in-out;
+}
+#links a:hover {
+	color: #4C9CF1;
+	margin-right: -15px;
+	padding-left: 18px;
+	border: 1px rgba(255, 255, 255, 1) solid;
+	transition: border 0.1s ease-in-out, color 0.1s ease-in-out, padding-left 0.1s ease-in-out, margin-right 0.1s ease-in-out;
+}
+.link a:hover {
+	color: yellow;
+}
+#logo {
+	float: left;
+	display: block;
+	padding-top: 4px;
+}
+#links nav {
+	float: right;
+	padding: 16px;
+}
+#links ul {
+	padding-right: 10px;
+	font-size: 1.15em;
+	line-height: 1.15em;
+	list-style: none;
+	overflow: hidden;
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+}
+#links li {
+	float: left;
+	padding: 10px;
+}
+@media screen and (max-width: 1180px) {
+#links {
+	font-size: .8em;
+}
+#links ul li {
+	display: block;
+}
+#navheader {
+	margin: 0px 10px;
+}
+}
+
+.current {
+	color: #2262AD;
+}
+#links a {
+	color: white;
+	width: 3em;
+	z-index: 4;
+}
+#links span {
+	z-index: 5;
+	width: 5px;
+	background-color: #1A3275;
+}
+.section {
+	margin: 80px auto 40px;
+	max-width: 980px;
+	position: relative;
+	padding: 20px
+}
+.container {
+	position: relative;
+	left: 0;
+	top: 40%;
+}
+.description {
+	width: 300px;
+	background-color: red;
+	float: right;
+	margin-right: 200px;
+	padding: 10px 20px;
+	background: rgb(0, 0, 0);
+	background: rgba(0, 0, 0, 0.8);
+	-webkit-box-shadow: 0 10px 15px rgba(0, 0, 0, .3);
+	border-radius: 3px;
+	color: rgb(220, 232, 243);
+	font-family: quicksand;
+	font-weight: normal;
+}
+/* importing fonts */
+@font-face {
+	font-family: Quicksand;
+	src: url(../fonts/quicksand/Quicksand-Bold.otf);
+	font-weight: bold;
+}
+@font-face {
+	font-family: Quicksand;
+	src: url(../fonts/quicksand/Quicksand-Regular.otf);
+	font-weight: normal;
+}
+.visit_btn {
+	padding: 10px;
+	margin-top: 5px;
+	float: right;
+	color: inherit;
+	background: rgb(81,141, 196);
+	display: inline-block;
+	transition: all 0.2s ease-in-out;
+}
+.visit_btn:hover {
+	font-weight: bold;
+	color: rgb(81,141, 196);
+	background: rgb(220,232, 243);
+	transition: all 0.2s ease-in-out;
 }

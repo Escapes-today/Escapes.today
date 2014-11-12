@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Superslides - A fullscreen slider for jQuery</title>
+  <link rel="stylesheet" href="../dist/stylesheets/superslides.css">
+  
+  
+  
+  <style>
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#main{
+    height:100%;
+    background-color: blue;
+}
+
+#header{
+    height: 10%;
+    background-color: green;
+}
+
+#content{
+    height: -webkit-calc(100% - 105px);
+    background-color: red;
+}
+  </style>
+</head>
+<body>
+<div id="main">
+  <div id="slides" id="header" >
+    <div class="slides-container" >
+      <img src="images/people.jpeg" alt="Cinelli">
+      <img src="images/surly.jpeg" width="1024" height="682" alt="Surly">
+      <img src="images/cinelli-front.jpeg" width="1024" height="683" alt="Cinelli">
+      <img src="images/affinity.jpeg" width="1024" height="685" alt="Affinity">
+    </div>
+
+    <nav class="slides-navigation">
+      <a href="#" class="next">Next</a>
+      <a href="#" class="prev">Previous</a>
+    </nav>
+  </div>
+  <div id="content"> asasdfasdasddgakjsdfasd j</div>
+  </div>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="javascripts/jquery.easing.1.3.js"></script>
+  <script src="javascripts/jquery.animate-enhanced.min.js"></script>
+  <script src="../dist/jquery.superslides.js" type="text/javascript" charset="utf-8"></script>
+  <script>
+    $(function() {
+      $('#slides').superslides({
+        hashchange: false,
+		 animation: 'fade',
+      });
+    });
+  </script>
+</body>
+</html>

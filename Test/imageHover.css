@@ -1,0 +1,60 @@
+.hover {
+
+}
+.main .picture {
+	height: 300px;
+	width: 600px;
+	overflow: hidden;
+   margin: 10px;
+   float: left;
+   border: 10px solid #fff;
+   overflow: hidden;
+   position: relative;
+   text-align: center;
+   z-index: 0;
+}
+.picture img {
+	display: block;
+	position: relative;
+	width: 100%;
+	z-index: 0;
+	transition: width 0.2s;
+}
+.picture:hover img {
+	width: 105%;
+	transition: width 0.2s, opacity 0.3s;
+	opacity: 0.5;
+}
+.hover {
+	color: white;
+	z-index: 1;
+	background-color: rgba(40,43,56,0);
+	height: 200px;
+	width: 600px;
+	position: absolute;
+	top: 50px;
+	left: -600px;
+	transition: left 0.2s, opacity 0.2s;
+}
+.picture:hover .hover {
+	background-color: rgba(40,43,56,0.9);
+	left: 0;
+	transition: left 0.2s, background-color 0.5s, rotate 1s;
+	font-family: sans-serif;
+}
+.hover h2 {
+	font-weight: bold;
+	background-color: #181a21;
+}
+.hover p {
+	width: 60%;
+	margin-left: auto;
+	margin-right: auto;
+	padding-bottom: 10px;
+}
+.hover a {
+	text-decoration: none;
+	color: white;
+	background-color: #181a21;
+	padding: 5px;
+}
