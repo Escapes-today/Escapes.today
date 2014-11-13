@@ -151,17 +151,6 @@ li a {
 	font-family: quicksand;
 	font-weight: normal;
 }
-/* importing fonts */
-@font-face {
-	font-family: Quicksand;
-	src: url(../fonts/quicksand/Quicksand-Bold.otf);
-	font-weight: bold;
-}
-@font-face {
-	font-family: Quicksand;
-	src: url(../fonts/quicksand/Quicksand-Regular.otf);
-	font-weight: normal;
-}
 .visit_btn {
 	padding: 10px;
 	margin-top: 5px;
