@@ -13,8 +13,6 @@
 }
 .poi.small {
 	margin: 10px;
-	height: 250px;
-	width: 250px;
 }
 .poi.small .cover {
 	top: 0px;
@@ -34,21 +32,9 @@
 }
 
 ul li *{
-display: block;x
+display: block;
 }
 #locations {
  width: 90%;
   margin: 20px auto 0 auto;
-}
-/* The Magic Float Center Code */
-.float_center {
-  float: left;
-
-  position: relative;
- 
-  text-align: left;
-}
-.float_center > .child {
-  position: relative;
-  left: 50%;
 }
