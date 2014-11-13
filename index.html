@@ -77,6 +77,20 @@ $(document).ready(function () {
         animation: 'slide',
         play: 60000
     });
+	
+	$("<span id='pause' class='fa fa-pause' style='position: absolute; right: 10px;color: rgb(220, 232, 243);'></span>").appendTo('.slides-pagination');
+	
+	$("#pause").click(function () {
+		if ($(this).hasClass("fa-pause")) {
+			$(this).toggleClass("fa-pause");
+			$(this).toggleClass("fa-play");
+			$('#slides').superslides('stop');
+		} else {
+			$(this).toggleClass("fa-pause");
+			$(this).toggleClass("fa-play");
+			$('#slides').superslides('start');
+		}
+	});
 });
 
 </script>
