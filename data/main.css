@@ -108,7 +108,11 @@ li a {
 	margin: 0px 10px;
 }
 }
-
+@media screen and (max-width: 900px) {
+#navheader {
+	height: auto;
+}
+}
 .current {
 	color: #2262AD;
 }
