@@ -2,14 +2,16 @@
 	padding: 0;
 	margin: 0;
 }
-
 img {
-border : 0px;	
+	border : 0px;
+}
+.home #navheader {
+position: fixed;	
 }
 #navheader {
 	display: block;
 	margin: 0px 10%;
-	position: fixed;
+	position: absolute;
 	top: 0;
 	left: 0;
 	right: 0; /* Make it fill the whole horizontal space */
@@ -74,7 +76,6 @@ border : 0px;
 	border-left: none;
 	transition: border 0.1s ease-in-out, color 0.1s ease-in-out, padding-left 0.1s ease-in-out, margin-right 0.1s ease-in-out;
 }
-
 #logo {
 	float: left;
 	display: block;
@@ -139,7 +140,7 @@ border : 0px;
 	left: 0;
 	top: 40%;
 }
-.slides .description {
+#slides .description {
 	width: 300px;
 	background-color: red;
 	float: right;
@@ -153,18 +154,25 @@ border : 0px;
 	font-family: quicksand;
 	font-weight: normal;
 }
-.slides .description p {
+#slides .description p {
 	margin-bottom: 1em;
 }
 .visit_btn {
-	padding: 10px;
-	margin-top: 5px;
-	float: right;
-	color: inherit;
-	background: rgb(81,141, 196);
-	display: inline-block;
-	border-radius: 4px;
-	transition: all 0.2s ease-in-out;
+padding: 10px;
+margin-top: 5px;
+float: right;
+color: inherit;
+background: rgb(81,141, 196);
+display: inline-block;
+border-radius: 4px;
+transition: all 0.2s ease-in-out;
+text-decoration: none;
+margin-right: 0px;
+border-left: none;
+border: 1px rgba(255, 255, 255, 0) solid;
+font-family: 'Quicksand', sans-serif;
+font-weight: bold;
+font-size: 1.1em;
 }
 .visit_btn:hover {
 	font-weight: bold;
