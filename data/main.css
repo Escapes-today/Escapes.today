@@ -50,7 +50,7 @@ border : 0px;
 #links ul li {
 	min-width: 4em;
 }
-li a {
+#links li a {
 	font-size: 1.1em;
 	text-decoration: none;
 	font-weight: bold;
@@ -74,9 +74,7 @@ li a {
 	border-left: none;
 	transition: border 0.1s ease-in-out, color 0.1s ease-in-out, padding-left 0.1s ease-in-out, margin-right 0.1s ease-in-out;
 }
-.link a:hover {
-	color: yellow;
-}
+
 #logo {
 	float: left;
 	display: block;
@@ -141,7 +139,7 @@ li a {
 	left: 0;
 	top: 40%;
 }
-.description {
+.slides .description {
 	width: 300px;
 	background-color: red;
 	float: right;
@@ -155,7 +153,7 @@ li a {
 	font-family: quicksand;
 	font-weight: normal;
 }
-.description p {
+.slides .description p {
 	margin-bottom: 1em;
 }
 .visit_btn {
@@ -173,4 +171,13 @@ li a {
 	color: rgb(81,141, 196);
 	background: rgb(220,232, 243);
 	transition: all 0.2s ease-in-out;
+}
+.contrast {
+	display: inline-block;
+	padding: 10px 20px;
+	background: rgb(0, 0, 0);
+	background: rgba(0, 0, 0, 0.6);
+	-webkit-box-shadow: 0 10px 15px rgba(0, 0, 0, .3);
+	border-radius: 3px;
+	color: rgb(220, 232, 243);
 }
