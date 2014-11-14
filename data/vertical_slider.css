@@ -77,16 +77,23 @@
 	width: 100%;
 	display: inline-block;
 	text-align: center;
+	
+	background: rgba(255,255,255,.3);
+	padding-bottom: 20px;
+	border-radius: 5px;
+	box-shadow: inset 5px 5px 20px #555;
 }
 .showcase {
-	background-color: #C96;
+	background: rgba(255,255,255,.3);
 	padding-bottom: 20px;
+	border-radius: 5px;
+	box-shadow: inset 5px 5px 20px #555;
 }
 #destination {
 	text-align: left;
 	margin-top: 20px;
 	min-height: 340px;
-	background-color: #09C;
+
 }
 .showcase li, #destination li {
 	min-height: 300px;
@@ -114,5 +121,5 @@
 }
 #products {
 	padding: 10px 20px;
-	background-color: #066;
+	background-color: #333;
 }
