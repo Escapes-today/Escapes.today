@@ -3,11 +3,11 @@
 }
 .main .picture {
 	height: 300px;
-	width: 600px;
+	width: 300px;
 	overflow: hidden;
    margin: 10px;
    float: left;
-   border: 10px solid #fff;
+   border: 10px soli #fff;
    overflow: hidden;
    position: relative;
    text-align: center;
@@ -16,35 +16,34 @@
 .picture img {
 	display: block;
 	position: relative;
-	width: 100%;
+	width: 200%;
 	z-index: 0;
 	transition: width 0.2s;
 }
 .picture:hover img {
-	width: 105%;
+	width: 205%;
 	transition: width 0.2s, opacity 0.3s;
 	opacity: 0.5;
 }
 .hover {
 	color: white;
 	z-index: 1;
-	background-color: rgba(40,43,56,0);
-	height: 200px;
-	width: 600px;
+	background-color: rgba(0,0,0,0.8);
+	height: 250px;
+	width: 300px;
 	position: absolute;
-	top: 50px;
-	left: -600px;
+	top: 25px;
+	left: -300px;
 	transition: left 0.2s, opacity 0.2s;
+	font-family: 'Quicksand', sans-serif;
 }
 .picture:hover .hover {
-	background-color: rgba(40,43,56,0.9);
+	background-color: rgba(0,0,0,0.8);
 	left: 0;
 	transition: left 0.2s, background-color 0.5s, rotate 1s;
-	font-family: sans-serif;
 }
 .hover h2 {
 	font-weight: bold;
-	background-color: #181a21;
 }
 .hover p {
 	width: 60%;
@@ -55,6 +54,13 @@
 .hover a {
 	text-decoration: none;
 	color: white;
-	background-color: #181a21;
+	background: rgb(81,141, 196);
 	padding: 5px;
+	transition: all 0.2s ease-in-out;
+	border-radius: 4px;
+}
+.hover a:hover {
+	color: rgb(81,141, 196);
+	background: rgb(220,232, 243);
+	transition: all 0.2s ease-in-out;
 }
