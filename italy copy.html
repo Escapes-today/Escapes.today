@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Escapes Today - Italy</title>
+<link rel="shortcut icon" href="img/favicon.ico">
+<link rel='stylesheet' href='fonts/fonts.css'>
+<link rel="stylesheet" href="data/main.css">
+<link rel="stylesheet" href="data/imageHover.css">
+<link rel="stylesheet" href="data/vertical_slider.css">
+<link rel="stylesheet" href="addons/font-awesome-4.2.0/css/font-awesome.min.css">
+<link href='http://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css'>
+<title>Escapes Today</title>
+</head>
+
+<body>
+<div id="header" style="width: 100%; height: 300px;">
+  <div id="navheader">
+    <div id="links">
+      <ul >
+        <li><a href="index.html" class="current">Home</a></li>
+        <li><a href="italy.html">Destinations</a></li>
+        <li><a href="#">Traveling Tips</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div id="header" style="width: 100%; height: 300px;background-image: url(img/Italy/itybg.jpg);background-size: cover;background-position: center 75%">
+    <!--<img src="img/Italy/itybg.jpg" style="height:300px;width:100%;" alt="" />-->
+</div>
+  <div style="text-align: center">
+    <div class="contrast" style="font-size: 3em; position: relative; top:-150px;color:rgb(220,232, 243); ">
+      <h1 style="text-align: center;">Italy</h1>
+    </div>
+  </div>
+  
+<div style="background-color:rgb(220,232, 243); color:#1a3275;	padding: 10px 20%;font-size:1.2em;"> Italy, officially the Italian Republic is a unitary parliamentary republic in Southern Europe. To the north, Italy borders France, Switzerland, Austria, and Slovenia, and is roughly delimited by the Alpine watershed, enclosing the Po Valley and the Venetian Plain. To the south, it consists of the entirety of the Italian Peninsula and the two biggest Mediterranean islands of Sicily and Sardinia, in addition to many other smaller islands. </div>
+<div class="container">
+            <div class="main">
+                <div class="picture">
+                    <img src="img/italy/bridge.jpg">
+                    <div class="hover">
+                        <h2>BATMAN FREEMAN</h2>
+                        <p>This is some filler text that neither includes Lorem Ipsum nor is excessively boring. In fact, it could be argued, that it is actually humorous!</p>
+                        <a href="#" class="info">Read More</a>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+</body>
+<script src="addons/jquery/jquery-1.11.1.min.js"></script>
+<script src="addons/jquery-ui-1.11.2/jquery-ui.min.js"></script>
+<script>
+$(function() {
+ $( ".showcase" ).sortable({ connectWith: "#destination", containment: "#products",  scroll: true});
+ $( ".showcase" ).disableSelection();
+ $( "#destination" ).sortable({ connectWith: ".showcase", containment: "#products",  scroll: true,receive: function( event, ui ) {
+	
+	   var draggable = ui.item;
+	// $(draggable).children(".poi").addClass(".small");
+$(ui.item).children(".shadowbox").children(".poi").toggleClass("small");
+	 
+	 },
+	  remove: function( event, ui ) {$(ui.item).children(".shadowbox").children(".poi").toggleClass("small");}});
+ $( "#destination" ).disableSelection();
+});
+  
+</script>
+</html>

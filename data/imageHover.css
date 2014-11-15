@@ -32,7 +32,6 @@
 	opacity: 0.5;
 }
 .hover {
-	padding-top: 10px;
 	color: white;
 	z-index: 1;
 	background-color: rgba(0,0,0,0.8);
