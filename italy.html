@@ -125,33 +125,89 @@
   </div>
 
   <div class="btns" style="text-align:center;">
-   <a class="btn" href="#">View Travel Deals</a>
-   <a class="btn" href="#">Create Your Own Plan</a>
+   <a class="btn" id="dealsbtn">View Travel Deals</a>
+   <a class="btn" id="makebtn">Create Your Own Plan</a>
   </div>
   
   
+  <ul class="deals slidein">
+   <li>
+        <div class="shadowbox">
+          <div class="poi"> <img class="max" src="img/Jamaica/bluemt.jpg">
+            <div class="cover max" style="position:absolute;">
+              <div class="description">
+                <h2>This is Batman Freeman</h2>
+                <h4>Combination with Batman and Morgan Freeman</h4>
+                <p class="info">Batman Freeman is the preposterous brain child of Mr. Tyler Morris. Batman Freeman has been in existence for an unknown amount of time and is here to stay.</p>
+                <div class="rating"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-half-o"></i> <i class="fa fa-star-o"></i> </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+       <li>
+        <div class="shadowbox">
+          <div class="poi"> <img class="max" src="img/Jamaica/bluemt.jpg">
+            <div class="cover max" style="position:absolute;">
+              <div class="description">
+                <h2>This is Batman Freeman</h2>
+                <h4>Combination with Batman and Morgan Freeman</h4>
+                <p class="info">Batman Freeman is the preposterous brain child of Mr. Tyler Morris. Batman Freeman has been in existence for an unknown amount of time and is here to stay.</p>
+                <div class="rating"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-half-o"></i> <i class="fa fa-star-o"></i> </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+  </ul>
   
   
-  <ul id="destination">
+  
+  <ul class="destination slidein">
   </ul>
 </div>
+
+
+<div style="width:100%; height:100px;">Sample Footer</div>
 </body>
 <script src="addons/jquery/jquery-1.11.1.min.js"></script>
 <script src="addons/jquery-ui-1.11.2/jquery-ui.min.js"></script>
 <script>
-$(function() {
- $( ".showcase" ).sortable({ connectWith: "#destination", containment: "#products",  scroll: true});
- $( ".showcase" ).disableSelection();
- $( "#destination" ).sortable({ connectWith: ".showcase", containment: "#products",  scroll: true,receive: function( event, ui ) {
-	
-	   var draggable = ui.item;
-	// $(draggable).children(".poi").addClass(".small");
-$(ui.item).children(".shadowbox").children(".poi").toggleClass("small");
-	 
-	 },
-	  remove: function( event, ui ) {$(ui.item).children(".shadowbox").children(".poi").toggleClass("small");}});
- $( "#destination" ).disableSelection();
+$(function () {
+    $(".showcase").sortable({
+        connectWith: ".destination",
+        containment: "#products",
+        scroll: true
+    });
+    $(".showcase").disableSelection();
+    $(".destination").sortable({
+        connectWith: ".showcase",
+        containment: "#products",
+        scroll: true,
+        receive: function (event, ui) {
+            $(ui.item).children(".shadowbox").children(".poi").toggleClass("small");
+        },
+        remove: function (event, ui) {
+            $(ui.item).children(".shadowbox").children(".poi").toggleClass("small");
+        }
+    });
+    $(".destination").disableSelection();
+    $('#dealsbtn').click(function () {
+        $('.deals').toggleClass('slidein');
+        if (!$('.deals').hasClass('slidein')) {
+            $('html, body').animate({
+                scrollTop: $('.deals').offset().top
+            }, 500);
+        }
+    });
+    $('#makebtn').click(function () {
+        $('.destination').toggleClass('slidein');
+        if (!$('.destination').hasClass('slidein')) {
+            $('html, body').animate({
+                scrollTop: $('.destination').offset().top
+            }, 500);
+        }
+    });
 });
-  
 </script>
 </html>

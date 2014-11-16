@@ -69,7 +69,7 @@
 }
 /* File orig  */
 
-.showcase, #destination {
+.showcase, .destination, .deals {
 	min-height: 500px;
 	list-style-type: none;
 	margin: 0;
@@ -89,12 +89,12 @@
 	border-radius: 5px;
 	box-shadow: inset 5px 5px 20px #555;
 }
-#destination {
+.destination, .deals {
 	text-align: left;
 	min-height: 340px;
-
+	margin-top: 20px;
 }
-.showcase li, #destination li {
+.showcase li, .destination li, .deals li {
 	min-height: 300px;
 	margin: 3px 3px 3px 0;
 	padding: 1px;
@@ -121,4 +121,14 @@
 #products {
 	padding: 10px 20px;
 	background-color: #333;
+}
+.slidein {
+	display: block;
+height: 0px;
+overflow: hidden;
+transition: all 0.2s ease-in-out;
+padding: 0px;
+min-height: 0px;
+transition: all 0.5s ease-in-out;
+margin-top: 0px;
 }
