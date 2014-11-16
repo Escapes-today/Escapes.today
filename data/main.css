@@ -189,3 +189,32 @@ font-size: 1.1em;
 	border-radius: 3px;
 	color: rgb(220, 232, 243);
 }
+
+
+ 
+#products   .btns {
+	padding: 20px;   
+   }
+.btns   .btn {
+padding: 10px;
+margin-top: 5px;
+margin-left: 40px;
+color: rgb(220, 232, 243);
+background: rgb(81,141, 196);
+display: inline-block;
+border-radius: 4px;
+transition: all 0.2s ease-in-out;
+text-decoration: none;
+
+border-left: none;
+border: 1px rgba(255, 255, 255, 0) solid;
+font-family: 'Quicksand', sans-serif;
+font-weight: bold;
+font-size: 1.1em;
+}
+.btns  .btn:hover {
+	font-weight: bold;
+	color: rgb(81,141, 196);
+	background: rgb(220,232, 243);
+	transition: all 0.2s ease-in-out;
+}
