@@ -77,18 +77,20 @@
 	width: 100%;
 	display: inline-block;
 	text-align: center;
-	
+}
+.showcase, .dealbox, .makeplan {
 	background: rgba(255,255,255,.3);
 	padding-bottom: 20px;
 	border-radius: 5px;
 	box-shadow: inset 5px 5px 20px #555;
 }
-.showcase {
-	background: rgba(255,255,255,.3);
-	padding-bottom: 20px;
-	border-radius: 5px;
-	box-shadow: inset 5px 5px 20px #555;
+
+.makeplan , .dealbox{
+margin-bottom: 20px;
+min-height: 300px;	
+width:100%;
 }
+
 .destination, .deals {
 	text-align: left;
 	min-height: 340px;
@@ -122,13 +124,14 @@
 	padding: 10px 20px;
 	background-color: #333;
 }
+
 .slidein {
-	display: block;
+	display: inline-block;
 height: 0px;
 overflow: hidden;
 transition: all 0.2s ease-in-out;
 padding: 0px;
 min-height: 0px;
 transition: all 0.5s ease-in-out;
-margin-top: 0px;
+margin: 0px;
 }

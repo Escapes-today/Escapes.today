@@ -129,8 +129,8 @@
    <a class="btn" id="makebtn">Create Your Own Plan</a>
   </div>
   
-  
-  <ul class="deals slidein">
+  <div class="dealbox slidein">
+  <ul class="deals">
    <li>
         <div class="shadowbox">
           <div class="poi"> <img class="max" src="img/Jamaica/bluemt.jpg">
@@ -160,11 +160,14 @@
         </div>
       </li>
   </ul>
+  </div>
   
-  
-  
-  <ul class="destination slidein">
+  <div class="makeplan slidein">
+  <ul class="destination">
+
   </ul>
+  <div class="total">Checkout:</div>
+  </div>
 </div>
 
 
@@ -186,25 +189,29 @@ $(function () {
         scroll: true,
         receive: function (event, ui) {
             $(ui.item).children(".shadowbox").children(".poi").toggleClass("small");
+			if($(this).children().size() >= 1){
+				$(this).children("li").children(".total").css("display","inline-block");
+			}
         },
         remove: function (event, ui) {
             $(ui.item).children(".shadowbox").children(".poi").toggleClass("small");
         }
     });
     $(".destination").disableSelection();
+	$('.deals .shadowbox .poi').addClass('small');
     $('#dealsbtn').click(function () {
-        $('.deals').toggleClass('slidein');
-        if (!$('.deals').hasClass('slidein')) {
+        $('.dealbox').toggleClass('slidein');
+        if (!$('.dealbox').hasClass('slidein')) {
             $('html, body').animate({
-                scrollTop: $('.deals').offset().top
+                scrollTop: $('.dealbox').offset().top
             }, 500);
         }
     });
     $('#makebtn').click(function () {
-        $('.destination').toggleClass('slidein');
-        if (!$('.destination').hasClass('slidein')) {
+ 	 	$('.makeplan').toggleClass('slidein');
+		if (!$('.makeplan').hasClass('slidein')) {
             $('html, body').animate({
-                scrollTop: $('.destination').offset().top
+                scrollTop: $('.makeplan').offset().top
             }, 500);
         }
     });
