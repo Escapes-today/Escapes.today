@@ -2,14 +2,16 @@
 	padding: 0;
 	margin: 0;
 }
-
 img {
-border : 0px;	
+	border : 0px;
+}
+.home #navheader {
+position: fixed;	
 }
 #navheader {
 	display: block;
 	margin: 0px 10%;
-	position: fixed;
+	position: absolute;
 	top: 0;
 	left: 0;
 	right: 0; /* Make it fill the whole horizontal space */
@@ -50,7 +52,7 @@ border : 0px;
 #links ul li {
 	min-width: 4em;
 }
-li a {
+#links li a {
 	font-size: 1.1em;
 	text-decoration: none;
 	font-weight: bold;
@@ -73,9 +75,6 @@ li a {
 	border: 1px rgba(255, 255, 255, 1) solid;
 	border-left: none;
 	transition: border 0.1s ease-in-out, color 0.1s ease-in-out, padding-left 0.1s ease-in-out, margin-right 0.1s ease-in-out;
-}
-.link a:hover {
-	color: yellow;
 }
 #logo {
 	float: left;
@@ -141,7 +140,7 @@ li a {
 	left: 0;
 	top: 40%;
 }
-.description {
+#slides .description {
 	width: 300px;
 	background-color: red;
 	float: right;
@@ -155,20 +154,65 @@ li a {
 	font-family: quicksand;
 	font-weight: normal;
 }
-.description p {
+#slides .description p {
 	margin-bottom: 1em;
 }
 .visit_btn {
-	padding: 10px;
-	margin-top: 5px;
-	float: right;
-	color: inherit;
-	background: rgb(81,141, 196);
-	display: inline-block;
-	border-radius: 4px;
-	transition: all 0.2s ease-in-out;
+padding: 10px;
+margin-top: 5px;
+float: right;
+color: inherit;
+background: rgb(81,141, 196);
+display: inline-block;
+border-radius: 4px;
+transition: all 0.2s ease-in-out;
+text-decoration: none;
+margin-right: 0px;
+border-left: none;
+border: 1px rgba(255, 255, 255, 0) solid;
+font-family: 'Quicksand', sans-serif;
+font-weight: bold;
+font-size: 1.1em;
 }
 .visit_btn:hover {
+	font-weight: bold;
+	color: rgb(81,141, 196);
+	background: rgb(220,232, 243);
+	transition: all 0.2s ease-in-out;
+}
+.contrast {
+	display: inline-block;
+	padding: 10px 20px;
+	background: rgb(0, 0, 0);
+	background: rgba(0, 0, 0, 0.6);
+	-webkit-box-shadow: 0 10px 15px rgba(0, 0, 0, .3);
+	border-radius: 3px;
+	color: rgb(220, 232, 243);
+}
+
+
+ 
+#products   .btns {
+	padding: 20px;   
+   }
+.btns   .btn {
+padding: 10px;
+margin-top: 5px;
+margin-left: 40px;
+color: rgb(220, 232, 243);
+background: rgb(81,141, 196);
+display: inline-block;
+border-radius: 4px;
+transition: all 0.2s ease-in-out;
+text-decoration: none;
+
+border-left: none;
+border: 1px rgba(255, 255, 255, 0) solid;
+font-family: 'Quicksand', sans-serif;
+font-weight: bold;
+font-size: 1.1em;
+}
+.btns  .btn:hover {
 	font-weight: bold;
 	color: rgb(81,141, 196);
 	background: rgb(220,232, 243);
