@@ -166,7 +166,50 @@
   <ul class="destination">
 
   </ul>
-  <div class="total">Checkout:</div>
+  <hr class="divider">
+  <div class="total">
+
+
+  <table width="350" border="0" cellpadding="5px" style="font-size: 1.1em;">
+<caption style="font-size:2em;font-weight:bold">
+  Cart
+</caption>
+<tr>
+<th colspan="2" style="text-align:left;font-size: 1.4em;">Items</th>
+</tr>
+
+<tr class="empty">
+<td><span style="font-style: italic;">Empty</span></td>
+<td>&nbsp;</td>
+</tr>
+<tr class="space">
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Sub-total</td>
+<td id="sub-total"></td>
+</tr>
+<tr>
+<td>Tax</td>
+<td id="tax"></td>
+</tr>
+
+<tr>
+<td>Grand total</td>
+<td id="total"></td>
+</tr>
+
+<tr>
+
+<td colspan="2"><div class="btns">
+    <a class="btn" id="checkout">Checkout</a></div></td>
+</tr>
+</table>
+
+
+  
+  </div>
   </div>
 </div>
 
@@ -175,6 +218,7 @@
 </body>
 <script src="addons/jquery/jquery-1.11.1.min.js"></script>
 <script src="addons/jquery-ui-1.11.2/jquery-ui.min.js"></script>
+<script src="addons/checkout.js"></script>
 <script>
 $(function () {
     $(".showcase").sortable({
@@ -192,9 +236,17 @@ $(function () {
 			if($(this).children().size() >= 1){
 				$(this).children("li").children(".total").css("display","inline-block");
 			}
+			var poi = $(ui.item).children(".shadowbox").children(".poi");
+			var name = ($(poi).find("h2").text());
+			var price = "";
+			add(name, price);
         },
         remove: function (event, ui) {
-            $(ui.item).children(".shadowbox").children(".poi").toggleClass("small");
+			var poi = $(ui.item).children(".shadowbox").children(".poi");
+			var name = ($(poi).find("h2").text());
+			var price = "";
+			remove(name);
+            poi.toggleClass("small");
         }
     });
     $(".destination").disableSelection();
