@@ -43,5 +43,5 @@
           $('table .empty').show();
       } else {
           $('table .empty').hide();
-      }
+	  }
   }
