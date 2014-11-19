@@ -42,7 +42,7 @@
           <div class="poi"> <img class="max" src="img/Italy/milan.jpg">
             <div class="cover max" style="position:absolute;">
               <div class="description">
-                <h2>Milan Cathedral - $100</h2>
+                <h2>Milan Cathedral</h2>
                 <h4>Milan, Italy</h4>
                 <p class="info">Milan is a gothic cathedral from the 14th century.  Archbishop Antonio da Saluzzo began construction in the 14th century, hiring first chief engineer Simone da Orsenigo and more than three hundred men.  The cathedral has been a tourist attraction and a symbol of religious prestige.  With our partner Viator, we have private tours for as low as $100!</p>
                   <span class="price rating" style="left: 10px; right:auto"> $101.72 </span>
@@ -57,7 +57,7 @@
           <div class="poi"> <img class="max" src="img/Italy/trevi.jpg">
             <div class="cover max" style="position:absolute;">
               <div class="description">
-                <h2>Trevi Fountain, Italy - $50</h2>
+                <h2>Trevi Fountain, Italy</h2>
                 <h4>Rome, Italy</h4>
                 <p class="info">Legend says a young girl lead soldiers to a source of water a little bit outside of rome.  Augustus built an aquaduct to bring the water into the city.  In 1629, Pope Urban VIII commishioned Gian Lorenzo Bernini to renovate the fountain.  Viator has a walking tour around Trevi Plazza to hit all the hot spots for $47.05</p>
                   <span class="price rating" style="left: 10px; right:auto"> $47.05 </span>
@@ -72,7 +72,7 @@
           <div class="poi"> <img class="max" src="img/Italy/pisa.jpg">
             <div class="cover max" style="position:absolute;">
               <div class="description">
-                <h2>Tower of Pisa - $95</h2>
+                <h2>Tower of Pisa</h2>
                 <h4>Pisa, Italy</h4>
                 <p class="info">The tower is the third oldest structure in the city.  Completed in the 14th century, the tower is a tourist attraction and landmark.  This belltower is unintentionally leaning to the side.  This is caused by the ground being too soft on one side during construction.  Book with us and Viator will have tours for pisa and the tower for $95</p>
                   <span class="price rating" style="left: 10px; right:auto"> $92.19 </span>
@@ -276,6 +276,17 @@ $(function () {
             }, 500);
         }
     });
+	$('#clear').click(function () {
+	$(".destination").children().each(function () {
+	$(this).removeClass("small");
+         $(this).insertAfter($(".showcase").children().last());
+      });
+	
+	
+	$(".destination").trigger("sortupdate");
+	 $(".showcase").trigger("sortupdate");
+	clear();
+	});
 });
 </script>
 </html>

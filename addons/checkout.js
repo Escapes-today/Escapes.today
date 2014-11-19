@@ -45,3 +45,11 @@
           $('table .empty').hide();
 	  }
   }
+  
+  function clear() { 
+  $($('table .dest').children()).each(function () {
+      $(this).parents('tr').remove();  
+      });
+      updateCosts();
+  }
+  
