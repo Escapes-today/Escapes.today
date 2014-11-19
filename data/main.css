@@ -193,7 +193,7 @@ font-size: 1.1em;
 
  
 #products   .btns {
-	padding: 20px;
+	padding: 20px 0px;
 	
 }
 .btns   .btn {
@@ -219,3 +219,42 @@ font-size: 1.1em;
 	background: rgb(220,232, 243);
 	transition: all 0.2s ease-in-out;
 }
+/* ------------------------------------ Weather ------------------------------------ */
+#weather {
+	font-size: .8em;
+	height: 150px;
+	width: 200px;
+border-left: 3px solid rgb(26, 50, 117);
+padding-left: 10px;
+	margin: 0px auto;
+	text-align: right;
+	text-transform: uppercase;
+	position: relative;
+	background-color: rgb(220, 232, 243);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+	float: right;
+margin-right: -30%;
+color: rgb(26, 50, 117);
+}
+#weather span {
+	display: block;
+	margin-right: 5px;
+	text-shadow: 1px 1px rgba(255, 255, 255, 0.8);
+	font-size: 1em;
+}
+#weather .loc {
+	margin: 0 0 8px;
+	font-size: 1.6em;
+	font-weight: 300;
+	text-align: center;
+	text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.15);
+}
+#weather .time {
+	position: absolute;
+	bottom: 0px;
+	text-align: center;
+	font-size: .8em;
+	text-shadow: none;
+	}

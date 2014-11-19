@@ -33,7 +33,12 @@
   </div>
 </div>
 </div>
-<div style="background-color:rgb(220,232, 243); color:#1a3275;	padding: 10px 20%;font-size:1.2em;"> Italy, officially the Italian Republic is a unitary parliamentary republic in Southern Europe. Famous for their art, architecture, and food, Italy is a destination full of sights to see.  You'll enjoy seeing the culture of 14th century artists, and enjoying traditional Italian food.  See what we have available for you to do, for the lowest price. </div>
+<div style="background-color:rgb(220,232, 243); color:#1a3275;	padding: 10px 20%;font-size:1.2em;display: inline-block;">
+
+  <div id="weather">
+</div>
+<p> Italy, officially the Italian Republic is a unitary parliamentary republic in Southern Europe. Famous for their art, architecture, and food, Italy is a destination full of sights to see.  You'll enjoy seeing the culture of 14th century artists, and enjoying traditional Italian food.  See what we have available for you to do, for the lowest price. </p>
+</div>
 <div id="products">
   <div class="locations">
     <ul class="showcase">
@@ -225,8 +230,13 @@
 
 <div style="width:100%; height:100px;">Sample Footer</div>
 </body>
+<!-- jQuery Scripts -->
 <script src="addons/jquery/jquery-1.11.1.min.js"></script>
 <script src="addons/jquery-ui-1.11.2/jquery-ui.min.js"></script>
+<!-- Weather Scripts -->
+<script src="addons/simpleweather/jquery.simpleWeather.min.js"></script>
+<script src="data/weather.js"></script>
+<!-- Cart Scripts -->
 <script src="addons/checkout.js"></script>
 <script>
 $(function () {
@@ -278,7 +288,7 @@ $(function () {
     });
 	$('#clear').click(function () {
 	$(".destination").children().each(function () {
-	$(this).removeClass("small");
+	$(this).children(".shadowbox").children(".poi").removeClass("small");
          $(this).insertAfter($(".showcase").children().last());
       });
 	
@@ -287,6 +297,19 @@ $(function () {
 	 $(".showcase").trigger("sortupdate");
 	clear();
 	});
+	
+	
+	$.simpleWeather({
+        location: 'Rome, Italy',
+        woeid: '',
+        unit: 'f',
+        success: weather,
+		error: function (error) {
+            $("#weather").html('<p>' + error + '</p>');
+        }
+    });
+	
+	
 });
 </script>
 </html>
