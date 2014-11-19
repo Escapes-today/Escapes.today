@@ -193,8 +193,9 @@ font-size: 1.1em;
 
  
 #products   .btns {
-	padding: 20px;   
-   }
+	padding: 20px;
+	
+}
 .btns   .btn {
 padding: 10px;
 margin-top: 5px;
