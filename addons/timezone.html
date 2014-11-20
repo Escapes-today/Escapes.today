@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+
+
+
+
+
+</body>
+<script src="simpleweather/moment.js"></script>
+<script src="simpleweather/moment-timezone.min.js"></script>
+<script src="simpleweather/jsTimezoneDetect/jstz-1.0.4.min.js"></script>
+
+<script>
+var s = "20 NOV 2014 3:05 AM EST";
+var italyw = moment.utc(s, "D MMM YYYY h:mm a z");
+console.log(italyw);
+console.log(italyw.format());
+
+
+var italy    = moment.tz(italyw ,"EST");//moment.tz("2014-06-01 12:00", "CET");
+var us     = italy.clone().tz("CET");
+
+console.log(italy.format('MM/DD/YY h:mma'));  
+
+console.log(us.format('MM/DD/YY h:mma'));
+
+//var s = "20 NOV 2014 3:05 AM CET";
+//var timestamp = moment().tz(s, "D MMM YYYY h:mm a z", "America/Toronto");
+//
+//
+// console.log(moment().tz(s, "CET").format('MM/DD/YY h:mma'));-->
+
+//   console.log(moment(timestamp).format());
+// var out =    moment(timestamp).fromNow();
+//      
+//    var time = moment(timestamp).format('MM/DD/YY h:mma');
+//
+//console.log(time);
+</script>
+</html>
