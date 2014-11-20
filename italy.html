@@ -291,16 +291,18 @@ $(function () {
             }, 500);
         }
     });
-	$('#clear').click(function () {
-	$(".destination").children().each(function () {
-	$(this).children(".shadowbox").children(".poi").removeClass("small");
-         $(this).insertAfter($(".showcase").children().last());
-      });
-	
-	
-	$(".destination").trigger("sortupdate");
-	 $(".showcase").trigger("sortupdate");
-	clear();
+	$("#clear").click(function () {
+		if($(".destination").children().size() > 0){
+			if (confirm("Are you sure you want to clear the cart?") == true) {
+			  $(".destination").children().each(function () {
+				  $(this).children(".shadowbox").children(".poi").removeClass("small");
+				  $(this).insertAfter($(".showcase").children().last())
+			  });
+			  $(".destination").trigger("sortupdate");
+			  $(".showcase").trigger("sortupdate");
+			  clear();
+			}
+		}		
 	});
 	
 	
