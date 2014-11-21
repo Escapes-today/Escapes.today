@@ -126,9 +126,17 @@ width:100%;
 	bottom: 30px;
 	top: auto;
 	right: 10px;
+	opacity: 1;
+	-webkit-transition: all 0.2s cubic-bezier(.99, .99, 0, .61);
+	-moz-transition: all 0.2s cubic-bezier(.99, .99, 0, .61);
+	-ms-transition: all 0.2s cubic-bezier(.99, .99, 0, .61);
 }
 .poi.small .cover .info {
 	display: block;
+	color: rgba(255, 255, 255, 1);
+	-webkit-transition: all 0.2s cubic-bezier(.99, .99, 0, .61);
+	-moz-transition: all 0.2s cubic-bezier(.99, .99, 0, .61);
+	-ms-transition: all 0.2s cubic-bezier(.99, .99, 0, .61);
 }
 .shadowbox {
 	display: inline-block;
