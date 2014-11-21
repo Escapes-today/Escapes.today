@@ -256,6 +256,7 @@ $(function () {
     $(".showcase").sortable({
         connectWith: ".destination",
         containment: "#products",
+		cancel: ".addRemove",   
         scroll: true
     });
     $(".showcase").disableSelection();
@@ -263,6 +264,7 @@ $(function () {
         connectWith: ".showcase",
         containment: "#products",
         scroll: true,
+		cancel: ".addRemove",
         receive: function (event, ui) {
             $(ui.item).children(".shadowbox").children(".poi").toggleClass("small");
 			if($(this).children().size() >= 1){
