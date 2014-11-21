@@ -18,7 +18,7 @@
     <div id="links">
       <ul >
         <li><a href="index.html" class="current">Home</a></li>
-        <li><a href="italy.html">Destinations</a></li>
+        <li><a href="destinations.html">Destinations</a></li>
         <li><a href="#">Traveling Tips</a></li>
         <li><a href="#">About</a></li>
         <li><a href="#">Contact</a></li>
@@ -43,7 +43,8 @@
     <ul class="showcase">
       <li>
         <div class="shadowbox">
-          <div class="poi"> <img class="max" src="img/Italy/milan2.jpg">
+          <div class="poi"> 
+          <i class="addRemove fa fa-plus" style="font-size:22px"></i><img class="max" src="img/Italy/milan2.jpg">
             <div class="cover max" style="position:absolute;">
               <div class="description">
                 <h2>Milan Cathedral</h2>
@@ -61,7 +62,9 @@
       </li>
       <li>
         <div class="shadowbox">
-          <div class="poi"> <img class="max" src="img/Italy/trevi2.jpg">
+          <div class="poi">
+          <i class="addRemove fa fa-plus" style="font-size:22px"></i> <img class="max" src="img/Italy/trevi2.jpg">
+          
             <div class="cover max" style="position:absolute;">
               <div class="description">
                 <h2>Trevi Fountain, Italy</h2>
@@ -76,7 +79,9 @@
       </li>
       <li>
         <div class="shadowbox">
-          <div class="poi"> <img class="max" src="img/Italy/pisa2.jpg">
+          <div class="poi">
+          <i class="addRemove fa fa-plus" style="font-size:22px"></i>
+           <img class="max" src="img/Italy/pisa2.jpg">
             <div class="cover max" style="position:absolute;">
               <div class="description">
                 <h2>Tower of Pisa</h2>
@@ -91,7 +96,8 @@
       </li>
       <li>
         <div class="shadowbox">
-          <div class="poi"> <img class="max" src="img/Italy/likeat2.jpg">
+          <div class="poi"> <i class="addRemove fa fa-plus" style="font-size:22px"></i>
+          <img class="max" src="img/Italy/likeat2.jpg">
             <div class="cover max" style="position:absolute;">
               <div class="description">
                 <h2>Likeat Italian Restaurant</h2>
@@ -106,7 +112,8 @@
       </li>
       <li>
         <div class="shadowbox">
-          <div class="poi"> <img class="max" src="../img/Batman Freeman.jpg">
+          <div class="poi">
+          <i class="addRemove fa fa-plus" style="font-size:22px"></i> <img class="max" src="../img/Batman Freeman.jpg">
             <div class="cover max" style="position:absolute;">
               <div class="description">
                 <h2>This is Batman Freeman 5</h2>
@@ -121,7 +128,8 @@
       </li>
       <li>
         <div class="shadowbox">
-          <div class="poi"> <img class="max" src="img/Italy/elogo.png">
+          <div class="poi"> 
+          <i class="addRemove fa fa-plus" style="font-size:22px"></i><img class="max" src="img/Italy/elogo.png">
             <div class="cover max" style="position:absolute;">
               <div class="description">
                 <h2>This is Batman Freeman 6</h2>
@@ -146,7 +154,8 @@
   <ul class="deals">
    <li>
         <div class="shadowbox">
-          <div class="poi"> <img class="max" src="img/Jamaica/bluemt.jpg">
+          <div class="poi">
+         <img class="max" src="img/Jamaica/bluemt.jpg">
             <div class="cover max" style="position:absolute;">
               <div class="description">
                 <h2>This is Batman Freeman 1</h2>
@@ -161,7 +170,8 @@
       </li>
        <li>
         <div class="shadowbox">
-          <div class="poi"> <img class="max" src="img/Italy/elogo.png">
+          <div class="poi">
+        <img class="max" src="img/Italy/elogo.png">
             <div class="cover max" style="position:absolute;">
               <div class="description">
                 <h2>This is Batman Freeman 2</h2>
@@ -183,10 +193,6 @@
   </ul>
   <hr class="divider">
   <div class="total">
-
-
-
-
   <table width="350" border="0" cellpadding="5px" style="font-size: 1.1em; margin: 0 auto;">
 <caption style="font-size:2em;font-weight:bold">
   Your Travel Plan
@@ -266,6 +272,7 @@ $(function () {
 			var name = ($(poi).find("h2").text());
 			var price = ($(poi).find(".price").text());
 			add(name, price);
+			poi.children(".addRemove").change();
         },
         remove: function (event, ui) {
 			var poi = $(ui.item).children(".shadowbox").children(".poi");
@@ -273,6 +280,7 @@ $(function () {
 			var price = ($(poi).find(".price").text());
 			remove(name);
             poi.toggleClass("small");
+			poi.children(".addRemove").change();
         }
     });
     $(".destination").disableSelection();
@@ -318,7 +326,42 @@ $(function () {
         }
     });
 	
+$(document).on("change", ".addRemove", function () {
+	if($(this).parent(".poi").hasClass("small")){
+		$(this).removeClass("fa-plus fa-plus-circle fa-times-circle");
+ 	 	$(this).addClass("fa-times");
+	}else {
+		$(this).removeClass("fa-times fa-times-circle fa-plus-circle");
+		$(this).addClass("fa-plus");
+	}
+}).on("mouseenter mouseleave", ".addRemove", function () {
+    if($(this).parent(".poi").hasClass("small")){
+ 	 $(this).toggleClass("fa-times fa-times-circle");
+	}else {
+		$(this).toggleClass("fa-plus fa-plus-circle");
+	}
+}).on("click", ".addRemove", function () {
+	 if($(this).parent(".poi").hasClass("small")){
+		// console.log($(this).parent().find("h2").html());
+	remove($(this).parent().find("h2").html());	
+	$(".destination").trigger("sortupdate");
+	 $(".showcase").trigger("sortupdate");
+	 }else {
 	
+		var li =  $(this).parent(".poi").parent(".shadowbox").parent("li");
+		$(li).appendTo($(".destination"));
+		
+		 $(li).children(".shadowbox").children(".poi").toggleClass("small");
+			
+			var poi = $(li).children(".shadowbox").children(".poi");
+			var name = ($(poi).find("h2").text());
+			var price = ($(poi).find(".price").text());
+			add(name, price);
+			poi.children(".addRemove").change();
+	
+	 }
+});
+
 });
 </script>
 </html>

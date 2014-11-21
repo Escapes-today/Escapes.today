@@ -1,33 +1,16 @@
-<!DOCTYPE html>
-<head>
+<!DOCTYPE html><head>
 <title>Escapes.today</title>
 <link rel="stylesheet" href="../data/vertical_slider.css">
 <link rel="stylesheet" href="font-awesome-4.2.0/css/font-awesome.min.css">
 </head>
+
 <style>
-a {
-	display: block;
-	width: 30px;
-	height: 30px;
-	background: rgba(0, 0, 0, 0.45);
-	border-radius: 0 0 0 30px;
-	-moz-border-radius: 0 0 0 30px;
-	-webkit-border-radius: 0 0 0 30px;
-}
-a {
-	position: absolute;
-	top: 0px;
-	right: 0px;
-	text-align: center;
-	font-size: 1.4em;
-	color: white;
-	padding-left: 4px;
-	z-index: 4;
-}
+
 </style>
 
 <body style="background-color: red">
-<div class="poi"> <img class="max" src="../img/Batman Freeman.jpg"> <a href="#"><i class="fa fa-times"></i></a>
+<div class="poi"> <img class="max" src="../img/Batman Freeman.jpg"> 
+<i class="addRemove fa fa-plus" style="font-size:22px"></i>
   <div class="cover max" style="position:absolute;">
     <div class="description" style="position:relative;color: white;display: block; padding: 10px;">
       <h2>This is Batman Freeman</h2>
@@ -38,7 +21,12 @@ a {
     </div>
   </div>
 </div>
-<div class="poi small"> <img class="max" src="../img/Batman Freeman.jpg"> <a href="#"><i class="fa fa-times"></i></a>
+
+
+
+<br>
+
+<div class="poi small"> <img class="max" src="../img/Batman Freeman.jpg"> 
   <div class="cover max" style="position:absolute;">
     <div class="description" style="position:relative;color: white;display: block; padding: 10px;">
       <h2>This is Batman Freeman</h2>
@@ -49,5 +37,25 @@ a {
     </div>
   </div>
 </div>
+
+<script src="jquery/jquery-1.11.1.min.js"></script>
+<script>
+$(document).on("click", ".addRemove", function () {
+	if($(this).parent(".poi").hasClass("small")){
+		$(this).removeClass("fa-plus fa-plus-circle fa-times");
+ 	 	$(this).addClass("fa-times-circle");
+	}else {
+		$(this).removeClass("fa-times fa-times-circle fa-plus");
+		$(this).addClass("fa-plus-circle");
+	}
+}).on("mouseenter mouseleave", ".addRemove", function () {
+    if($(this).parent(".poi").hasClass("small")){
+ 	 $(this).toggleClass("fa-times fa-times-circle");
+	}else {
+		$(this).toggleClass("fa-plus fa-plus-circle");
+	}
+});
+</script>
 </body>
+
 </html>
