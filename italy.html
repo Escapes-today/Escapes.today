@@ -274,7 +274,7 @@ $(function () {
 			var name = ($(poi).find("h2").text());
 			var price = ($(poi).find(".price").text());
 			add(name, price);
-			poi.children(".addRemove").change();
+			$(".addRemove").change();
         },
         remove: function (event, ui) {
 			var poi = $(ui.item).children(".shadowbox").children(".poi");
@@ -282,7 +282,7 @@ $(function () {
 			var price = ($(poi).find(".price").text());
 			remove(name);
             poi.toggleClass("small");
-			poi.children(".addRemove").change();
+			$(".addRemove").change();
         }
     });
     $(".destination").disableSelection();
@@ -336,16 +336,27 @@ $(document).on("change", ".addRemove", function () {
 		$(this).removeClass("fa-times fa-times-circle fa-plus-circle");
 		$(this).addClass("fa-plus");
 	}
-}).on("mouseenter mouseleave", ".addRemove", function () {
-    if($(this).parent(".poi").hasClass("small")){
- 	 $(this).toggleClass("fa-times fa-times-circle");
+}).on("mouseenter", ".addRemove", function () {
+	if($(this).parent(".poi").hasClass("small")){
+		$(this).removeClass("fa-times");
+ 	 	$(this).addClass("fa-times-circle");
 	}else {
-		$(this).toggleClass("fa-plus fa-plus-circle");
+		$(this).removeClass("fa-plus");
+ 	 	$(this).addClass("fa-plus-circle");
+	}
+}).on(" mouseleave", ".addRemove", function () {
+	if($(this).parent(".poi").hasClass("small")){
+		$(this).removeClass("fa-times-circle");
+ 	 	$(this).addClass("fa-times");
+	}else {
+		$(this).removeClass("fa-plus-circle");
+ 	 	$(this).addClass("fa-plus");
 	}
 }).on("click", ".addRemove", function () {
 	 if($(this).parent(".poi").hasClass("small")){
 		// console.log($(this).parent().find("h2").html());
 	remove($(this).parent().find("h2").html());	
+		$(".addRemove").change();
 	$(".destination").trigger("sortupdate");
 	 $(".showcase").trigger("sortupdate");
 	 }else {
@@ -359,7 +370,7 @@ $(document).on("change", ".addRemove", function () {
 			var name = ($(poi).find("h2").text());
 			var price = ($(poi).find(".price").text());
 			add(name, price);
-			poi.children(".addRemove").change();
+			$(".addRemove").change();
 	
 	 }
 });
