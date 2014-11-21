@@ -19,26 +19,31 @@
       <ul >
         <li><a href="index.html" class="current">Home</a></li>
         <li><a href="destinations.html">Destinations</a></li>
-        <li><a href="#">Traveling Tips</a></li>
+        <li><a href="#">Travel Tips</a></li>
         <li><a href="#">About</a></li>
         <li><a href="#">Contact</a></li>
       </ul>
     </div>
   </div>
-  <div style="text-align: center">
-    <div class="contrast" style="font-size: 3em; position: relative; top:-150px;color:rgb(220,232, 243); ">
-      <h1 style="text-align: center;">Italy</h1>
-    </div>
   </div>
-</div>
 </div>
 <div style="background-color:rgb(220,232, 243); color:#1a3275;	padding: 10px 20%;font-size:1.2em;display: inline-block;">
 
-  <div id="weather">
-</div>
-<p> Italy, officially the Italian Republic is a unitary parliamentary republic in Southern Europe. Famous for their art, architecture, and food, Italy is a destination full of sights to see.  You'll enjoy seeing the culture of 14th century artists, and enjoying traditional Italian food.  See what we have available for you to do, for the lowest price. </p>
+  <div id="weather"></div>
+  
+ 
+   
+      <h1 id="country" style="text-align: center; font-size: 3em;">Italy</h1>
+
+
+  
+<p style="margin-top: 20px;"> Italy, officially the Italian Republic is a unitary parliamentary republic in Southern Europe. Famous for their art, architecture, and food, Italy is a destination full of sights to see.  You'll enjoy seeing the culture of 14th century artists, and enjoying traditional Italian food.  See what we have available for you to do, for the lowest price. </p>
 </div>
 <div id="products">
+<div class="instructions" style="color: rgb(220,232, 243); font-size: 1.3em;margin-top:20px; margin-bottom:25px;text-align: right;">
+<h2 style="margin:10px;">Personalized Travel Plan</h2>
+    <p style="margin:10px;">Click and drag the items to your plan below or click the plus button to add automatically. Our value packages are located below.</p>
+  </div>
   <div class="locations">
     <ul class="showcase">
       <li>
@@ -147,7 +152,7 @@
 
   <div class="btns" style="text-align:center;">
    <a class="btnd" id="dealsbtn">View Travel Deals</a>
-   <a class="btnd" id="makebtn">Create Your Own Plan</a>
+   <a class="btnd" id="makebtn">Create Plan</a>
   </div>
   
   <div class="dealbox slidein">
@@ -186,16 +191,16 @@
       </li>
   </ul>
   </div>
-  
+
   <div class="makeplan slidein">
+    <h2 style="margin:10px;text-align:center">Travel Plan</h2>
   <ul class="destination">
 
   </ul>
   <hr class="divider">
   <div class="total">
   <table width="350" border="0" cellpadding="5px" style="font-size: 1.1em; margin: 0 auto;">
-<caption style="font-size:2em;font-weight:bold">
-  Your Travel Plan
+<caption style="font-size:2em;font-weight:bold">Travel Plan
 </caption>
 <tr>
 <th colspan="3" style="text-align:left;font-size: 1.4em;">Items</th>
@@ -257,8 +262,12 @@ $(function () {
         connectWith: ".destination",
         containment: "#products",
 		cancel: ".addRemove",   
-        scroll: true
-    });
+        scroll: true,
+		start: function (event, ui) {
+			$('.makeplan').removeClass('slidein');
+			
+		}
+	});
     $(".showcase").disableSelection();
     $(".destination").sortable({
         connectWith: ".showcase",
@@ -283,7 +292,7 @@ $(function () {
 			remove(name);
             poi.toggleClass("small");
 			$(".addRemove").change();
-        }
+        },
     });
     $(".destination").disableSelection();
 	$('.deals .shadowbox .poi').addClass('small');
