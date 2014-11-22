@@ -91,7 +91,7 @@
 	text-align: center;
 }
 .showcase, .dealbox, .makeplan {
-	background: rgba(255,255,255,.3);
+	background: rgb(220, 232, 243);
 	padding-bottom: 20px;
 	border-radius: 5px;
 	box-shadow: inset 5px 5px 20px #555;
@@ -209,7 +209,7 @@ font-size: 1.1em;
 }
 .btnd:hover {
 	font-weight: bold;
-	color: rgba(0, 0, 0, 0.8);
-	background: rgb(220,232, 243);
+color: rgb(76, 156, 241);
+background: rgba(0, 0, 0, 0.8);
 	transition: all 0.2s ease-in-out;
 }
