@@ -297,10 +297,11 @@ $(function () {
         containment: "#products",
 		cancel: ".addRemove, .dragignore",   
         scroll: true,
-		start: function (event, ui) {
-			$('.makeplan').removeClass('slidein');
-			
-		}
+	});
+	//Slide out the makeplan div when user drags a POI
+	$(".showcase").on("click, mousedown", "li", function () {
+	  $('.makeplan').removeClass('slidein').css("min-height", "300px");
+	  $('.makeplan').css("min-height", "");
 	});
     $(".showcase").disableSelection();
     $(".destination").sortable({
