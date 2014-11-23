@@ -18,6 +18,16 @@
       updateCosts();
   };
   
+  function updatePrice(dest, price){
+ 	$($('table .dest').children()).each(function () {
+          if ($(this).length > 0 && $(this).text().indexOf(dest) > -1) {
+			   $(this).siblings("td").first().text(price);
+          }
+      });
+	  
+      updateCosts();
+  }
+  
    
 $(document).on("click", ".removeitem", function () {
  	remove($(this).parents("tr").children().first().text());

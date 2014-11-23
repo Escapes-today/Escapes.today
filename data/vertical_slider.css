@@ -183,10 +183,7 @@ margin-left: 40px;
 margin-right: 40px;
 }
 .total{
-
 padding: 10px;
-
-
 }
 td:not(:first-child) {
 	text-align:right;
@@ -213,3 +210,13 @@ color: rgb(76, 156, 241);
 background: rgba(0, 0, 0, 0.8);
 	transition: all 0.2s ease-in-out;
 }
+.checkoutslideRight{
+	right: -500px;
+position: relative;
+width: 400px; float:right;transition: all 0.5s ease-in-out;	
+}
+
+.checkoutNorm  {
+	right: 20px;
+position: relative;
+width: 400px; float:right;transition: all 0.5s ease-in-out;	}

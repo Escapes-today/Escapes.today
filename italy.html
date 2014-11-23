@@ -123,7 +123,17 @@
               <div class="description">
                 <h2>Albergo del Senato</h2>
                 <h4>Rome, Italy</h4>
-                <p class="info">This hotel in Rome will put you within walking distance of the hotspots of the city.  Pricing ranges from the room you pick, and when you stay.  Their service is phenomenal and they are one of the cleanest hotels in Rome.  You will enjoy having the pantheon right at the steps of the hotel as well.</p>
+                <p class="info">This hotel in Rome will put you within walking distance of the hotspots of the city.  Service is phenomenal and this is one of the cleanest hotels in Rome.  One will enjoy having the pantheon right at the steps of the hotel.</p>  
+                <div class="options">
+                <span>Room: </span><select name="room" class="dragignore">
+					<option value="220">Presidental @ $220</option>
+					<option value="175">Deluxe @ $175</option>
+					<option value="130" selected="selected">Normal @ $130</option>
+				</select>
+                <br>
+                   <span>Number of nights: </span>
+                  <input type="number" name="nights" min="1" max="20" value="1" class="dragignore">
+                </div>
                   <span class="price rating" style="left: 10px; right:auto"> $130-$220 </span>
                 <div class="rating"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-half-o"></i> <i class="fa fa-star-o"></i> </div>
               </div>
@@ -138,7 +148,7 @@
             <div class="cover max" style="position:absolute;">
               <div class="description">
                 <h2>Enterprise</h2>
-                <h4>Rome, Italy</h4>
+                <h4>Rent-A-Car</h4>
                 <p class="info">Enterprise is a company that has car locations all around the world.  You can choose from a variety of cars.  Want to save?  Rent a compact.  Want to be comfortable?  Rent a luxary.  Prices vary between cars and times</p>
                  <span class="price rating" style="left: 10px; right:auto"> $80-$160 </span>
                 <div class="rating"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-half-o"></i> <i class="fa fa-star-o"></i> </div>
@@ -192,14 +202,37 @@
   </ul>
   </div>
 
-  <div class="makeplan slidein">
+  <div class="makeplan slidein" style="color:rgb(26, 50, 117);overflow: hidden;">
     <h2 style="margin:10px;text-align:center">Travel Plan</h2>
   <ul class="destination">
 
   </ul>
   <hr class="divider">
   <div class="total">
-  <table width="350" border="0" cellpadding="5px" style="font-size: 1.1em; margin: 0 auto;">
+      <div class="checkoutinfo checkoutslideRight">
+      <h2>Contact Information</h2>
+  <form style="border: 2px solid rgb(26, 50, 117);padding: 10px;" name="buyform" method="post">
+First name:<br>
+<input type="text" name="firstname">
+<br>
+Last name:<br>
+<input type="text" name="lastname">
+<br>
+Email:<br>
+<input type="email" name="email"><br>
+Phone:<br>
+<input type="tel" name="phone"><br>
+<br>
+Comments:<br>
+<textarea id="confirmationText" class="text"  rows ="5" name="confirmationText" style="width: 100%; resize:vertical;"></textarea>
+
+<div class="btns" style="text-align:right;padding-bottom: 0px;">
+    <a class="btnd submitOrder">Submit</a></div>
+        <p class="orderRem"></p>
+</form> 
+  </div>
+  
+<table width="350" border="0" cellpadding="5px" style="font-size: 1.1em; margin: 0 auto;">
 <caption style="font-size:2em;font-weight:bold">Travel Plan
 </caption>
 <tr>
@@ -233,12 +266,13 @@
 
 <tr style="text-align: center;">
 <td colspan="3"><div class="btns">
+     <a class="btnd" id="clear">Clear Cart</a>
     <a class="btnd" id="checkout">Checkout</a>
-     <a class="btnd" id="clear">Clear Cart</a></div></td>
+    </div>
+</td>
 
 </tr>
 </table>
-
 
   
   </div>
@@ -261,7 +295,7 @@ $(function () {
     $(".showcase").sortable({
         connectWith: ".destination",
         containment: "#products",
-		cancel: ".addRemove",   
+		cancel: ".addRemove, .dragignore",   
         scroll: true,
 		start: function (event, ui) {
 			$('.makeplan').removeClass('slidein');
@@ -273,7 +307,7 @@ $(function () {
         connectWith: ".showcase",
         containment: "#products",
         scroll: true,
-		cancel: ".addRemove",
+		cancel: ".addRemove, .dragignore",
         receive: function (event, ui) {
             $(ui.item).children(".shadowbox").children(".poi").toggleClass("small");
 			if($(this).children().size() >= 1){
@@ -384,6 +418,72 @@ $(document).on("change", ".addRemove", function () {
 	 }
 });
 
+$("#checkout").click(function(e) {
+    $(".checkoutinfo").toggleClass("checkoutslideRight");
+	$(".checkoutinfo").toggleClass("checkoutNorm");
 });
+});
+
+
+$(".submitOrder").click(function(e) {
+  if(check_form()){
+	var now = new Date();
+	var start = new Date(now.getFullYear(), 0, 0);
+	var diff = now - start;
+	
+	//86400000 is number of ms in a day
+	var day = Math.floor(diff / 86400000);
+	var mstag = now.getMilliseconds() % 1000;
+	var orderNum = day + mstag;
+	
+	var rem = "Your order #" + orderNum + " has been recieved.";
+	$(this).parent().siblings(".orderRem").text(rem);
+	clear_form();
+  }
+});
+
+
+  $(document).on("change", ".options .dragignore", function() {
+	var poi = $(this).closest(".poi");//().find(".poi");
+	 
+	 //Get from room type 
+	 var cpn  = parseInt(poi.find("[name='room']").val());
+	 //Get from number
+	 var nights =  parseInt(poi.find("[name='nights']").val());
+	 var cost = cpn*nights;
+	 
+	 poi.children().find(".price").text("$" + cost).trigger("change");
+
+
+
+			var name = ($(poi).find("h2").text());
+			var price = ($(poi).find(".price").text());
+			updatePrice(name,price);
+			
+	 console.log(cpn*nights);
+  });
+
+
+function check_form(){
+    var $blankFields = $('form input').filter(function () {
+        return $.trim($(this).val()) === "";
+    });
+    if ($blankFields.length) {
+		var errors = "Please enter a value for: \n       ";
+        $blankFields.each(function () {
+            errors +=  $(this).attr('name') + "\n       ";
+        });
+        alert(errors);
+        return false;
+    }
+    return true;
+}
+
+
+function clear_form(){
+   $('form input, form textarea').each(function () {
+		$(this).val("");
+   });
+}
 </script>
 </html>
