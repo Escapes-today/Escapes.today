@@ -79,7 +79,8 @@ position: fixed;
 #logo {
 	float: left;
 	display: block;
-	padding-top: 4px;
+	padding-top: 0px;
+	padding-left: 20px;
 }
 #links nav {
 	float: right;
@@ -199,7 +200,10 @@ font-size: 1.1em;
 .btns   .btn {
 padding: 10px;
 margin-top: 5px;
-margin-left: 40px;
+margin-left: auto;
+margin-right: auto;
+position: relative;
+bottom: -75px;
 color: rgb(220, 232, 243);
 background: rgb(81,141, 196);
 display: inline-block;
