@@ -72,7 +72,7 @@
           
             <div class="cover max" style="position:absolute;">
               <div class="description">
-                <h2>Trevi Fountain, Italy</h2>
+                <h2>Trevi Fountain</h2>
                 <h4>Rome, Italy</h4>
                 <p class="info">Legend says a young girl lead soldiers to a source of water a little bit outside of rome.  Augustus built an aquaduct to bring the water into the city.  In 1629, Pope Urban VIII commishioned Gian Lorenzo Bernini to renovate the fountain.  Viator has a walking tour around Trevi Plazza to hit all the hot spots.</p>
                   <span class="price rating" style="left: 10px; right:auto"> $47.05 </span>
@@ -173,32 +173,56 @@
          <img class="max" src="img/Jamaica/bluemt.jpg">
             <div class="cover max" style="position:absolute;">
               <div class="description">
-                <h2>This is Batman Freeman 1</h2>
-                <h4>Combination with Batman and Morgan Freeman</h4>
-                <p class="info">Batman Freeman is the preposterous brain child of Mr. Tyler Morris. Batman Freeman has been in existence for an unknown amount of time and is here to stay.</p>
-                  <span class="price rating" style="left: 10px; right:auto"> $399.99 </span>
-                <div class="rating"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-half-o"></i> <i class="fa fa-star-o"></i> </div>
+                <h2>Explorer Package</h2>
+                <h4>For the true explorers</h4>
+                <p class="info">This travel package will give you the full experience with all the hotspots of Italy.  Take a trip to Milan, Rome, and Pisa to get the full escape.
+                
+                <ol style="margin-left: 20px;">
+                <li>Milan Cathedral</li>
+                <li>Trevi Fountain</li>
+                <li>Tower of Pisa</li>
+                </ol>
+                <br>
+                Savings:<span  class="savings" style="color: #0F0">$300.00</span>
+                
+                </p>
+                  <span class="price rating" style="left: 10px; right:auto">$399.99</span>
+                <div class="rating"> <div class="btns" style="text-align:right;padding-bottom: 0px;">
+    <a class="btn addDeal">Get Deal</a></div> </div>
               </div>
             </div>
           </div>
         </div>
       </li>
-       <li>
+      
+      <li>
         <div class="shadowbox">
           <div class="poi">
-        <img class="max" src="img/Italy/elogo.png">
+         <img class="max" src="img/Jamaica/bluemt.jpg">
             <div class="cover max" style="position:absolute;">
               <div class="description">
-                <h2>This is Batman Freeman 2</h2>
-                <h4>Combination with Batman and Morgan Freeman</h4>
-                <p class="info">ggg</p>
-                  <span class="price rating" style="left: 10px; right:auto"> $399.99 </span>
-                <div class="rating"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-half-o"></i> <i class="fa fa-star-o"></i> </div>
+                <h2>Sleeper Package</h2>
+                <h4>For the true explorers</h4>
+                <p class="info">This travel package will give you the full experience with all the hotspots of Italy.  Take a trip to Milan, Rome, and Pisa to get the full escape.
+                
+                <ol style="margin-left: 20px;">
+                <li>Albergo del Senato</li>
+                <li>Trevi Fountain</li>
+                <li>Tower of Pisa</li>
+                </ol>
+                <br>
+                Savings:<span  class="savings" style="color: #0F0">$100.00</span>
+                
+                </p>
+                  <span class="price rating" style="left: 10px; right:auto">$160-$399.99</span>
+                <div class="rating"> <div class="btns" style="text-align:right;padding-bottom: 0px;">
+    <a class="btn addDeal">Get Deal</a></div> </div>
               </div>
             </div>
           </div>
         </div>
       </li>
+      
   </ul>
   </div>
 
@@ -419,6 +443,44 @@ $(document).on("change", ".addRemove", function () {
 	 }
 });
 
+$(".addDeal").click(function(e) {
+		if($(".destination").children().size() > 0){
+			if (confirm("Are you sure this will clear your cart?") == true) {
+			  $(".destination").children().each(function () {
+				  $(this).children(".shadowbox").children(".poi").removeClass("small");
+				  $(this).insertAfter($(".showcase").children().last())
+			  });
+			  $(".destination").trigger("sortupdate");
+			  $(".showcase").trigger("sortupdate");
+			  clear();
+			}
+		}		
+		
+    var dealpoi = $(this).closest(".poi");
+	var dname = ($(dealpoi).find("h2").text());
+	var dprice = ($(dealpoi).find(".savings").text());
+    $(dealpoi).children().find("ol li").each(function() {
+        var dest = $(this).text();
+        $(".showcase").children().each(function() {
+            var poi = $(this).children(".shadowbox").children(".poi");
+            var name = ($(poi).find("h2").text());
+            var price = ($(poi).find(".price").text());
+            //if its the right poi
+            if (name.length > 0 && name.indexOf(dest) > -1) {
+                poi.addClass("small");
+                $(this).appendTo($(".destination"));
+                add(name, price);
+                $(".addRemove").change();
+                $(".destination, .showcase").trigger("sortupdate");
+            }
+        });
+    });
+	add(dname, "-" + dprice);
+	updateCosts();
+});
+
+  
+  
 $("#checkout").click(function(e) {
     $(".checkoutinfo").toggleClass("checkoutslideRight");
 	$(".checkoutinfo").toggleClass("checkoutNorm");

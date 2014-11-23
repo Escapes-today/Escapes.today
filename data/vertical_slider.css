@@ -109,7 +109,7 @@ width:100%;
 	min-height: 340px;
 	margin-top: 20px;
 }
-.showcase li, .destination li, .deals li {
+.showcase  > li, .destination  > li, .deals  > li {
 	min-height: 300px;
 	margin: 3px 3px 3px 0;
 	padding: 1px;

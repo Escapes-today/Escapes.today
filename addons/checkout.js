@@ -65,10 +65,17 @@ $(document).on("click", ".removeitem", function () {
   }
 
   function updateCosts() {
+	  checkDeal();
       var cost = 0;
       $($('table .dest').children()).each(function () {
+		  //if cost
           if ($(this).text().length > 0 && $(this).text().indexOf("$") > -1) {
-              cost += parseFloat($(this).html().replace("$", ""));
+			  var poicost = parseFloat($(this).html().replace("$", ""));
+              cost += poicost;
+			 
+			  if(poicost < 0){
+			  $(this).css("color", "red");
+			  }
           }
       });
       $('#sub-total').text('$' + (cost).toFixed(2));
@@ -81,6 +88,44 @@ $(document).on("click", ".removeitem", function () {
           $('table .empty').hide();
 	  }
   }
+  
+  function checkDeal() {
+	  var pkg = false;
+	  var deals = [];
+	  var trOfPkg;
+	   $($('table .dest').children()).each(function () {	
+		  //If it contains a package
+		  if ($(this).text().length > 0 && $(this).text().indexOf("Package") > -1) {
+			  pkg = true;
+			  trOfPkg = $(this).parent();
+			  var pname = $(this).text();
+			  $(".deals").find("h2").each(function(index, element) {
+                 if ($(this).text().length > 0 && $(this).text().indexOf(pname) > -1) {
+					var dealpoi = $(this).closest(".poi");
+					var dname = $(this);
+					$(dealpoi).children().find("ol li").each(function() {
+	 					deals.push($(this).text());		  
+					});
+				 }
+               });
+			}
+	   });
+		if(pkg){
+		var buypois = [];	
+		$($('table .dest').not(':last').find("td:first")).each(function () {	  
+		buypois.push($(this).text());		  
+      	});
+
+		if(deals.sort().join(',')=== buypois.sort().join(',')){
+ 		console.log("a ok");
+		}	else {
+		 console.log("not ok");
+		 $(trOfPkg).remove();
+		 
+		}
+		}
+  }
+			  	 
   
   function clear() { 
   $($('table .dest').children()).each(function () {
