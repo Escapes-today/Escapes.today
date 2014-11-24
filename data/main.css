@@ -120,7 +120,7 @@ position: fixed;
 	color: #2262AD;
 }
 #links a {
-	color: white;
+	color: rgb(220, 232, 243);
 	width: 3em;
 	z-index: 4;
 }
