@@ -68,17 +68,6 @@ $(function () {
 		}		
 	});
 	
-	
-	$.simpleWeather({
-        location: 'Rome, Italy',
-        woeid: '',
-        unit: 'f',
-        success: weather,
-		error: function (error) {
-            $("#weather").html('<p>' + error + '</p>');
-        }
-    });
-	
 $(document).on("change", ".addRemove", function () {
 	if($(this).parent(".poi").hasClass("small")){
 		$(this).removeClass("fa-plus fa-plus-circle fa-times-circle");

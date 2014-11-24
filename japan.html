@@ -321,5 +321,16 @@
 <script src="addons/checkout.js"></script>
 
 <script src="addons/country.js"></script>
+<script>
+	$.simpleWeather({
+        location: 'Tokyo, Japan',
+        woeid: '',
+        unit: 'f',
+        success: weather,
+		error: function (error) {
+            $("#weather").html('<p>' + error + '</p>');
+        }
+    });
+</script>
 </body>
 </html>
