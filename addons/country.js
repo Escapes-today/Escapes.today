@@ -59,7 +59,7 @@ $(function () {
 			if (confirm("Are you sure you want to clear the cart?") == true) {
 			  $(".destination").children().each(function () {
 				  $(this).children(".shadowbox").children(".poi").removeClass("small");
-				  $(this).insertAfter($(".showcase").children().last())
+				  $(this).appendTo($(".showcase"))
 			  });
 			  $(".destination").trigger("sortupdate");
 			  $(".showcase").trigger("sortupdate");
@@ -131,7 +131,7 @@ $(".addDeal").click(function(e) {
 			if (confirm("Are you sure this will clear your cart?") == true) {
 			  $(".destination").children().each(function () {
 				  $(this).children(".shadowbox").children(".poi").removeClass("small");
-				  $(this).insertAfter($(".showcase").children().last())
+				  $(this).appendTo($(".showcase"))
 			  });
 			  $(".destination").trigger("sortupdate");
 			  $(".showcase").trigger("sortupdate");
