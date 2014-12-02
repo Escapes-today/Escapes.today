@@ -2,10 +2,16 @@
 	padding: 0;
 	margin: 0;
 }
+img {
+	border : 0px;
+}
+.home #navheader {
+position: fixed;	
+}
 #navheader {
 	display: block;
 	margin: 0px 10%;
-	position: fixed;
+	position: absolute;
 	top: 0;
 	left: 0;
 	right: 0; /* Make it fill the whole horizontal space */
@@ -46,17 +52,19 @@
 #links ul li {
 	min-width: 4em;
 }
-li a {
+#links li a {
 	font-size: 1.1em;
 	text-decoration: none;
 	font-weight: bold;
 	font-family: 'Quicksand', sans-serif;
 	border: 1px rgba(255, 255, 255, 0) solid;
+	border-left: none;
 	padding-top: 6px;
 	padding-bottom: 6px;
 	padding-left: 3px;
 	padding-right: 3px;
-	border-radius: 3px;
+	border-bottom-right-radius: 4px;
+	border-top-right-radius: 4px;
 	margin-right: 0px;
 	transition: border 0.2s ease-in-out, color 0.2s ease-in-out, padding-left 0.2s ease-in-out, margin-right 0.2s ease-in-out;
 }
@@ -65,10 +73,8 @@ li a {
 	margin-right: -15px;
 	padding-left: 18px;
 	border: 1px rgba(255, 255, 255, 1) solid;
+	border-left: none;
 	transition: border 0.1s ease-in-out, color 0.1s ease-in-out, padding-left 0.1s ease-in-out, margin-right 0.1s ease-in-out;
-}
-.link a:hover {
-	color: yellow;
 }
 #logo {
 	float: left;
@@ -105,12 +111,16 @@ li a {
 	margin: 0px 10px;
 }
 }
-
+@media screen and (max-width: 900px) {
+#navheader {
+	height: auto;
+}
+}
 .current {
 	color: #2262AD;
 }
 #links a {
-	color: white;
+	color: rgb(220, 232, 243);
 	width: 3em;
 	z-index: 4;
 }
@@ -130,11 +140,11 @@ li a {
 	left: 0;
 	top: 40%;
 }
-.description {
+#slides .description {
 	width: 300px;
 	background-color: red;
 	float: right;
-	margin-right: 200px;
+	margin-right: 80px;
 	padding: 10px 20px;
 	background: rgb(0, 0, 0);
 	background: rgba(0, 0, 0, 0.8);
@@ -144,25 +154,25 @@ li a {
 	font-family: quicksand;
 	font-weight: normal;
 }
-/* importing fonts */
-@font-face {
-	font-family: Quicksand;
-	src: url(../fonts/quicksand/Quicksand-Bold.otf);
-	font-weight: bold;
-}
-@font-face {
-	font-family: Quicksand;
-	src: url(../fonts/quicksand/Quicksand-Regular.otf);
-	font-weight: normal;
+#slides .description p {
+	margin-bottom: 1em;
 }
 .visit_btn {
-	padding: 10px;
-	margin-top: 5px;
-	float: right;
-	color: inherit;
-	background: rgb(81,141, 196);
-	display: inline-block;
-	transition: all 0.2s ease-in-out;
+padding: 10px;
+margin-top: 5px;
+float: right;
+color: inherit;
+background: rgb(81,141, 196);
+display: inline-block;
+border-radius: 4px;
+transition: all 0.2s ease-in-out;
+text-decoration: none;
+margin-right: 0px;
+border-left: none;
+border: 1px rgba(255, 255, 255, 0) solid;
+font-family: 'Quicksand', sans-serif;
+font-weight: bold;
+font-size: 1.1em;
 }
 .visit_btn:hover {
 	font-weight: bold;
@@ -170,3 +180,95 @@ li a {
 	background: rgb(220,232, 243);
 	transition: all 0.2s ease-in-out;
 }
+.contrast {
+	display: inline-block;
+	padding: 10px 20px;
+	background: rgb(0, 0, 0);
+	background: rgba(0, 0, 0, 0.6);
+	-webkit-box-shadow: 0 10px 15px rgba(0, 0, 0, .3);
+	border-radius: 3px;
+	color: rgb(220, 232, 243);
+}
+
+
+ 
+#products   .btns {
+	padding: 20px 0px;
+	
+}
+.btns   .btn {
+padding: 10px;
+margin-top: 5px;
+margin-left: 40px;
+color: rgb(220, 232, 243);
+background: rgb(81,141, 196);
+display: inline-block;
+border-radius: 4px;
+transition: all 0.2s ease-in-out;
+text-decoration: none;
+
+border-left: none;
+border: 1px rgba(255, 255, 255, 0) solid;
+font-family: 'Quicksand', sans-serif;
+font-weight: bold;
+font-size: 1.1em;
+}
+.btns  .btn:hover {
+	font-weight: bold;
+	color: rgb(81,141, 196);
+	background: rgb(220,232, 243);
+	transition: all 0.2s ease-in-out;
+}
+/* ------------------------------------ Weather ------------------------------------ */
+#weather {
+	font-size: .8em;
+	height: 150px;
+	width: 200px;
+border-left: 3px solid rgb(26, 50, 117);
+padding-left: 10px;
+	margin: 0px auto;
+	text-align: right;
+	text-transform: uppercase;
+	position: relative;
+	background-color: rgb(220, 232, 243);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+	float: right;
+margin-right: -30%;
+color: rgb(26, 50, 117);
+}
+#weather span {
+	display: block;
+	margin-right: 5px;
+	text-shadow: 1px 1px rgba(255, 255, 255, 0.8);
+	font-size: 1em;
+}
+#weather .loc {
+	margin: 0 0 8px;
+	font-size: 1.6em;
+	font-weight: 300;
+	text-align: center;
+	text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.15);
+}
+#weather .time {
+	position: absolute;
+	bottom: 0px;
+	text-align: center;
+	font-size: .8em;
+	text-shadow: none;
+	}
+	
+	#country {
+			font-size: 3em;
+	height: 150px;
+	width: 200px;
+border-right: 3px solid rgb(26, 50, 117);
+padding-right: 10px;
+	margin: 0px auto;
+		position: relative;
+		float: left;
+margin-left: -30%;
+color: rgb(26, 50, 117);
+line-height: 150px;
+	}

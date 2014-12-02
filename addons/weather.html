@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Escapes Today - Italy</title>
+<title>Escapes Today</title>
+</head>
+
+
+<style>
+body {
+	padding: 45px 0;
+	background: #1192d3;
+}
+#weather {
+	height: 150px;
+	width: 200px;
+	border: 2px solid rgb(0, 0, 0);
+	margin: 0px auto;
+	text-align: right;
+	text-transform: uppercase;
+	position: relative;
+	background-color: #1192d3;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+}
+#weather span {
+	display: block;
+	margin-right: 5px;
+	color: rgb(255, 255, 255);
+	font-size: 1em;
+}
+#weather .loc {
+	margin: 0 0 8px;
+	color: #fff;
+	font-size: 1.6em;
+	font-weight: 300;
+	text-align: center;
+	text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.15);
+}
+#weather .time {
+	position: absolute;
+	bottom: 0px;
+	text-align: center;
+	font-size: .8em;
+	color: rgb(0, 0, 0);
+}
+</style>
+<body>
+
+  <div id="weather">
+</div>
+
+</body>
+
+<script src="jquery/jquery-1.11.1.min.js"></script>
+<script src="jquery-ui-1.11.2/jquery-ui.min.js"></script>
+<script src="simpleweather/jquery.simpleWeather.min.js"></script>
+<script src="../data/weather.js"></script>
+<script>
+
+$(document).ready(function () {
+$.simpleWeather({
+        location: 'orlando',
+        woeid: '',
+        unit: 'f',
+        success: weather,
+		error: function (error) {
+            $("#weather").html('<p>' + error + '</p>');
+        }
+    });    
+});
+</script>
+</html>

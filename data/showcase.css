@@ -1,0 +1,40 @@
+.showcase, #destination {
+	min-height: 500px;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	display: inline-block;
+}
+.showcase li, #destination li {
+	min-height: 300px;
+	 list-style-type: none;
+	float: left;
+}
+.poi.small {
+	margin: 10px;
+}
+.poi.small .cover {
+	top: 0px;
+}
+.poi.small .cover .rating {
+	position: absolute;
+	bottom: 30px;
+	top: auto;
+	right: 10px;
+}
+.poi.small .cover .info {
+	display: block;
+}
+.shadowbox {
+	display: block;
+	-webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, .6);
+}
+
+ul li *{
+display: block;
+}
+#locations {
+ width: 90%;
+  margin: 20px auto 0 auto;
+}

@@ -1,56 +1,354 @@
-
-</head>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+ <!DOCTYPE html>
+<html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Italy</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Escapes Today - Italy</title>
+<link rel="shortcut icon" href="assets/img/Logos/favicon.ico">
+<link rel='stylesheet' href='fonts/fonts.css'>
 <link rel="stylesheet" href="data/main.css">
-<style>
-.contrast {
-	display: inline-block;
-	padding: 10px 20px;
-	background: rgb(0, 0, 0);
-	background: rgba(0, 0, 0, 0.6);
-	-webkit-box-shadow: 0 10px 15px rgba(0, 0, 0, .3);
-	border-radius: 3px;
-	color: rgb(220, 232, 243);
-}
-</style>
-
+<link rel="stylesheet" href="data/vertical_slider.css">
+<link rel="stylesheet" href="addons/font-awesome-4.2.0/css/font-awesome.min.css">
 </head>
 
 <body>
-  <div id="header" style="width: 100%; height: 300px;">
-    <img src="img/Italy/itybg.jpg" style="height:300px;width:100%;" alt="" />
-    
-    <div id="navheader">
-        <div style="margin-left: 0px; border:1px; border-color:red;">
-          <a href="http://www.escapes.today" id="logo"> 
-      <img style="height: 90px;" src="img/logo.svg" alt="Escapes Today logo">
-    </a>
+<div id="header" style="width: 100%; height: 300px;">
+   <img src="assets/img/Italy/italy_b.jpg" style="height:300px;width:100%;background:rgb(220,232, 243);" alt="Italy Image">
+   <div id="navheader">
+      <div style="margin-left: 0px"> 
+         <a href="http://www.escapes.today" id="logo"><img style="height: 90px;" src="assets/img/Logos/logo.svg" alt="Escapes Today logo" />  </a> 
+      </div>
+      <div id="links">
+         <ul >
+            <li><a href="index.html">Home</a></li>
+            <li><a href="destinations.html">Destinations</a></li>
+            <li><a href="tips.html">Travel&nbsp;Tips</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+         </ul>
+      </div>
+   </div>
 </div>
-        <div id="links">
-            <ul >
-                <li><a href="index.html" class="current">Home</a></li>
-                <li><a href="italy.html">Destinations</a></li>
-                <li><a href="#">Traveling Tips</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
-</ul>
+<div style="background-color:rgb(220,232, 243); color:#1a3275;	padding: 10px 20%;font-size:1.2em;display: inline-block;">
+   <div id="weather"></div>
+   <h1 id="country" style="text-align: center; font-size: 3em;">Italy</h1>
+   <p style="margin-top: 20px;"> Italy, officially the Italian Republic is a unitary parliamentary republic in Southern Europe. Famous for their art, architecture, and food, Italy is a destination full of sights to see.  You'll enjoy seeing the culture of 14th century artists, and enjoy traditional Italian food.</p>
 </div>
+<div id="products">
+   <div class="instructions" style="color: rgb(220,232, 243); font-size: 1.3em;margin-top:20px; margin-bottom:25px;text-align:right;">
+      <h2 style="margin:10px;">Personalized Travel Plan</h2>
+      <p style="margin:10px;">Click and drag the items to your plan below or click the plus button to add automatically. Our value packages are located below.</p>
+   </div>
+   <div class="locations">
+      <ul class="showcase">
+         <li>
+            <div class="shadowbox">
+               <div class="poi">
+                  <i class="addRemove fa fa-plus" style="font-size:22px"></i><img class="max" src="assets/img/Italy/milan_poi.jpg" alt="Milan Cathedeal">
+                  <div class="cover max" style="position:absolute;">
+                     <div class="description">
+                        <h2>Milan Cathedral Tour</h2>
+                        <h4>Milan, Italy</h4>
+                        <p class="info">This cathedral is from the 14th century.  Archbishop Antonio da Saluzzo began construction by, hiring the first chief engineer Simone da Orsenigo and more than three hundred men.  The cathedral has been a tourist attraction and a symbol of religious prestige.</p>
+                        <div class="bottomBar">
+                           <span class="price rating" style="left: 10px; right:auto"> $101.72 </span>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </li>
+         <li>
+            <div class="shadowbox">
+               <div class="poi">
+                  <i class="addRemove fa fa-plus" style="font-size:22px"></i> <img class="max" src="assets/img/Italy/trevi_poi.jpg" alt="Trevi Fountain">
+                  <div class="cover max" style="position:absolute;">
+                     <div class="description">
+                        <h2>Trevi Fountain Tour</h2>
+                        <h4>Rome, Italy</h4>
+                        <p class="info">Legend says a young girl led soldiers to a source of water a little bit outside of Rome.  Augustus built an aquaduct to bring the water into the city.  In 1629, Pope Urban VIII commissened Gian Lorenzo Bernini to renovate the fountain.</p>
+                        <span class="price rating" style="left: 10px; right:auto"> $47.05 </span>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </li>
+         <li>
+            <div class="shadowbox">
+               <div class="poi">
+                  <i class="addRemove fa fa-plus" style="font-size:22px"></i>
+                  <img class="max" src="assets/img/Italy/pisa_poi.jpg" alt="Tower of Pisa">
+                  <div class="cover max" style="position:absolute;">
+                     <div class="description">
+                        <h2>Tower of Pisa Tour</h2>
+                        <h4>Pisa, Italy</h4>
+                        <p class="info">The tower is the third oldest structure in the city, completed in the 14th century. The tower is a tourist attraction and landmark.  This bell tower is unintentionally leaning to the side.  This is caused by the ground being too soft on one side during construction.</p>
+                        <span class="price rating" style="left: 10px; right:auto"> $92.19 </span>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </li>
+         <li>
+            <div class="shadowbox">
+               <div class="poi">
+                  <i class="addRemove fa fa-plus" style="font-size:22px"></i>
+                  <img class="max" src="assets/img/Italy/LaPergola_poi.jpg" alt="La Pergola">
+                  <div class="cover max" style="position:absolute;">
+                     <div class="description">
+                        <h2>La Pergola Italian Restaurant</h2>
+                        <h4>Rome, Italy</h4>
+                        <p class="info">This Italian gourmet restaurant will give you tradtional Italian cuisine.  A fresh loaf of bread with salt and olive oil to start off your meal, followed by your meal.  The warm and humble staff will make sure your every need is satisfied.  Try their grand dessert which consists of seven plates of pastries and their traditional Italain desserts.</p>
+                        <span class="price rating" style="left: 10px; right:auto"> $150-$350 </span>
+                        <div class="rating"> 
+                           <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> 
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </li>
+         <li>
+            <div class="shadowbox">
+               <div class="poi">
+                  <i class="addRemove fa fa-plus" style="font-size:22px"></i> <img class="max" src="assets/img/Italy/albergo_poi.jpg" alt="Albergo del Senato">
+                  <div class="cover max" style="position:absolute;">
+                     <div class="description">
+                        <h2>Albergo del Senato Hotel</h2>
+                        <h4>Rome, Italy</h4>
+                        <p class="info">This hotel will put you within walking distance of the hotspots of the city.  Service is phenomenal and this is one of the cleanest hotels in Rome.  One will enjoy having the Pantheon right at the steps of the hotel.</p>
+                        <div class="options">
+                           <span>Room: </span>
+                           <select name="perd" class="dragignore">
+                              <option value="220">Presidential @ $220</option>
+                              <option value="175">Deluxe @ $175</option>
+                              <option value="130" selected="selected">Normal @ $130</option>
+                           </select>
+                           <br>
+                           <span>Number of nights: </span>
+                           <input type="number" name="numd" min="1" max="20" value="1" class="dragignore">
+                        </div>
+                        <span class="price rating" style="left: 10px; right:auto"> $130-$220 </span>
+                        <div class="rating"> 
+                           <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-half-o"></i> <i class="fa fa-star-o"></i> 
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </li>
+         <li>
+            <div class="shadowbox">
+               <div class="poi">
+                  <i class="addRemove fa fa-plus" style="font-size:22px"></i><img class="max" src="assets/img/Italy/elogo_poi.png" alt="Enterprise">
+                  <div class="cover max" style="position:absolute;">
+                     <div class="description">
+                        <h2>Enterprise</h2>
+                        <h4>Rent-A-Car</h4>
+                        <p class="info">Enterprise is a company that has car locations all around the world.  You can choose from a variety of cars.  Want to save?  Rent a compact.  Want to be comfortable?  Rent a luxary.</p>
+                        <span class="price rating" style="left: 10px; right:auto"> $80-$160 </span>
+                        <div class="rating"> 
+                           <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-half-o"></i> <i class="fa fa-star-o"></i> 
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </li>
+      </ul>
+   </div>
+   <div class="btns" style="text-align:center;">
+      <a class="btnd" id="dealsbtn">View Travel Deals</a>
+      <a class="btnd" id="makebtn">View Plan</a>
+   </div>
+   <div class="dealbox slidein">
+      <ul class="deals">
+         <li>
+            <div class="shadowbox">
+               <div class="poi">
+                  <img class="max" src="assets/img/Italy/Iexplorer_p.jpg" alt="Explorer Package">
+                  <div class="cover max" style="position:absolute;">
+                     <div class="description">
+                        <h2>Explorer Package</h2>
+                        <h4>For the true explorers</h4>
+                        <p class="info">This travel package will give you the full experience with all the hotspots of Italy.  Take a trip to Milan, Rome, and Pisa to get the full escape.</p>
+                        <ol style="margin-left: 20px;">
+                           <li>Milan Cathedral</li>
+                           <li>Trevi Fountain</li>
+                           <li>Tower of Pisa</li>
+                        </ol>
+                        <br>
+                        Savings:<span  class="savings" style="color: #0F0">$50.00</span>
+                        <span class="price rating" style="left: 10px; right:auto">$202.42</span>
+                        <div class="rating">
+                           <div class="btns" style="text-align:right;padding-bottom: 0px;">
+                              <a class="btn addDeal">Get Deal</a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </li>
+         <li>
+            <div class="shadowbox">
+               <div class="poi">
+                  <img class="max" src="assets/img/Italy/Icity_p.jpg" alt="Rome Package">
+                  <div class="cover max" style="position:absolute;">
+                     <div class="description">
+                        <h2>Rome Package</h2>
+                        <h4>For the full Rome experience</h4>
+                        <p class="info">The Rome package will give you the full roman experience.  This package will give you the Trevi Fountain tour, along with a hotel room, rental car, and coupon for the La Pergola Italian Restaurant.</p>
+                        <ol style="margin-left: 20px;">
+                           <li>Trevi Fountain</li>
+                           <li>La Pergola Italian Restaurant</li>
+                           <li>Albergo del Senato</li>
+                           <li>Enterprise</li>
+                        </ol>
+                        <br>
+                        Savings:<span  class="savings" style="color: #0F0">$150.00</span>
+                        <span class="price rating" style="left: 10px; right:auto">$270-$2000</span>
+                        <div class="rating">
+                           <div class="btns" style="text-align:right;padding-bottom: 0px;">
+                              <a class="btn addDeal">Get Deal</a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </li>
+           <li>
+            <div class="shadowbox">
+               <div class="poi">
+                  <img class="max" src="assets/img/Logos/logoglobe.gif">
+                  <div class="cover max" style="position:absolute;">
+                     <div class="description">
+                        <h2>Escape Package</h2>
+                        <h4>For the full Rome experience</h4>
+                        <p class="info">This is the complete Italian Experience.  Enjoy everything with a major discount.
+</p>
+                        <ol style="margin-left: 20px;">
+                           <li>Milan Cathedral</li>
+                           <li>Trevi Fountain</li>
+                           <li>Tower of Pisa</li>
+                           <li>La Pergola Italian Restaurant</li>
+                           <li>Albergo del Senato</li>
+                           <li>Enterprise</li>
+                        </ol>
+                        <br>
+                        Savings:<span  class="savings" style="color: #0F0">$300.00</span>
+                        <span class="price rating" style="left: 10px; right:auto">$320-$2,000</span>
+                        <div class="rating">
+                           <div class="btns" style="text-align:right;padding-bottom: 0px;">
+                              <a class="btn addDeal">Get Deal</a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </li>
+      </ul>
+   </div>
+   <div class="makeplan slidein" style="color:rgb(26, 50, 117);overflow: hidden;">
+      <h2 style="margin:10px;text-align:center">Travel Plan</h2>
+      <ul class="destination">
+      </ul>
+      <hr class="divider">
+      <div class="total">
+         <div class="checkoutinfo checkoutslideRight">
+            <h2>Contact Information</h2>
+            <form style="border: 2px solid rgb(26, 50, 117);padding: 10px;" name="buyform" method="post">
+               First name:<br>
+               <input type="text" name="firstname">
+               <br>
+               Last name:<br>
+               <input type="text" name="lastname">
+               <br>
+               Email:<br>
+               <input type="email" name="email">
+               <br>
+               Phone:<br>
+               <input type="tel" name="phone">
+               <br>
+               <br>
+               Comments:<br>
+               <textarea id="confirmationText" class="text"  rows ="5" name="confirmationText" style="width: 100%; resize:vertical;"></textarea>
+               <div class="btns" style="text-align:right;padding-bottom: 0px;">
+                  <a class="btnd submitOrder">Submit</a>
+               </div>
+               <p class="orderRem"></p>
+            </form>
+         </div>
+         <table style="width: 350px;border: 0px;cellpadding:5px;font-size: 1.1em; margin: 0 auto;">
+            <caption style="font-size:2em;font-weight:bold">
+               Travel Plan
+            </caption>
+            <tr>
+               <th colspan="3" style="text-align:left;font-size: 1.4em;">Items</th>
+            </tr>
+            <tr class="empty">
+               <td><span style="font-style: italic;">Empty</span></td>
+               <td colspan="2">&nbsp;</td>
+            </tr>
+            <tr class="space">
+               <td colspan="2">&nbsp;</td>
+               <td style="width: 18px;">&nbsp;</td>
+            </tr>
+            <tr>
+               <td>Sub-total</td>
+               <td id="sub-total"></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td>Tax</td>
+               <td id="tax" ></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td>Grand total</td>
+               <td id="total"></td>
+               <td></td>
+            </tr>
+            <tr style="text-align: center;">
+               <td colspan="3">
+                  <div class="btns">
+                     <a class="btnd" id="clear">Clear Cart</a>
+                     <a class="btnd" id="checkout">Checkout</a>
+                  </div>
+               </td>
+            </tr>
+         </table>
+      </div>
+   </div>
 </div>
-    <div style="text-align: center">
-      <div class="contrast" style="font-size: 3em; position: relative; top:-150px;color:rgb(220,232, 243); ">
-        <h1 style="text-align: center;">Italy</h1>
-	  </div>
-  </div>
+<div id="footer" style="position: static;"> 
+   <a href="https://github.com/Escapes-today/Escapes.today" target="_blank" style="left: 10px;position:relative; top: 4px">
+   <img src="assets/img/GitHub/lightb_logo.png" style="height: 15px;" alt="GitHub" />
+   <img src="assets/img/GitHub/lightb_octo.png" style="height: 15px" alt="GitHub logo" />
+   </a> <a href="index.html" style="position: relative;float: right;top: 6px;right:10px"><img src="assets/img/Logos/logoSmall.png" style="height: 20px" alt="Escapes Logo" /></a> 
 </div>
- 
-  
-  </div>
-   <div style="background-color:rgb(220,232, 243); color:#1a3275;	padding: 10px 20%;font-size:1.2em;">
-    Italy, officially the Italian Republic is a unitary parliamentary republic in Southern Europe. To the north, Italy borders France, Switzerland, Austria, and Slovenia, and is roughly delimited by the Alpine watershed, enclosing the Po Valley and the Venetian Plain. To the south, it consists of the entirety of the Italian Peninsula and the two biggest Mediterranean islands of Sicily and Sardinia, in addition to many other smaller islands.
-  </div>
+
+<!-- jQuery Scripts -->
+<script src="addons/jquery/jquery-1.11.1.min.js"></script>
+<script src="addons/jquery-ui-1.11.2/jquery-ui.min.js"></script>
+<!-- Weather Scripts -->
+<script src="addons/simpleweather/jquery.simpleWeather.min.js"></script>
+<script src="data/weather.js"></script>
+<!-- Cart Scripts -->
+<script src="addons/checkout.js"></script>
+<script src="addons/country.js"></script>
+<script>
+	$.simpleWeather({
+        location: 'Rome, Italy',
+        woeid: '',
+        unit: 'f',
+        success: weather,
+		error: function (error) {
+            $("#weather").html('<p>' + error + '</p>');
+        }
+    });
+</script>
 </body>
 </html>

@@ -99,3 +99,12 @@
 .slides-pagination a.current {
   background: rgb(220, 232, 243);
 }
+ 
+ 
+#slides .container {
+  position: absolute;
+  left: auto; 
+  top: auto; 
+  bottom: 80px;  
+  right: 0px;
+}
