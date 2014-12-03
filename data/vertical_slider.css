@@ -184,6 +184,7 @@ margin-right: 40px;
 }
 .total{
 padding: 10px;
+padding-top: 0px;
 }
 td:not(:first-child) {
 	text-align:right;
