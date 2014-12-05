@@ -10,7 +10,7 @@ $(function () {
 	  $('.makeplan').removeClass('slidein').css("min-height", "300px");
 	  $('.makeplan').css("min-height", "");
 	});
-    $(".showcase").disableSelection();
+    //$(".showcase").disableSelection();
     $(".destination").sortable({
         connectWith: ".showcase",
         containment: "#products",
@@ -36,7 +36,7 @@ $(function () {
 			$(".addRemove").change();
         },
     });
-    $(".destination").disableSelection();
+    //$(".destination").disableSelection();
 	$('.deals .shadowbox .poi').addClass('small');
     $('#dealsbtn').click(function () {
         $('.dealbox').toggleClass('slidein');
