@@ -36,7 +36,13 @@
 
 }
 div #menuToggle {
-background: rgba(255, 0, 0, 0.6);
+	transition: all 0.2s ease-in-out;
+	font-size: 22px;
+color: rgb(220, 232, 243);
+font-weight: bold;
+font-family: 'Quicksand', sans-serif;
+
+background: rgba(0, 0, 0, 0.8);
 display: block;
 position: absolute;
 height: 200px;
@@ -48,14 +54,18 @@ width: 50px;
 	-webkit-border-radius: 30px 0px 0px 30px;
 	border-radius: 30px 0px 0px 30px;
 }
+
+div #menuToggle:hover {
+color: rgb(76, 156, 241);	
+}
 .open {
 	right: 0;
 }
-.open #menuToggle span {
+/*.open #menuToggle span {
 	background: transparent;
 	left: -45%;
 	top: 45%;
-}
+}*/
 #menuToggle .divOpen {
 	-moz-transition: background 0.1s linear 0.2s;
 	-o-transition: background 0.1s linear 0.2s;
@@ -64,9 +74,10 @@ width: 50px;
 	transition: background 0.1s linear 0.2s;
 }
 .mButton {
+	background: transparent;
 	margin: auto;
 	position: absolute;
-	left: -45%;
+	left: -70%;
 	top: 45%;
 }
 
@@ -278,7 +289,7 @@ box-shadow: inset 5px 5px 20px rgb(85, 85, 85);
 height: auto;
 ">
   <a href="" id="menuToggle" title="show menu" style="font-size: 22px;">
-    <span class="divClosed mButton fa fa-rotate-270">Travel&nbsp;Plan</span>
+    <span class="divClosed mButton fa-rotate-270">Travel&nbsp;Plan</span>
   </a>
 <!--<h2 style="margin:10px;text-align:center">Travel Plan</h2>-->
 <!--   <div class="makeplan slidein" style="color:rgb(26, 50, 117);overflow: hidden;">-->
