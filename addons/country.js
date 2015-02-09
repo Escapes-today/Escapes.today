@@ -44,7 +44,7 @@ $(function () {
         }
     });
     //$(".destination").disableSelection();
-	$('.deals .shadowbox .poi').addClass('preview');
+	$('.deals .shadowbox .poi').addClass('small');
     $('#dealsbtn').click(function () {
         $('.dealbox').toggleClass('slidein');
 	        if (!$('.dealbox').hasClass('slidein')) {
