@@ -17,7 +17,7 @@ $(function () {
         scroll: true,
 		cancel: ".addRemove, .dragignore",
         receive: function (event, ui) {
-            $(ui.item).children(".shadowbox").children(".poi").toggleClass("small");
+            $(ui.item).children(".shadowbox").children(".poi").toggleClass("preview");
 			if($(this).children().size() >= 1){
 				$(this).children("li").children(".total").css("display","inline-block");
 			}
@@ -32,12 +32,19 @@ $(function () {
 			var name = ($(poi).find("h2").text());
 			var price = ($(poi).find(".price").text());
 			remove(name);
-            poi.toggleClass("small");
+            poi.toggleClass("preview");
 			$(".addRemove").change();
         },
+        start: function(){ 
+	        $(this).css("overflow-x", "visible");
+			$(this).css("overflow-y", "visible");             
+        },
+        stop: function(){
+             $(this).css("overflow-x","hidden");  
+        }
     });
     //$(".destination").disableSelection();
-	$('.deals .shadowbox .poi').addClass('small');
+	$('.deals .shadowbox .poi').addClass('preview');
     $('#dealsbtn').click(function () {
         $('.dealbox').toggleClass('slidein');
 	        if (!$('.dealbox').hasClass('slidein')) {
@@ -58,7 +65,7 @@ $(function () {
 		if($(".destination").children().size() > 0){
 			if (confirm("Are you sure you want to clear the cart?") == true) {
 			  $(".destination").children().each(function () {
-				  $(this).children(".shadowbox").children(".poi").removeClass("small");
+				  $(this).children(".shadowbox").children(".poi").removeClass("preview");
 				  $(this).appendTo($(".showcase"))
 			  });
 			  $(".destination").trigger("sortupdate");
@@ -69,7 +76,7 @@ $(function () {
 	});
 	
 $(document).on("change", ".addRemove", function () {
-	if($(this).parent(".poi").hasClass("small")){
+	if($(this).parent(".poi").hasClass("preview")){
 		$(this).removeClass("fa-plus fa-plus-circle fa-times-circle");
  	 	$(this).addClass("fa-times");
 	}else {
@@ -77,7 +84,7 @@ $(document).on("change", ".addRemove", function () {
 		$(this).addClass("fa-plus");
 	}
 }).on("mouseenter", ".addRemove", function () {
-	if($(this).parent(".poi").hasClass("small")){
+	if($(this).parent(".poi").hasClass("preview")){
 		$(this).removeClass("fa-times");
  	 	$(this).addClass("fa-times-circle");
 	}else {
@@ -85,7 +92,7 @@ $(document).on("change", ".addRemove", function () {
  	 	$(this).addClass("fa-plus-circle");
 	}
 }).on(" mouseleave", ".addRemove", function () {
-	if($(this).parent(".poi").hasClass("small")){
+	if($(this).parent(".poi").hasClass("preview")){
 		$(this).removeClass("fa-times-circle");
  	 	$(this).addClass("fa-times");
 	}else {
@@ -93,7 +100,7 @@ $(document).on("change", ".addRemove", function () {
  	 	$(this).addClass("fa-plus");
 	}
 }).on("click", ".addRemove", function () {
-	 if($(this).parent(".poi").hasClass("small")){
+	 if($(this).parent(".poi").hasClass("preview")){
 		// console.log($(this).parent().find("h2").html());
 	remove($(this).parent().find("h2").html());	
 		$(".addRemove").change();
@@ -104,7 +111,7 @@ $(document).on("change", ".addRemove", function () {
 		var li =  $(this).parent(".poi").parent(".shadowbox").parent("li");
 		$(li).appendTo($(".destination"));
 		
-		 $(li).children(".shadowbox").children(".poi").toggleClass("small");
+		 $(li).children(".shadowbox").children(".poi").toggleClass("preview");
 			
 			var poi = $(li).children(".shadowbox").children(".poi");
 			var name = ($(poi).find("h2").text());
@@ -119,7 +126,7 @@ $(".addDeal").click(function(e) {
 		if($(".destination").children().size() > 0){
 			if (confirm("Are you sure this will clear your cart?") == true) {
 			  $(".destination").children().each(function () {
-				  $(this).children(".shadowbox").children(".poi").removeClass("small");
+				  $(this).children(".shadowbox").children(".poi").removeClass("preview");
 				  $(this).appendTo($(".showcase"))
 			  });
 			  $(".destination").trigger("sortupdate");
@@ -139,7 +146,7 @@ $(".addDeal").click(function(e) {
             var price = ($(poi).find(".price").text());
             //if its the right poi
             if (name.length > 0 && name.indexOf(dest) > -1) {
-                poi.addClass("small");
+                poi.addClass("preview");
                 $(this).appendTo($(".destination"));
                 add(name, price);
                 $(".addRemove").change();
@@ -151,7 +158,13 @@ $(".addDeal").click(function(e) {
 	updateCosts();
 });
 
-  
+
+$("#openPlanBtn").click(function(e) {
+//Finalize plan button
+//Open the first modal dialog
+dialog.dialog( "open" );
+});
+
   
 $("#checkout").click(function(e) {
     $(".checkoutinfo").toggleClass("checkoutslideRight");

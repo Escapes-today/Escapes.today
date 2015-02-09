@@ -51,7 +51,7 @@ $(document).on("click", ".removeitem", function () {
 			
 			//if its the right poi
           if (name.length > 0 && name.indexOf(dest) > -1) {
-             poi.removeClass("small");
+             poi.removeClass("preview");
          	$(this).insertAfter($(".showcase").children().last());
           }
           });

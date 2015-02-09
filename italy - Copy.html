@@ -13,62 +13,8 @@
 <link rel="stylesheet" href="data/main.css">
 <link rel="stylesheet" href="data/vertical_slider.css">
 <link rel="stylesheet" href="addons/font-awesome-4.2.0/css/font-awesome.min.css">
-<link href="addons/jquery-ui-1.11.2/jquery-ui.min.css" rel="stylesheet">
 </head>
-<style>
-.miniCart {
-	background-color: rgba(0, 0, 0, 0.6);
-	height: 400px;
-/*	position: fixed;
-	right: -300px;
-	top: 0;*/
-	position: relative;
-	-moz-transition: right 0.2s linear;
-	-o-transition: right 0.2s linear;
-	-webkit-transition: right 0.2s linear;
-	transition: right 0.2s linear;
-	width: 300px;
 
-}
-div #menuToggle {
-background: rgba(255, 0, 0, 0.6);
-display: block;
-position: absolute;
-height: 200px;
-left: -50px;
-top: 75px;
-width: 50px;
-	-o-border-radius: 30px 0px 0px 30px;
-	-moz-border-radius: 30px 0px 0px 30px;
-	-webkit-border-radius: 30px 0px 0px 30px;
-	border-radius: 30px 0px 0px 30px;
-}
-.open {
-	right: 0;
-}
-.open #menuToggle span {
-	background: transparent;
-	left: -45%;
-	top: 45%;
-}
-#menuToggle .divOpen {
-	-moz-transition: background 0.1s linear 0.2s;
-	-o-transition: background 0.1s linear 0.2s;
-	-webkit-transition: background 0.1s linear;
-	-webkit-transition-delay: 0.2s;
-	transition: background 0.1s linear 0.2s;
-}
-.mButton {
-	margin: auto;
-	position: absolute;
-	left: -45%;
-	top: 45%;
-}
-
-.shiftLocations {
-	padding-right: 320px
-}
-</style>
 <body>
 
 <!--Heading-->
@@ -117,8 +63,9 @@ width: 50px;
    <!--Beginning of Points of Interest-->
    
    <div class="locations">
-      <ul class="showcase" style="float:left;">
-      	<!--Milan Cathedral-->
+      <ul class="showcase">
+      
+      <!--Milan Cathedral-->
       
          <li>
             <div class="shadowbox">
@@ -258,44 +205,8 @@ width: 50px;
             </div>
          </li>
       </ul>
-
-
-  <div class="miniCart" style="float: right;
-max-height: 500px;
-width: 300px;
-margin-right: -320px;
-margin-left: -20px;
-/* height: 300px; */
-background: rgb(220, 232, 243);
-padding-bottom: 20px;
-border-radius: 5px;
-box-shadow: inset 5px 5px 20px rgb(85, 85, 85);
-height: auto;
-">
-  <a href="" id="menuToggle" title="show menu" style="font-size: 22px;">
-    <span class="divClosed mButton fa fa-rotate-270">Travel&nbsp;Plan</span>
-  </a>
-<!--<h2 style="margin:10px;text-align:center">Travel Plan</h2>-->
-<!--   <div class="makeplan slidein" style="color:rgb(26, 50, 117);overflow: hidden;">-->
-      <ul class="destination" style="position: relative;
-top: 0;
-width: 100%;
-max-width: 100%;
-overflow-x: hidden;
-overflow-y: auto;
-/* max-height: inherit; */
-max-height: 437px;">
-      </ul>
-       <div class="btns" style="text-align:center;padding-top: 2px;">
-        <a class="btnd" id="openPlanBtn">Finalize Plan</a>
    </div>
-</div>
-
-
-
-    <i  style="clear:both; width:100%; display: block;"></i>
-   </div>
-
+   
    <!--End of Points of Interest-->
    
    <div class="btns" style="text-align:center;">
@@ -374,11 +285,13 @@ max-height: 437px;">
    <!--Travel Plan-->
    
    <div class="makeplan slidein" style="color:rgb(26, 50, 117);overflow: hidden;">
-      
+      <h2 style="margin:10px;text-align:center">Travel Plan</h2>
+      <ul class="destination">
+      </ul>
       <hr class="divider">
       <div class="total">
       
-      <!-- Checkout Form-->
+      <!-- Checkout Forum-->
       
          <div class="checkoutinfo checkoutslideRight">
             <h2>Contact Information</h2>
@@ -404,7 +317,6 @@ max-height: 437px;">
                <p class="orderRem"></p>
             </form>
          </div>
-         <div id="dialog-confirm" title="Travel Plan">
          <table style="width: 350px;border: 0px;cellpadding:5px;font-size: 1.1em; margin: 0 auto;">
             <caption style="font-size:2em;font-weight:bold">
                Travel Plan
@@ -444,7 +356,6 @@ max-height: 437px;">
                </td>
             </tr>
          </table>
-         </div>
       </div>
    </div>
 </div>
@@ -468,53 +379,6 @@ max-height: 437px;">
 <script src="addons/checkout.js"></script>
 <script src="addons/country.js"></script>
 <script>
-$(function() {
-	
-	 (function ($) {
-    $(document).ready(function () {
-        $('#menuToggle').click(function (e) {
-            var $parent = $(this).parent('div');
-            $parent.toggleClass('open');
-			$(".locations").toggleClass('shiftLocations');
-            var divState = $parent.hasClass('open') ? 'hide' : 'show';
-            $(this).attr('title', divState + ' divigation');
-            setTimeout(function () {
-                console.log('timeout set');
-                $('#menuToggle > span').toggleClass('divClosed').toggleClass('divOpen');
-            }, 200);
-            e.preventDefault();
-        });
-    });
-}(jQuery));
-
-
-   dialog =  $("#dialog-confirm").dialog({
-	   	autoOpen: false,
-        resizable: false,
-        height: $(window).height() * .9,
-        width: $(window).width() * .85,
-        modal: true,
-        open: function(event, ui) {
-            $('.ui-widget-overlay').bind('click', function() {
-				console.log("click");
-                $("#dialog-confirm").dialog('close');
-            });
-			$("body").css('overflow', 'hidden');
-        },
-		close: function(event, ui) {
-			$("body").css('overflow', 'visible');
-		},
-        buttons: {
-            "Check Out": function() {
-                //$( this ).dialog( "close" );
-            },
-            Cancel: function() {
-                $(this).dialog("close");
-            }
-        }
-    });
-});
-  
 	$.simpleWeather({
         location: 'Rome, Italy',
         woeid: '',

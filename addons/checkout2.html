@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Escapes Today - Italy</title>
+<link rel="shortcut icon" href="../assets/img/Logos/favicon.ico">
+<link rel='stylesheet' href='../fonts/fonts.css'>
+<link rel="stylesheet" href="../data/main.css">
+<link rel="stylesheet" href="../data/vertical_slider.css">
+<link rel="stylesheet" href="../addons/font-awesome-4.2.0/css/font-awesome.min.css">
+<title>Escapes Today</title>
+
+  <style>
+body {
+	background: red;
+}
+a {
+	text-decoration: none;
+}
+a i {
+	font: 0/0 a;
+	text-shadow: none;
+	color: transparent;
+}
+.miniCart {
+	background-color: rgba(0, 0, 0, 0.6);
+	height: 400px;
+	position: fixed;
+	right: -300px;
+	top: 0;
+	-moz-transition: right 0.2s linear;
+	-o-transition: right 0.2s linear;
+	-webkit-transition: right 0.2s linear;
+	transition: right 0.2s linear;
+	width: 300px;
+	z-index: 9001;
+}
+div #menuToggle {
+	background: rgba(0, 0, 0, 0.6);
+	display: block;
+	position: relative;
+	height: 200px;
+	left: -50px;
+	top: 75px;
+	width: 50px;
+	-o-border-radius: 30px 0px 0px 30px;
+	-moz-border-radius: 30px 0px 0px 30px;
+	-webkit-border-radius: 30px 0px 0px 30px;
+	border-radius: 30px 0px 0px 30px;
+}
+.open {
+	right: 0;
+}
+.open #menuToggle span {
+	background: transparent;
+	left: 10%;
+	top: 45%;
+}
+#menuToggle .divOpen {
+	-moz-transition: background 0.1s linear 0.2s;
+	-o-transition: background 0.1s linear 0.2s;
+	-webkit-transition: background 0.1s linear;
+	-webkit-transition-delay: 0.2s;
+	transition: background 0.1s linear 0.2s;
+}
+.mButton {
+	margin: auto;
+	position: absolute;
+	left: 10%;
+	top: 45%;
+}
+</style>
+
+</head>
+
+
+<body>
+<p>sdfhsadkf <br>
+asfjhladsfadsfhjsa<br>
+asdfjhb jasdf hsakfdas<br>
+asdfhj sfajaksfd</p>
+<div>
+  <div class="miniCart">
+  <a href="" id="menuToggle" title="show menu" style="font-size: 22px;">
+    <span class="divClosed mButton fa fa-rotate-270">Show</span>
+  </a>
+  <a href="#" title="Item 1">Item 1</a>
+  <a href="#" title="Item 2">Item 2</a>
+  <a href="#" title="Item 3">Item 3</a>
+  <a href="#" title="Item 3">Item 4</a>
+</div>
+</div>
+<p>sdfhsadkf <br>
+asfjhladsfadsfhjsa<br>
+asdfjhb jasdf hsakfdas<br>
+asdfhj sfajaksfd</p>
+
+  <script src="../addons/jquery/jquery-1.11.1.min.js"></script>
+  <script src="../addons/jquery-ui-1.11.2/jquery-ui.min.js"></script>
+  <script src="../addons/checkout.js"></script>
+
+  <script>
+    (function ($) {
+    $(document).ready(function () {
+        $('#menuToggle').click(function (e) {
+            var $parent = $(this).parent('div');
+            $parent.toggleClass('open');
+            var divState = $parent.hasClass('open') ? 'hide' : 'show';
+            $(this).attr('title', divState + ' divigation');
+            setTimeout(function () {
+                console.log('timeout set');
+                $('#menuToggle > span').toggleClass('divClosed').toggleClass('divOpen');
+            }, 200);
+            e.preventDefault();
+        });
+    });
+}(jQuery));
+
+  </script>
+
+</body>
+</html>

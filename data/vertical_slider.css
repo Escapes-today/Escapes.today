@@ -109,11 +109,17 @@ width:100%;
 	min-height: 340px;
 	margin-top: 20px;
 }
-.showcase  > li, .destination  > li, .deals  > li {
+.showcase  > li, .deals  > li {
 	min-height: 300px;
 	margin: 3px 3px 3px 0;
 	padding: 1px;
 	display: inline-block;
+}
+.destination  > li {
+		width: auto;
+	height: auto;
+	margin-bottom: 10px;
+	min-height: initial;
 }
 .poi.small {
 	margin: 10px;
@@ -144,6 +150,7 @@ width:100%;
 #products {
 	padding: 10px 20px;
 	background-color: rgb(61,121, 176);
+	overflow: hidden;
 }
 
 .slidein {
@@ -221,3 +228,49 @@ width: 400px; float:right;transition: all 0.5s ease-in-out;
 	right: 20px;
 position: relative;
 width: 400px; float:right;transition: all 0.5s ease-in-out;	}
+
+
+.poi.preview {
+	width: 280px;
+	height: 100px;
+	background: rgba(0, 0, 0, 0.45);
+}
+.poi.preview .cover.max {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	font-size: .8em;
+}
+.poi.preview .cover .description .info, .poi.preview .cover .description .options {
+	display: none;
+}
+.poi.preview .cover .description {
+	height: 100%;
+	background: none;
+}
+.poi.preview .cover .description .rating {
+	bottom: 20px;
+	right: 2px !important;
+	position: absolute;
+	opacity: 1;
+	font-size: 1.4em;
+	padding-right: 8px;
+	padding-bottom: 4px;
+}
+.poi.preview .cover .description div.rating {
+display:none;
+}
+
+
+.poi.preview .addRemove {
+	font-size: 18px !important;
+	width: 24px;
+	height: 24px;
+}
+.poi.preview .cover h2, .poi.preview .cover h4 {
+	margin-left: 100px;
+}
+.poi.preview img.max {
+	width: 100px;
+	height: 100px;
+}
