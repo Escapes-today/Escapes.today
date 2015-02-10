@@ -18,7 +18,7 @@
 <link rel="stylesheet" href="data/main.css">
 <link rel="stylesheet" href="data/vertical_slider.css">
 <link rel="stylesheet" href="addons/font-awesome-4.2.0/css/font-awesome.min.css">
-<link href="addons/jquery-ui-1.11.2/jquery-ui.min.css" rel="stylesheet">
+<link href="addons/jquery-ui-1.11.2/jquery-ui.css" rel="stylesheet">
 </head>
 <style>
 .miniCart {
@@ -83,6 +83,10 @@ color: rgb(76, 156, 241);
 
 .shiftLocations {
 	padding-right: 320px
+}
+
+.dest td:first-child{
+padding-left: 5em;	
 }
 </style>
 <body>
@@ -420,21 +424,21 @@ max-height: 437px;">
                <p class="orderRem"></p>
             </form>
          </div>
-         <div id="dialog-confirm" title="Travel Plan">
-         <table style="width: 350px;border: 0px;cellpadding:5px;font-size: 1.1em; margin: 0 auto;">
-            <caption style="font-size:2em;font-weight:bold">
+         <div id="dialog-confirm" title="Travel Plan" style="background: rgb(220, 232, 243);">
+         <table style="width: 65%;border: 0px;cellpadding:5px;font-size: 1.3em; margin: 0 auto;">
+            <caption style="font-size:2em;font-weight:bold;margin-top: 100px;">
                Travel Plan
             </caption>
             <tr>
-               <th colspan="3" style="text-align:left;font-size: 1.4em;">Items</th>
+               <th colspan="3" style="text-align:left;font-size: 1.4em;padding-bottom: 10px;">Items</th>
             </tr>
             <tr class="empty">
-               <td><span style="font-style: italic;">Empty</span></td>
+               <td><span style="">There are no items in your cart!</span></td>
                <td colspan="2">&nbsp;</td>
             </tr>
             <tr class="space">
                <td colspan="2">&nbsp;</td>
-               <td style="width: 18px;">&nbsp;</td>
+               <td style="width: 22px;">&nbsp;</td>
             </tr>
             <tr>
                <td>Sub-total</td>
@@ -447,18 +451,22 @@ max-height: 437px;">
                <td></td>
             </tr>
             <tr>
+               <td colspan="2">&nbsp;</td>
+               <td style="width: 22px;">&nbsp;</td>
+            </tr>
+            <tr>
                <td>Grand total</td>
                <td id="total"></td>
                <td></td>
             </tr>
-            <tr style="text-align: center;">
+            <!--<tr style="text-align: center;">
                <td colspan="3">
                   <div class="btns">
                      <a class="btnd" id="clear">Clear Cart</a>
                      <a class="btnd" id="checkout">Checkout</a>
                   </div>
                </td>
-            </tr>
+            </tr>-->
          </table>
          </div>
       </div>
