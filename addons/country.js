@@ -174,20 +174,20 @@ $("#checkout").click(function(e) {
 
 
 $(".submitOrder").click(function(e) {
-  if(check_form()){
-	var now = new Date();
-	var start = new Date(now.getFullYear(), 0, 0);
-	var diff = now - start;
-	
-	//86400000 is number of ms in a day
-	var day = Math.floor(diff / 86400000);
-	var mstag = now.getMilliseconds() % 1000;
-	var orderNum = day + mstag;
-	
-	var rem = "Your order #" + orderNum + " has been recieved.";
-	$(this).parent().siblings(".orderRem").text(rem);
-	clear_form();
-  }
+//  if(check_form()){
+//	var now = new Date();
+//	var start = new Date(now.getFullYear(), 0, 0);
+//	var diff = now - start;
+//	
+//	//86400000 is number of ms in a day
+//	var day = Math.floor(diff / 86400000);
+//	var mstag = now.getMilliseconds() % 1000;
+//	var orderNum = day + mstag;
+//	
+//	var rem = "Your order #" + orderNum + " has been recieved.";
+//	$(this).parent().siblings(".orderRem").text(rem);
+//	clear_form();
+//  }
 });
 
 

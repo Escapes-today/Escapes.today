@@ -24,7 +24,7 @@
 .miniCart {
 	background-color: rgba(0, 0, 0, 0.6);
 	height: 400px;
-/*	position: fixed;
+	/*	position: fixed;
 	right: -300px;
 	top: 0;*/
 	position: relative;
@@ -280,40 +280,23 @@ padding-left: 5em;
       </ul>
 
 
-  <div class="miniCart" style="float: right;
-max-height: 500px;
-width: 300px;
-margin-right: -320px;
-margin-left: -20px;
-/* height: 300px; */
-background: rgb(220, 232, 243);
-padding-bottom: 20px;
-border-radius: 5px;
-box-shadow: inset 5px 5px 20px rgb(85, 85, 85);
-height: auto;
-">
-  <a href="" id="menuToggle" title="show menu" style="font-size: 22px;">
-    <span class="divClosed mButton fa-rotate-270">Travel&nbsp;Plan</span>
-  </a>
-<!--<h2 style="margin:10px;text-align:center">Travel Plan</h2>-->
-<!--   <div class="makeplan slidein" style="color:rgb(26, 50, 117);overflow: hidden;">-->
-      <ul class="destination" style="position: relative;
-top: 0;
-width: 100%;
-max-width: 100%;
-overflow-x: hidden;
-overflow-y: auto;
-/* max-height: inherit; */
-max-height: 437px;">
-      </ul>
-       <div class="btns" style="text-align:center;padding-top: 2px;">
-        <a class="btnd" id="openPlanBtn">Finalize Plan</a>
-   </div>
-</div>
-
-
-
-    <i  style="clear:both; width:100%; display: block;"></i>
+      <div class="miniCart" style="float: right;    max-height: 500px;    margin-right: -320px;
+    margin-left: -20px; background: rgb(220, 232, 243);    padding-bottom: 20px;    border-radius: 5px;    box-shadow: inset 5px 5px 20px rgb(85, 85, 85);    height: auto;
+    ">
+      <a href="" id="menuToggle" title="show menu" style="font-size: 22px;">
+        <span class="divClosed mButton fa-rotate-270">Travel&nbsp;Plan</span>
+      </a>
+   
+          <ul class="destination" style="position: relative;    top: 0;
+    width: 100%;    max-width: 100%;
+    overflow-x: hidden;    overflow-y: auto;    /* max-height: inherit; */
+    max-height: 437px;">
+          </ul>
+           <div class="btns" style="text-align:center;padding-top: 2px;">
+            <a class="btnd" id="openPlanBtn">Finalize Plan</a>
+       </div>
+    </div>
+ <i  style="clear:both; width:100%; display: block;"></i>
    </div>
 
    <!--End of Points of Interest-->
@@ -399,10 +382,10 @@ max-height: 437px;">
       <div class="total">
       
       <!-- Checkout Form-->
-      
-         <div class="checkoutinfo checkoutslideRight">
+        <div id="dialog-checkout" title="Checkout" style="background: rgb(220, 232, 243);">
+         <div class="checkoutinfo" style="padding: 40px 80px;">
             <h2>Contact Information</h2>
-            <form style="border: 2px solid rgb(26, 50, 117);padding: 10px;" name="buyform" method="post">
+            <form style="padding: 10px;" name="buyform" method="post">
                First name:<br>
                <input type="text" name="firstname">
                <br>
@@ -418,57 +401,51 @@ max-height: 437px;">
                <br>
                Comments:<br>
                <textarea id="confirmationText" class="text"  rows ="5" name="confirmationText" style="width: 100%; resize:vertical;"></textarea>
-               <div class="btns" style="text-align:right;padding-bottom: 0px;">
-                  <a class="btnd submitOrder">Submit</a>
-               </div>
                <p class="orderRem"></p>
             </form>
          </div>
-         <div id="dialog-confirm" title="Travel Plan" style="background: rgb(220, 232, 243);">
-         <table style="width: 65%;border: 0px;cellpadding:5px;font-size: 1.3em; margin: 0 auto;">
-            <caption style="font-size:2em;font-weight:bold;margin-top: 100px;">
-               Travel Plan
-            </caption>
-            <tr>
-               <th colspan="3" style="text-align:left;font-size: 1.4em;padding-bottom: 10px;">Items</th>
-            </tr>
-            <tr class="empty">
-               <td><span style="">There are no items in your cart!</span></td>
-               <td colspan="2">&nbsp;</td>
-            </tr>
-            <tr class="space">
-               <td colspan="2">&nbsp;</td>
-               <td style="width: 22px;">&nbsp;</td>
-            </tr>
-            <tr>
-               <td>Sub-total</td>
-               <td id="sub-total"></td>
-               <td></td>
-            </tr>
-            <tr>
-               <td>Tax</td>
-               <td id="tax" ></td>
-               <td></td>
-            </tr>
-            <tr>
-               <td colspan="2">&nbsp;</td>
-               <td style="width: 22px;">&nbsp;</td>
-            </tr>
-            <tr>
-               <td>Grand total</td>
-               <td id="total"></td>
-               <td></td>
-            </tr>
-            <!--<tr style="text-align: center;">
-               <td colspan="3">
-                  <div class="btns">
-                     <a class="btnd" id="clear">Clear Cart</a>
-                     <a class="btnd" id="checkout">Checkout</a>
-                  </div>
-               </td>
-            </tr>-->
-         </table>
          </div>
+         
+        <div id="dialog-finalize" title="Travel Plan" style="background: rgb(220, 232, 243);">
+            <table style="width: 65%;border: 0px;cellpadding:5px;font-size: 1.3em; margin: 0 auto;">
+                <caption style="font-size:2em;font-weight:bold;margin-top: 100px;">
+                       Travel Plan
+                    </caption>
+                <tr>
+                    <th colspan="3" style="text-align:left;font-size: 1.4em;padding-bottom: 10px;">Items</th>
+                </tr>
+                <tr class="empty">
+                    <td>
+                        <span style="">There are no items in your cart!</span>
+                    </td>
+                    <td colspan="2">&nbsp;</td>
+                </tr>
+                <tr class="space">
+                    <td colspan="2">&nbsp;</td>
+                    <td style="width: 22px;">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Sub-total</td>
+                    <td id="sub-total"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Tax</td>
+                    <td id="tax" ></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td colspan="2">&nbsp;</td>
+                    <td style="width: 22px;">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Grand total</td>
+                    <td id="total"></td>
+                    <td></td>
+                </tr>
+                <!--<tr style="text-align: center;"><td colspan="3"><div class="btns"><a class="btnd" id="clear">Clear Cart</a><a class="btnd" id="checkout">Checkout</a></div></td></tr>-->
+            </table>
+        </div>
       </div>
    </div>
 </div>
@@ -493,7 +470,6 @@ max-height: 437px;">
 <script src="addons/country.js"></script>
 <script>
 $(function() {
-	
 	 (function ($) {
     $(document).ready(function () {
         $('#menuToggle').click(function (e) {
@@ -512,7 +488,7 @@ $(function() {
 }(jQuery));
 
 
-   dialog =  $("#dialog-confirm").dialog({
+dialog =  $("#dialog-finalize").dialog({
 	   	autoOpen: false,
         resizable: false,
         height: $(window).height() * .9,
@@ -521,7 +497,7 @@ $(function() {
         open: function(event, ui) {
             $('.ui-widget-overlay').bind('click', function() {
 				console.log("click");
-                $("#dialog-confirm").dialog('close');
+                $("#dialog-finalize").dialog("close");
             });
 			$("body").css('overflow', 'hidden');
         },
@@ -530,7 +506,59 @@ $(function() {
 		},
         buttons: {
             "Check Out": function() {
-                //$( this ).dialog( "close" );
+               $( checkout ).dialog( "open" );
+            },
+            Cancel: function() {
+                $(this).dialog("close");
+            }
+        }
+    });
+
+   checkout =  $("#dialog-checkout").dialog({
+	   	autoOpen: false,
+        resizable: false,
+            width: 'auto',
+            height: 'auto',
+            position: {
+                my: 'center',
+                at: 'center',
+                of: window
+            },
+        modal: true,
+        open: function(event, ui) {
+            $('.ui-widget-overlay').bind('click', function() {
+				console.log("click");
+                $("#dialog-checkout").dialog("close");
+            });
+			$("body").css('overflow', 'hidden');
+        },
+		close: function(event, ui) {
+			$("body").css('overflow', 'visible');
+		},
+        buttons: {
+            "Submit Order": function() {
+	
+             if(check_form()){
+				var now = new Date();
+				var start = new Date(now.getFullYear(), 0, 0);
+				var diff = now - start;
+				
+				//86400000 is number of ms in a day
+				var day = Math.floor(diff / 86400000);
+				var mstag = now.getMilliseconds() % 1000;
+				var orderNum = day + mstag;
+				
+				var rem = "Your order #" + orderNum + " has been recieved.";
+				$(this).find(".orderRem").text(rem);
+				clear_form();
+				
+			//	$(this).dialog("options", "buttons"
+				
+				
+			//$( this ).dialog( "close" );
+			 }
+    
+
             },
             Cancel: function() {
                 $(this).dialog("close");
@@ -538,6 +566,7 @@ $(function() {
         }
     });
 });
+  
   
 	$.simpleWeather({
         location: 'Rome, Italy',
