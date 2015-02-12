@@ -14,13 +14,14 @@
 
 <!--External Sources-->
 <link rel="shortcut icon" href="assets/img/Logos/favicon.ico">
+<link rel="stylesheet" href="addons/country.css">
 <link rel='stylesheet' href='fonts/fonts.css'>
 <link rel="stylesheet" href="data/main.css">
 <link rel="stylesheet" href="data/vertical_slider.css">
 <link rel="stylesheet" href="addons/font-awesome-4.2.0/css/font-awesome.min.css">
 <link href="addons/jquery-ui-1.11.2/jquery-ui.css" rel="stylesheet">
-</head>
-<style>
+
+<!--<style>
 .miniCart {
 	background-color: rgba(0, 0, 0, 0.6);
 	height: 400px;
@@ -88,12 +89,16 @@ color: rgb(76, 156, 241);
 .dest td:first-child{
 padding-left: 5em;	
 }
-</style>
+
+</style>-->
+
+</head>
+
 <body>
 
 <!--Heading-->
 
-<div id="header" style="width: 100%; height: 300px;">
+<header id="header" style="width: 100%; height: 300px;">
    <img src="assets/img/Italy/italy_b.jpg" style="height:300px;width:100%;background:rgb(220,232, 243);" alt="Italy Image">
    
    <!--Navigation Bar-->
@@ -112,7 +117,9 @@ padding-left: 5em;
          </ul>
       </div>
    </div>
-</div>
+</header>
+
+<main>
 
 <!--Country Description-->
 
@@ -293,6 +300,7 @@ padding-left: 5em;
     max-height: 437px;">
           </ul>
            <div class="btns" style="text-align:center;padding-top: 2px;">
+           <a class="btnd" id="clear">Clear Cart</a>
             <a class="btnd" id="openPlanBtn">Finalize Plan</a>
        </div>
     </div>
@@ -303,7 +311,6 @@ padding-left: 5em;
    
    <div class="btns" style="text-align:center;">
       <a class="btnd" id="dealsbtn">View Travel Deals</a>
-      <a class="btnd" id="makebtn">View Plan</a>
    </div>
    
    <!--Beginning of Travel Deals-->
@@ -358,7 +365,7 @@ padding-left: 5em;
                            <li>Albergo del Senato Hotel</li>
                            <li>Enterprise</li>
                         </ol>
-                        <br>
+                        
                         Savings:<span  class="savings" style="color: #0F0">$150.00</span>
                         <span class="price rating" style="left: 10px; right:auto">$270-$2000</span>
                         <div class="rating">
@@ -377,6 +384,7 @@ padding-left: 5em;
    <!--Forms-->
    
       <div style="display:none">
+
       
       <!-- Checkout Form-->
         <div id="dialog-checkout" title="Checkout" style="background: rgb(220, 232, 243);">
@@ -447,14 +455,16 @@ padding-left: 5em;
    </div>
 </div>
 
+</main>
+
 <!--Footer-->
 
-<div id="footer" style="position: static;"> 
+<footer id="footer" style="position: static;"> 
    <a href="https://github.com/Escapes-today/Escapes.today" target="_blank" style="left: 10px;position:relative; top: 4px">
    <img src="assets/img/GitHub/lightb_logo.png" style="height: 15px;" alt="GitHub" />
    <img src="assets/img/GitHub/lightb_octo.png" style="height: 15px" alt="GitHub logo" />
    </a> <a href="index.html" style="position: relative;float: right;top: 6px;right:10px"><img src="assets/img/Logos/logoSmall.png" style="height: 20px" alt="Escapes Logo" /></a> 
-</div>
+</footer>
 
 <!-- jQuery Scripts -->
 <script src="addons/jquery/jquery-1.11.1.min.js"></script>
@@ -465,7 +475,7 @@ padding-left: 5em;
 <!-- Cart Scripts -->
 <script src="addons/checkout.js"></script>
 <script src="addons/country.js"></script>
-<script>
+<!--<script>
 $(function() {
 	 (function ($) {
     $(document).ready(function () {
@@ -556,8 +566,8 @@ dialog =  $("#dialog-finalize").dialog({
         }
     });
 });
-  
-  
+-->
+<script>
 	$.simpleWeather({
         location: 'Rome, Italy',
         woeid: '',

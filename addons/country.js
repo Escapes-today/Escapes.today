@@ -4,11 +4,15 @@ $(function () {
         containment: "#products",
 		cancel: ".addRemove, .dragignore",   
         scroll: true,
+		start: function(){
+			$(".miniCart").addClass("open");
+			$(".locations").addClass('shiftLocations');  	
+		}
 	});
 	//Slide out the makeplan div when user drags a POI
 	$(".showcase").on("click, mousedown", "li", function () {
-	  $('.makeplan').removeClass('slidein').css("min-height", "300px");
-	  $('.makeplan').css("min-height", "");
+	//$('.makeplan').removeClass('slidein').css("min-height", "300px");
+	//$('.makeplan').css("min-height", "");
 	});
     //$(".showcase").disableSelection();
     $(".destination").sortable({
@@ -53,6 +57,7 @@ $(function () {
             }, 500);
         }
     });
+
 //    $('#makebtn').click(function () {
 // 	 	$('.makeplan').toggleClass('slidein');
 //		if (!$('.makeplan').hasClass('slidein')) {
@@ -61,6 +66,7 @@ $(function () {
 //            }, 500);
 //        }
 //    });
+
 	$("#clear").click(function () {
 		if($(".destination").children().size() > 0){
 			if (confirm("Are you sure you want to clear the cart?") == true) {
@@ -233,3 +239,105 @@ function clear_form(){
 		$(this).val("");
    });
 }
+
+$(function() {
+	 (function ($) {
+    $(document).ready(function () {
+        $('#menuToggle').click(function (e) {
+            var $parent = $(this).parent('div');
+            $parent.toggleClass('open');
+			$(".locations").toggleClass('shiftLocations');
+            var divState = $parent.hasClass('open') ? 'hide' : 'show';
+            $(this).attr('title', divState + ' divigation');
+            setTimeout(function () {
+                console.log('timeout set');
+                $('#menuToggle > span').toggleClass('divClosed').toggleClass('divOpen');
+            }, 200);
+            e.preventDefault();
+        });
+    });
+}(jQuery));
+
+
+dialog =  $("#dialog-finalize").dialog({
+	   	autoOpen: false,
+        resizable: false,
+        //height: $(window).height() * .9,
+        width: $(window).width() * .85,
+        height: 'auto',
+        modal: true,
+        open: function(event, ui) {
+            $('.ui-widget-overlay').bind('click', function() {
+				console.log("click");
+                $("#dialog-finalize").dialog("close");
+            });
+			$("body").css('overflow', 'hidden');
+        },
+		close: function(event, ui) {
+			$("body").css('overflow', 'visible');
+		},
+        buttons: {
+            "Check Out": function() {
+               $( checkout ).dialog( "open" );
+            },
+			"Clear Cart": function() {
+               $("#clear").trigger( "click" );
+            },
+            Cancel: function() {
+                $(this).dialog("close");
+            }
+        }
+    });
+
+   checkout =  $("#dialog-checkout").dialog({
+	   	autoOpen: false,
+        resizable: false,
+            width: 'auto',
+            height: 'auto',
+            position: {
+                my: 'center',
+                at: 'center',
+                of: window
+            },
+        modal: true,
+        open: function(event, ui) {
+            $('.ui-widget-overlay').bind('click', function() {
+				console.log("click");
+                $("#dialog-checkout").dialog("close");
+            });
+			$("body").css('overflow', 'hidden');
+        },
+		close: function(event, ui) {
+			$("body").css('overflow', 'visible');
+		},
+        buttons: {
+            "Submit Order": function() {
+	
+             if(check_form()){
+				var now = new Date();
+				var start = new Date(now.getFullYear(), 0, 0);
+				var diff = now - start;
+				
+				//86400000 is number of ms in a day
+				var day = Math.floor(diff / 86400000);
+				var mstag = now.getMilliseconds() % 1000;
+				var orderNum = day + mstag;
+				
+				var rem = "Your order #" + orderNum + " has been recieved.";
+				$(this).find(".orderRem").text(rem);
+				clear_form();
+				
+			//	$(this).dialog("options", "buttons"
+				
+				
+			//$( this ).dialog( "close" );
+			 }
+    
+
+            },
+            Cancel: function() {
+                $(this).dialog("close");
+            }
+        }
+    });
+});

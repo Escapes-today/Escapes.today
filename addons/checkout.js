@@ -13,7 +13,18 @@
 
   });
 
-  function add(dest, price) {
+  function add(dest, priceText) {
+	  if(priceText.indexOf("-") != 0){
+	  		var prices =  priceText.split("-");
+			price = prices[prices.length-1].trim();
+			if(price.indexOf(".") == -1){
+			   price+= ".00";
+			} else if(price.indexOf(".") == price.length -2) {
+			   price+= "0";
+			}
+	  } else {
+	  		price = priceText;
+	  }	  
       $('table .space').before('<tr class="dest"><td>' + dest + '</td><td>' + price + '</td><td><i class="removeitem fa fa-times"></i></td></tr>');
       updateCosts();
   };
