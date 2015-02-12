@@ -1,0 +1,16 @@
+@charset "utf-8";
+/* CSS Document */
+p {
+padding-top:20px;	
+text-align:justify;
+}
+
+a:link, a:visited {
+	color: rgb(220, 232, 243);
+}
+
+a:hover , a:active{
+	color: rgb(220, 232, 243);
+	font-weight:bold;
+}
+
