@@ -374,12 +374,9 @@ padding-left: 5em;
       </ul>
    </div>
    
-   <!--Travel Plan-->
+   <!--Forms-->
    
-   <div class="makeplan slidein" style="color:rgb(26, 50, 117);overflow: hidden;">
-      
-      <hr class="divider">
-      <div class="total">
+      <div style="display:none">
       
       <!-- Checkout Form-->
         <div id="dialog-checkout" title="Checkout" style="background: rgb(220, 232, 243);">
@@ -405,7 +402,7 @@ padding-left: 5em;
             </form>
          </div>
          </div>
-         
+       <!-- Travel Plan Form-->
         <div id="dialog-finalize" title="Travel Plan" style="background: rgb(220, 232, 243);">
             <table style="width: 65%;border: 0px;cellpadding:5px;font-size: 1.3em; margin: 0 auto;">
                 <caption style="font-size:2em;font-weight:bold;margin-top: 100px;">
@@ -551,14 +548,7 @@ dialog =  $("#dialog-finalize").dialog({
 				var rem = "Your order #" + orderNum + " has been recieved.";
 				$(this).find(".orderRem").text(rem);
 				clear_form();
-				
-			//	$(this).dialog("options", "buttons"
-				
-				
-			//$( this ).dialog( "close" );
 			 }
-    
-
             },
             Cancel: function() {
                 $(this).dialog("close");
