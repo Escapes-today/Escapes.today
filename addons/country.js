@@ -4,11 +4,15 @@ $(function () {
         containment: "#products",
 		cancel: ".addRemove, .dragignore",   
         scroll: true,
+		start: function(){
+			$(".miniCart").addClass("open");
+			$(".locations").addClass('shiftLocations');  	
+		}
 	});
 	//Slide out the makeplan div when user drags a POI
 	$(".showcase").on("click, mousedown", "li", function () {
-	  $('.makeplan').removeClass('slidein').css("min-height", "300px");
-	  $('.makeplan').css("min-height", "");
+	//$('.makeplan').removeClass('slidein').css("min-height", "300px");
+	//$('.makeplan').css("min-height", "");
 	});
     //$(".showcase").disableSelection();
     $(".destination").sortable({
@@ -256,8 +260,9 @@ $(function() {
 dialog =  $("#dialog-finalize").dialog({
 	   	autoOpen: false,
         resizable: false,
-        height: $(window).height() * .9,
+        //height: $(window).height() * .9,
         width: $(window).width() * .85,
+        height: 'auto',
         modal: true,
         open: function(event, ui) {
             $('.ui-widget-overlay').bind('click', function() {
@@ -272,6 +277,9 @@ dialog =  $("#dialog-finalize").dialog({
         buttons: {
             "Check Out": function() {
                $( checkout ).dialog( "open" );
+            },
+			"Clear Cart": function() {
+               $("#clear").trigger( "click" );
             },
             Cancel: function() {
                 $(this).dialog("close");
@@ -331,16 +339,3 @@ dialog =  $("#dialog-finalize").dialog({
         }
     });
 });
-  
-  
-	$.simpleWeather({
-        location: 'Rome, Italy',
-        woeid: '',
-        unit: 'f',
-        success: weather,
-		error: function (error) {
-            $("#weather").html('<p>' + error + '</p>');
-        }
-    });
-
-
