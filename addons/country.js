@@ -77,6 +77,7 @@ $(function () {
 			  $(".destination").trigger("sortupdate");
 			  $(".showcase").trigger("sortupdate");
 			  clear();
+			  $(".fa-times").trigger("change");
 			}
 		}		
 	});
