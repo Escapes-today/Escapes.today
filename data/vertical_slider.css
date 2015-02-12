@@ -81,7 +81,7 @@
 }
 /* File orig  */
 
-.showcase, .destination, .deals {
+.showcase, .destination, .deals, .traveltips {
 	min-height: 500px;
 	list-style-type: none;
 	margin: 0;
@@ -90,26 +90,26 @@
 	display: inline-block;
 	text-align: center;
 }
-.showcase, .dealbox, .makeplan {
+.showcase, .dealbox, .makeplan, .tipbox {
 	background: rgb(220, 232, 243);
 	padding-bottom: 20px;
 	border-radius: 5px;
 	box-shadow: inset 5px 5px 20px #555;
 }
 
-.makeplan , .dealbox{
+.makeplan , .dealbox , .tipbox{
 	display: inline-block;
 margin-bottom: 20px;
 min-height: 300px;	
 width:100%;
 }
 
-.destination, .deals {
+.destination, .deals{
 	text-align: left;
 	min-height: 340px;
 	margin-top: 20px;
 }
-.showcase  > li, .deals  > li {
+.showcase  > li, .deals  > li, .traveltips > li {
 	min-height: 300px;
 	margin: 3px 3px 3px 0;
 	padding: 1px;
