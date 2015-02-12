@@ -14,86 +14,19 @@
 
 <!--External Sources-->
 <link rel="shortcut icon" href="assets/img/Logos/favicon.ico">
+<link rel="stylesheet" href="addons/country.css">
 <link rel='stylesheet' href='fonts/fonts.css'>
 <link rel="stylesheet" href="data/main.css">
 <link rel="stylesheet" href="data/vertical_slider.css">
 <link rel="stylesheet" href="addons/font-awesome-4.2.0/css/font-awesome.min.css">
 <link href="addons/jquery-ui-1.11.2/jquery-ui.css" rel="stylesheet">
 </head>
-<style>
-.miniCart {
-	background-color: rgba(0, 0, 0, 0.6);
-	height: 400px;
-	/*	position: fixed;
-	right: -300px;
-	top: 0;*/
-	position: relative;
-	-moz-transition: right 0.2s linear;
-	-o-transition: right 0.2s linear;
-	-webkit-transition: right 0.2s linear;
-	transition: right 0.2s linear;
-	width: 300px;
 
-}
-div #menuToggle {
-	transition: all 0.2s ease-in-out;
-	font-size: 22px;
-color: rgb(220, 232, 243);
-font-weight: bold;
-font-family: 'Quicksand', sans-serif;
-
-background: rgba(0, 0, 0, 0.8);
-display: block;
-position: absolute;
-height: 200px;
-left: -50px;
-top: 75px;
-width: 50px;
-	-o-border-radius: 30px 0px 0px 30px;
-	-moz-border-radius: 30px 0px 0px 30px;
-	-webkit-border-radius: 30px 0px 0px 30px;
-	border-radius: 30px 0px 0px 30px;
-}
-
-div #menuToggle:hover {
-color: rgb(76, 156, 241);	
-}
-.open {
-	right: 0;
-}
-/*.open #menuToggle span {
-	background: transparent;
-	left: -45%;
-	top: 45%;
-}*/
-#menuToggle .divOpen {
-	-moz-transition: background 0.1s linear 0.2s;
-	-o-transition: background 0.1s linear 0.2s;
-	-webkit-transition: background 0.1s linear;
-	-webkit-transition-delay: 0.2s;
-	transition: background 0.1s linear 0.2s;
-}
-.mButton {
-	background: transparent;
-	margin: auto;
-	position: absolute;
-	left: -70%;
-	top: 45%;
-}
-
-.shiftLocations {
-	padding-right: 320px
-}
-
-.dest td:first-child{
-padding-left: 5em;	
-}
-</style>
 <body>
 
 <!--Heading-->
 
-<div id="header" style="width: 100%; height: 300px;">
+<header id="header" style="width: 100%; height: 300px;">
    <img src="assets/img/Italy/italy_b.jpg" style="height:300px;width:100%;background:rgb(220,232, 243);" alt="Italy Image">
    
    <!--Navigation Bar-->
@@ -112,7 +45,9 @@ padding-left: 5em;
          </ul>
       </div>
    </div>
-</div>
+</header>
+
+<main>
 
 <!--Country Description-->
 
@@ -303,7 +238,7 @@ padding-left: 5em;
    
    <div class="btns" style="text-align:center;">
       <a class="btnd" id="dealsbtn">View Travel Deals</a>
-      <a class="btnd" id="makebtn">View Plan</a>
+      <!--<a class="btnd" id="makebtn">View Plan</a>-->
    </div>
    
    <!--Beginning of Travel Deals-->
@@ -358,7 +293,7 @@ padding-left: 5em;
                            <li>Albergo del Senato Hotel</li>
                            <li>Enterprise</li>
                         </ol>
-                        <br>
+                        
                         Savings:<span  class="savings" style="color: #0F0">$150.00</span>
                         <span class="price rating" style="left: 10px; right:auto">$270-$2000</span>
                         <div class="rating">
@@ -450,14 +385,16 @@ padding-left: 5em;
    </div>
 </div>
 
+</main>
+
 <!--Footer-->
 
-<div id="footer" style="position: static;"> 
+<footer id="footer" style="position: static;"> 
    <a href="https://github.com/Escapes-today/Escapes.today" target="_blank" style="left: 10px;position:relative; top: 4px">
    <img src="assets/img/GitHub/lightb_logo.png" style="height: 15px;" alt="GitHub" />
    <img src="assets/img/GitHub/lightb_octo.png" style="height: 15px" alt="GitHub logo" />
    </a> <a href="index.html" style="position: relative;float: right;top: 6px;right:10px"><img src="assets/img/Logos/logoSmall.png" style="height: 20px" alt="Escapes Logo" /></a> 
-</div>
+</footer>
 
 <!-- jQuery Scripts -->
 <script src="addons/jquery/jquery-1.11.1.min.js"></script>

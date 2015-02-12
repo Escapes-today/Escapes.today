@@ -53,14 +53,14 @@ $(function () {
             }, 500);
         }
     });
-    $('#makebtn').click(function () {
+   /* $('#makebtn').click(function () {
  	 	$('.makeplan').toggleClass('slidein');
 		if (!$('.makeplan').hasClass('slidein')) {
             $('html, body').animate({
                 scrollTop: $('.makeplan').offset().top
-            }, 500);
+            }, 500); 
         }
-    });
+    });*/
 	$("#clear").click(function () {
 		if($(".destination").children().size() > 0){
 			if (confirm("Are you sure you want to clear the cart?") == true) {
@@ -233,3 +233,6 @@ function clear_form(){
 		$(this).val("");
    });
 }
+
+
+
