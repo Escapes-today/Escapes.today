@@ -6,7 +6,7 @@ img {
 	border : 0px;
 }
 .home #navheader {
-position: fixed;	
+	position: fixed;
 }
 #navheader {
 	display: block;
@@ -158,21 +158,21 @@ position: fixed;
 	margin-bottom: 1em;
 }
 .visit_btn {
-padding: 10px;
-margin-top: 5px;
-float: right;
-color: inherit;
-background: rgb(81,141, 196);
-display: inline-block;
-border-radius: 4px;
-transition: all 0.2s ease-in-out;
-text-decoration: none;
-margin-right: 0px;
-border-left: none;
-border: 1px rgba(255, 255, 255, 0) solid;
-font-family: 'Quicksand', sans-serif;
-font-weight: bold;
-font-size: 1.1em;
+	padding: 10px;
+	margin-top: 5px;
+	float: right;
+	color: inherit;
+	background: rgb(81,141, 196);
+	display: inline-block;
+	border-radius: 4px;
+	transition: all 0.2s ease-in-out;
+	text-decoration: none;
+	margin-right: 0px;
+	border-left: none;
+	border: 1px rgba(255, 255, 255, 0) solid;
+	font-family: 'Quicksand', sans-serif;
+	font-weight: bold;
+	font-size: 1.1em;
 }
 .visit_btn:hover {
 	font-weight: bold;
@@ -189,31 +189,26 @@ font-size: 1.1em;
 	border-radius: 3px;
 	color: rgb(220, 232, 243);
 }
-
-
- 
-#products   .btns {
+#products .btns {
 	padding: 20px 0px;
-	
 }
-.btns   .btn {
-padding: 10px;
-margin-top: 5px;
-margin-left: 40px;
-color: rgb(220, 232, 243);
-background: rgb(81,141, 196);
-display: inline-block;
-border-radius: 4px;
-transition: all 0.2s ease-in-out;
-text-decoration: none;
-
-border-left: none;
-border: 1px rgba(255, 255, 255, 0) solid;
-font-family: 'Quicksand', sans-serif;
-font-weight: bold;
-font-size: 1.1em;
+.btns .btn {
+	padding: 10px;
+	margin-top: 5px;
+	margin-left: 40px;
+	color: rgb(220, 232, 243);
+	background: rgb(81,141, 196);
+	display: inline-block;
+	border-radius: 4px;
+	transition: all 0.2s ease-in-out;
+	text-decoration: none;
+	border-left: none;
+	border: 1px rgba(255, 255, 255, 0) solid;
+	font-family: 'Quicksand', sans-serif;
+	font-weight: bold;
+	font-size: 1.1em;
 }
-.btns  .btn:hover {
+.btns .btn:hover {
 	font-weight: bold;
 	color: rgb(81,141, 196);
 	background: rgb(220,232, 243);
@@ -224,8 +219,8 @@ font-size: 1.1em;
 	font-size: .8em;
 	height: 150px;
 	width: 200px;
-border-left: 3px solid rgb(26, 50, 117);
-padding-left: 10px;
+	border-left: 3px solid rgb(26, 50, 117);
+	padding-left: 10px;
 	margin: 0px auto;
 	text-align: right;
 	text-transform: uppercase;
@@ -235,8 +230,8 @@ padding-left: 10px;
 	background-attachment: fixed;
 	background-position: center;
 	float: right;
-margin-right: -30%;
-color: rgb(26, 50, 117);
+	margin-right: -30%;
+	color: rgb(26, 50, 117);
 }
 #weather span {
 	display: block;
@@ -257,18 +252,17 @@ color: rgb(26, 50, 117);
 	text-align: center;
 	font-size: .8em;
 	text-shadow: none;
-	}
-	
-	#country {
-			font-size: 3em;
+}
+#country {
+	font-size: 3em;
 	height: 150px;
 	width: 200px;
-border-right: 3px solid rgb(26, 50, 117);
-padding-right: 10px;
+	border-right: 3px solid rgb(26, 50, 117);
+	padding-right: 10px;
 	margin: 0px auto;
-		position: relative;
-		float: left;
-margin-left: -30%;
-color: rgb(26, 50, 117);
-line-height: 150px;
-	}
+	position: relative;
+	float: left;
+	margin-left: -30%;
+	color: rgb(26, 50, 117);
+	line-height: 150px;
+}

@@ -1,6 +1,5 @@
 p {
 	padding-top: 20px;
-	text-align: justify;
 }
 a:link, a:visited {
 	color: rgb(220, 232, 243);
@@ -8,4 +7,10 @@ a:link, a:visited {
 a:hover, a:active {
 	color: rgb(220, 232, 243);
 	font-weight: bold;
+}
+.downloads li a {
+	width: 100px;
+}
+.downloads li a i {
+	text-align: right;
 }

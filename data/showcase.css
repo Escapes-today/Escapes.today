@@ -8,7 +8,7 @@
 }
 .showcase li, #destination li {
 	min-height: 300px;
-	 list-style-type: none;
+	list-style-type: none;
 	float: left;
 }
 .poi.small {
@@ -30,11 +30,10 @@
 	display: block;
 	-webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, .6);
 }
-
-ul li *{
-display: block;
+ul li * {
+	display: block;
 }
 #locations {
- width: 90%;
-  margin: 20px auto 0 auto;
+	width: 90%;
+	margin: 20px auto 0 auto;
 }
