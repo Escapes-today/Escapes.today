@@ -401,3 +401,9 @@ dialog =  $("#dialog-finalize").dialog({
             }
     }).disableSelection();
 });
+
+ 	$('.destination').slimScroll({
+      alwaysVisible: true,
+      railVisible: true,
+	  height: 437
+  	});
