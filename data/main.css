@@ -8,6 +8,10 @@ img {
 .home #navheader {
 position: fixed;	
 }
+
+#headerheight{
+	height: 90px;}
+
 #navheader {
 	display: block;
 	margin: 0px 10%;
@@ -25,6 +29,9 @@ position: fixed;
 	border-bottom-right-radius: 6px;
 	border-bottom-left-radius: 6px;
 }
+
+
+
 #footer {
 	height: 30px;
 	position: fixed;
@@ -45,6 +52,18 @@ position: fixed;
 	text-decoration: none;
 	font-weight: bold;
 }
+
+#footer git{
+	left: 10px;
+	position:relative; 
+	top: 4px}
+
+#gitlogo{
+	height: 15px;}
+	
+#footer #escapes{
+	height: 20px;}
+	
 #links {
 	float: right;
 	height: 100%;
@@ -80,6 +99,7 @@ position: fixed;
 	float: left;
 	display: block;
 	padding-top: 4px;
+	"margin-left: 0px"
 }
 #links nav {
 	float: right;
@@ -219,6 +239,7 @@ font-size: 1.1em;
 	background: rgb(220,232, 243);
 	transition: all 0.2s ease-in-out;
 }
+
 /* ------------------------------------ Weather ------------------------------------ */
 #weather {
 	font-size: .8em;
