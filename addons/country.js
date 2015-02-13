@@ -60,27 +60,9 @@ $(function () {
         }
     });
 
-//    $('#makebtn').click(function () {
-// 	 	$('.makeplan').toggleClass('slidein');
-//		if (!$('.makeplan').hasClass('slidein')) {
-//            $('html, body').animate({
-//                scrollTop: $('.makeplan').offset().top
-//            }, 500);
-//        }
-//    });
-
 	$("#clear").click(function () {
 		if($(".destination").children().size() > 0){
-			if (confirm("Are you sure you want to clear the cart?") == true) {
-			  $(".destination").children().each(function () {
-				  $(this).children(".shadowbox").children(".poi").removeClass("preview");
-				  $(this).appendTo($(".showcase"))
-			  });
-			  $(".destination").trigger("sortupdate");
-			  $(".showcase").trigger("sortupdate");
-			  clear();
-			  $(".fa-times").trigger("change");
-			}
+			clearDialog(null, null);
 		}		
 	});
 	
@@ -137,18 +119,14 @@ $(document).on("change", ".addRemove", function () {
 
 $(".addDeal").click(function(e) {
 		if($(".destination").children().size() > 0){
-			if (confirm("Are you sure this will clear your cart?") == true) {
-			  $(".destination").children().each(function () {
-				  $(this).children(".shadowbox").children(".poi").removeClass("preview");
-				  $(this).appendTo($(".showcase"))
-			  });
-			  $(".destination").trigger("sortupdate");
-			  $(".showcase").trigger("sortupdate");
-			  clear();
-			}
-		}		
-		
-    var dealpoi = $(this).closest(".poi");
+			clearDialog(addDeal, this);
+		}else {
+			addDeal(this);		
+		}
+});
+
+function addDeal(e) {
+    var dealpoi = $(e).closest(".poi");
 	var dname = ($(dealpoi).find("h2").text());
 	var dprice = ($(dealpoi).find(".savings").text());
     $(dealpoi).children().find("ol li").each(function() {
@@ -169,8 +147,29 @@ $(".addDeal").click(function(e) {
     });
 	add(dname, "-" + dprice);
 	updateCosts();
-});
+}
 
+//Helper method to call clear dialog and callback a function with
+//params in e
+function clearDialog(callback, e) {
+	clearCart.dialog("option", "buttons", {
+            	"Yes": function() {
+					$(".destination").children().each(function () {
+						$(this).children(".shadowbox").children(".poi").removeClass("preview");
+						$(this).appendTo($(".showcase"))
+				    });
+					$(".destination").trigger("sortupdate");
+					$(".showcase").trigger("sortupdate");
+					clear();
+					$(".fa-times").trigger("change");
+					$(this).dialog("close");
+					callback(e);
+			 	},
+				"Cancel": function() {
+                	$(this).dialog("close");
+            	} 
+	}).dialog("open");
+}
 
 $("#openPlanBtn").click(function(e) {
 //Finalize plan button
@@ -365,6 +364,34 @@ dialog =  $("#dialog-finalize").dialog({
             	"Ok": function() {
 					$( this ).dialog( "close" );
 			 	}  
+            }
+    }).disableSelection();
+	clearCart =  $("#dialog-clearCart").dialog({
+	   		autoOpen: false,
+        	resizable: false,
+            width: 'auto',
+            height: 'auto',
+            position: {
+                my: 'center',
+                at: 'center',
+                of: window
+            },
+        	modal: true,
+        	buttons: {
+            	"Yes": function() {
+					$(".destination").children().each(function () {
+						$(this).children(".shadowbox").children(".poi").removeClass("preview");
+						$(this).appendTo($(".showcase"))
+				    });
+					$(".destination").trigger("sortupdate");
+					$(".showcase").trigger("sortupdate");
+					clear();
+					$(".fa-times").trigger("change");
+					$(this).dialog("close");
+			 	},
+				"Cancel": function() {
+                	$(this).dialog("close");
+            	} 
             }
     }).disableSelection();
 });
