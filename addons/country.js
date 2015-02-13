@@ -2,19 +2,21 @@ $(function () {
     $(".showcase").sortable({
         connectWith: ".destination",
         containment: "#products",
-		cancel: ".addRemove, .dragignore",   
+		cancel: ".addRemove, .dragignore, .dragignoreDefault",   
         scroll: true,
-		start: function(){
-			$(".miniCart").addClass("open");
-			$(".locations").addClass('shiftLocations');  	
-		}
 	});
 	//Slide out the makeplan div when user drags a POI
-	$(".showcase").on("click, mousedown", "li", function () {
-	//$('.makeplan').removeClass('slidein').css("min-height", "300px");
-	//$('.makeplan').css("min-height", "");
+	$(".showcase").on("click, mousedown", "li", function (e) {
+		//If the target click is not going to an interactive area 
+		if($(e.target).parents('.options').length <= 0) {
+			//And the it is interactive
+			if($(this).hasClass("dragignoreDefault")){
+			//Alert the user to not add to cart
+			interactiveError.dialog("open");
+			}
+		}
 	});
-    //$(".showcase").disableSelection();
+    $(".showcase").disableSelection();
     $(".destination").sortable({
         connectWith: ".showcase",
         containment: "#products",
@@ -116,6 +118,10 @@ $(document).on("change", ".addRemove", function () {
 	 }else {
 	
 		var li =  $(this).parent(".poi").parent(".shadowbox").parent("li");
+		//If it is unchanged dont add to plan
+	 	if(li.hasClass("dragignoreDefault")){
+	 		return;
+	 	}
 		$(li).appendTo($(".destination"));
 		
 		 $(li).children(".shadowbox").children(".poi").toggleClass("preview");
@@ -201,6 +207,9 @@ $(".submitOrder").click(function(e) {
   $(document).on("change", ".options .dragignore", function() {
 	var poi = $(this).closest(".poi");//().find(".poi");
 	 
+	 //Remove dragignore class when iteractive object is changed
+	 li =  $(poi).closest("li");
+	 li.removeClass("dragignoreDefault");
 	 //Get from room type 
 	 var cpn  = parseInt(poi.find("[name='perd']").val());
 	 //Get from number
@@ -341,4 +350,21 @@ dialog =  $("#dialog-finalize").dialog({
             }
         }
     });
+	interactiveError =  $("#dialog-interactiveError").dialog({
+	   		autoOpen: false,
+        	resizable: false,
+            width: 'auto',
+            height: 'auto',
+            position: {
+                my: 'center',
+                at: 'center',
+                of: window
+            },
+        	modal: true,
+        	buttons: {
+            	"Ok": function() {
+					$( this ).dialog( "close" );
+			 	}  
+            }
+    }).disableSelection();
 });
