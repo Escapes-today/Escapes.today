@@ -115,8 +115,12 @@
 	min-height: 300px;
 	width: 100%;
 }
-.destination, .deals {
+.destination {
 	text-align: left;
+	min-height: 340px;
+	margin-top: 20px;
+}
+.deals {
 	min-height: 340px;
 	margin-top: 20px;
 }

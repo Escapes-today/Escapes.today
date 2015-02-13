@@ -155,6 +155,8 @@ $(function() {
                     add(name, price);
                     $(".addRemove").change();
                     $(".destination, .showcase").trigger("sortupdate");
+					$(".miniCart").addClass("open");
+            		$(".locations").addClass('shiftLocations');
                 }
             });
         });
