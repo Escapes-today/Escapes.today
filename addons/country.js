@@ -4,6 +4,10 @@ $(function () {
         containment: "#products",
 		cancel: ".addRemove, .dragignore, .dragignoreDefault",   
         scroll: true,
+		start: function(){
+			$(".miniCart").addClass("open");
+			$(".locations").addClass('shiftLocations');  	
+		}
 	});
 	//Slide out the makeplan div when user drags a POI
 	$(".showcase").on("click, mousedown", "li", function (e) {
@@ -114,6 +118,8 @@ $(document).on("change", ".addRemove", function () {
 			add(name, price);
 			$(".addRemove").change();
 	
+			$(".miniCart").addClass("open");
+			$(".locations").addClass('shiftLocations');  	
 	 }
 });
 
