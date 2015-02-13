@@ -52,11 +52,14 @@ $(function () {
         stop: function(){
              $(this).css("overflow-x","hidden");  
         }
-    }).slimScroll({
-      alwaysVisible: true,
-      railVisible: true,
-	  height: 437
-  	});
+    });
+	
+//	 .slimScroll({
+//      alwaysVisible: true,
+//      railVisible: true,
+//	  height: 437
+//  	});
+
     //$(".destination").disableSelection();
 	$('.deals .shadowbox .poi').addClass('small');
     $('#dealsbtn').click(function () {
