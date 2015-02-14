@@ -1,0 +1,7 @@
+td {
+	text-align: center;
+	display: block;
+}
+table, th, td {
+	border: 1px solid rgb(220,232, 243);
+}
