@@ -70,6 +70,16 @@ $(function() {
             }, 500);
         }
     });
+	
+	 $('.flights .shadowbox .poi').addClass('small');
+    $('#flightsbtn').click(function() {
+        $('.flightsbox').toggleClass('slidein');
+        if (!$('.flightsbox').hasClass('slidein')) {
+            $('html, body').animate({
+                scrollTop: $('.flightsbox').offset().top
+            }, 500);
+        }
+    });
 
     $("#clear").click(function() {
         if ($(".destination").children().size() > 0) {
