@@ -83,7 +83,7 @@
 }
 /* File orig  */
 
-.showcase, .destination, .deals, .flights .traveltips {
+.showcase, .destination, .deals, .flights, .traveltips {
 	min-height: 500px;
 	list-style-type: none;
 	margin: 0;
