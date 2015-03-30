@@ -109,7 +109,7 @@
 	border-radius: 5px;
 	box-shadow: inset 5px 5px 20px #555;
 }
-.makeplan, .dealbox, .tipbox {
+.makeplan, .dealbox, .tipbox, .flightsbox {
 	display: inline-block;
 	margin-bottom: 20px;
 	min-height: 300px;
