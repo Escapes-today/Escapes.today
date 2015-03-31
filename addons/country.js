@@ -301,7 +301,11 @@ $(function() {
         height: 'auto',
         modal: true,
         open: function(event, ui) {
-			setupMap();
+			var dests = [];
+			$($('table .dest td:first-child')).each(function() {
+				  dests.push($(this).text());
+		  	});
+			setupMap(dests);
             $('.ui-widget-overlay').bind('click', function() {
                 console.log("click");
                 $("#dialog-finalize").dialog("close");

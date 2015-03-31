@@ -47,6 +47,8 @@
   });
 
   function remove(dest) {
+	  //Remove from map
+	  remPOIMapPointByName(dest);
       //Remove name in table
       $($('table .dest').children()).each(function() {
           if ($(this).length > 0 && $(this).text().indexOf(dest) > -1) {
@@ -139,8 +141,8 @@
 
 
   function clear() {
-      $($('table .dest').children()).each(function() {
-          $(this).parents('tr').remove();
-      });
-      updateCosts();
+	$($('table .dest td:first-child')).each(function() {
+		remove($(this).text());
+	});
+	updateCosts();
   }
