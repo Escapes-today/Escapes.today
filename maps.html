@@ -20,6 +20,7 @@ body {
 <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 <title>Google Maps Multiple Markers</title>
 <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBtaG3B9hCShJlR_QZDJPUbv3diEJpnWL4&sensor=false&libraries=places" type="text/javascript"></script>
+<script type="text/javascript" src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/infobox/src/infobox.js"></script>
 <link rel="shortcut icon" href="assets/img/Logos/favicon.ico">
 <link rel="stylesheet" href="addons/country.css">
 <link rel='stylesheet' href='fonts/fonts.css'>
@@ -28,12 +29,91 @@ body {
 <link rel="stylesheet" href="addons/font-awesome-4.2.0/css/font-awesome.min.css">
 <link href="addons/jquery-ui-1.11.2/jquery-ui.css" rel="stylesheet">
 <script src="addons/jquery/jquery-1.11.1.min.js"></script>
-<script src="addons/map.js"></script>
+
+<script src="addons/jquery-ui-1.11.2/jquery-ui.min.js"></script> 
 </head>
 <body>
+
+<a href="javascript:dialog.dialog('open');addPOIMapPointByName('Trevi Fountain');">Show</a>
     <br>
     <br>
-    <div id="map" style="width: 550px; height: 550px;margin-left: 20px">
-</div>
+     <div id="dialog-finalize" title="Travel Plan" style="width: 100%; height:100%">
+    <table style="width: 40%;border: 0px;cellpadding:5px;font-size: 1.3em; margin: 0 auto;float:left">
+          <caption style="font-size:2em;font-weight:bold;margin-top: 100px;">
+          Travel Plan
+          </caption>
+          <tr>
+            <th colspan="3" style="text-align:left;font-size: 1.4em;padding-bottom: 10px;">Items</th>
+          </tr>
+          <tr class="empty">
+            <td><span style="">There are no items in your cart!</span></td>
+            <td colspan="2">&nbsp;</td>
+          </tr>
+          <tr class="space">
+            <td colspan="2">&nbsp;</td>
+            <td style="width: 22px;">&nbsp;</td>
+          </tr>
+          <tr>
+            <td>Sub-total</td>
+            <td id="sub-total"></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Tax</td>
+            <td id="tax" ></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td colspan="2">&nbsp;</td>
+            <td style="width: 22px;">&nbsp;</td>
+          </tr>
+          <tr>
+            <td>Grand total</td>
+            <td id="total"></td>
+            <td></td>
+          </tr>
+        </table>
+          <div id="map" style="width: 59.8%; height: 100%;margin-left: 20px;"></div>
+      </div>
+      
+<!--  <div id="map" style="width: 550px; height: 550px;margin-left: 20px"></div>-->
+<script src="addons/map.js"></script>
+<script>
+        $(document).ready(function() {
+			console.log("dialog set up");
+ dialog = $("#dialog-finalize").dialog({
+        autoOpen: false,
+        resizable: false,
+        height: $(window).height() * .95,
+        width: $(window).width() * .95,
+		//width: '100%',
+        //height: '100%',
+        modal: true,
+        open: function(event, ui) {
+			setupMap();
+            $('.ui-widget-overlay').bind('click', function() {
+                console.log("click");
+                $("#dialog-finalize").dialog("close");
+            });
+            $("body").css('overflow', 'hidden');
+        },
+        close: function(event, ui) {
+            $("body").css('overflow', 'visible');
+        },
+        buttons: {
+            "Check Out": function() {
+                $(checkout).dialog("open");
+            },
+            "Clear Cart": function() {
+                $("#clear").trigger("click");
+            },
+            Cancel: function() {
+                $(this).dialog("close");
+            }
+        }
+    });
+		});
+</script>
+
 </body>
 </html>

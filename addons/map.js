@@ -1,6 +1,5 @@
 var map;
 var infowindow;
-
 /* Each location array contains:
 	name
 	lat
@@ -13,94 +12,116 @@ var infowindow;
 		street view info
 			heading
 			pitch
-			zoom			
+			zoom		
 */
 var locations = [
-    ['Milan Cathedral', 45.464102, 9.191919, 'assets/img/Italy/milan_poi.jpg', [
-        [45.464087, 9.189659000000006],
-        [83.08716247365916, 20.8979432206712, 1.99]
+    ['Imperial Palace Tour', 35.685177, 139.752790, 'assets/img/Italy/milan_poi.jpg', [
+        [35.688692, 139.75214900000003],
+        [-22.780781060801058, 11.262987736104488, 0.6699999999999999]
     ]],
-    ['Trevi Fountain', 41.900931, 12.483313, 'assets/img/Italy/trevi_poi.jpg', [
-        [41.900845, 12.483357000000069],
-        [-15.841324202271354, 6.781721590935567, 1]
+    ['Mount Fuji Bike Tour', 35.360560, 138.727752, 'assets/img/Italy/trevi_poi.jpg', [
+        [ 35.360565, 138.72778100000005],
+        [115.0601968682149, 15.232870499796768, 1]
     ]],
-    ['Tower of Pisa', 43.722952, 10.396597, 'assets/img/Italy/pisa_poi.jpg', [
-        [43.722963, 10.397140000000036],
-        [-38.067682546933696, 23.540597461396413, 1.33]
+    ['Kōtoku-in Tour', 35.316694, 139.536154, 'assets/img/Italy/pisa_poi.jpg', [
+        [35.316692, 139.53570000000002],
+        [11.990795936962162, 28.117036097369198, 1.33]
     ]],
-    ['La Pergonla', 41.918833, 12.446494, 'assets/img/Italy/LaPergola_poi.jpg', [
+    ['Imperial Hotel', 41.918833, 12.446494, 'assets/img/Italy/LaPergola_poi.jpg', [
         [41.918825, 12.445901000000049],
         [94.46519433298454, 20.98201249691098, 0.3299999999999999]
     ]],
-    ['Albergo del Senato', 41.899192, 12.4773742, 'assets/img/Italy/albergo_poi.jpg', [
+    ['Nippon Rent-a-Car', 41.899192, 12.4773742, 'assets/img/Italy/albergo_poi.jpg', [
         [41.899197, 12.476933000000031],
         [-98.5602501893209, 8.056225356480065, 1.33]
     ]]
 ];
 
-
-var bound = new google.maps.LatLngBounds();
 var allMarkers = [];
-$(document).ready(function() {
+
+function setupMap(destinations) {
     map = new google.maps.Map(document.getElementById('map'), {
         center: new google.maps.LatLng(0, 0),
-        zoom: 15,
-		minZoom: 2, 
-		maxZoom: 20
+        zoom: 1,
+        minZoom: 1,
+        maxZoom: 20
     });
-	infowindow = new google.maps.InfoWindow();
-
+    infowindow = new google.maps.InfoWindow();
 
     //Preload Images
-    for (var j = 0; j < locations.length; j++) {
+    /*    for (var j = 0; j < locations.length; j++) {
         $('<img/>')[0].src = locations[j][3];
-    }
+    }*/
 
+    for (var j = 0; j < destinations.length; j++) {
+        addPOIMapPointByName(destinations[j]);
+        //  addPOIMapPoint(locations[j][1], locations[j][2], locations[j][0], locations[j][3], locations[j][4]);
+    }
+}
+
+//Adds a poing based off of the name to the map
+function addPOIMapPointByName(name) {
     for (var j = 0; j < locations.length; j++) {
-        addPOIMapPoint(locations[j][1], locations[j][2], locations[j][0], locations[j][3], locations[j][4]);
+        if (locations[j][0] == name) {
+            addPOIMapPoint(locations[j][1], locations[j][2], locations[j][0], locations[j][3], locations[j][4]);
+        }
     }
-    console.log(locations[0][5]);
+}
 
-    //showStreetView(locations[0][4]);
-});
-
-
+//Adds a point to the map based off of locations array information
 function addPOIMapPoint(lat, lng, name, image, info) {
     marker = new google.maps.Marker({
         position: new google.maps.LatLng(lat, lng),
-        map: map
+        map: map,
+        title: name
     });
 
-
-    google.maps.event.addListener(marker, 'click', (function(marker) {
-        return function() {
+    google.maps.event.addListener(marker, 'click', (function (marker) {
+        return function () {
             var html;
+            //If it has street view information
             if (info != null) {
-                html = '<div class="poiInfo" style="width:300px;padding-left:20px;"><h2 style="padding:10px;text-align:center">' + name + '</h2><img src="' + image + '" style="height:300px;width:300px"><div class="btns" style="text-align: center;width: 100%;"> <a class="btn" href="javascript:showStreetView([[' + info[0] + '],[' + info[1] + ']])" style="   margin-left: 0;   text-align: left;">Eye View<i class="fa fa-eye" style="    margin-left: 12px;    font-size: 17px;"></i></a><a class="btn" href="javascript:null" style="    text-align: right;    margin-left: 48px;">Remove Item</a></div></div>';
+                html = '<div class="poiInfo" style="width:300px;padding-left:20px;"><h2 style="padding:10px;text-align:center">' + name + '</h2><img src="' + image + '" style="height:100%;width:100%"><div class="btns" style="float:right;text-align: center;width: 100%;"> <a class="btn" href="javascript:showStreetView([[' + info[0] + '],[' + info[1] + ']])" style="   margin-left: 0;   text-align: left;">Eye View<i class="fa fa-eye" style="    margin-left: 12px;    font-size: 17px;"></i></a><a class="btn" href="javascript:remove(\'' + name + '\')" style="    text-align: right;    margin-left: 48px;">Remove Item</a></div></div>';
             } else {
-                html = '<div class="poiInfo" style="width:300px;padding-left:20px;"><h2 style="padding:10px;text-align:center">' + name + '</h2><img src="' + image + '" style="height:300px;width:300px"><div class="btns" style="text-align: center;width: 100%;"><a class="btn" href="javascript:null" style="    text-align: right;    margin-left: 0px;">Remove Item</a></div></div>';
-
+				html = '<div class="poiInfo" style="width:300px;padding-left:20px;"><h2 style="padding:10px;text-align:center">' + name + '</h2><img src="' + image + '" style="height:100%;width:100%"><div class="btns" style="float:right;text-align: center;width: 100%;"> <a class="btn" href="javascript:remove(\'' + name + '\')" style="    text-align: right;    margin-left: 0px;">Remove Item</a></div></div>';
             }
-            infowindow.setContent(html);
+            infowindow.setContent($(html).get(0));
             infowindow.open(map, marker);
-			//Add custom drop shadow to infowindow
-			$(".poiInfo").parent().parent().parent().parent().css("-webkit-box-shadow","0 20px 90px rgba(0, 0, 0, 0.6)");
+            //Add custom drop shadow to infowindow
+            //$(".poiInfo").parents().css("display","block");
+            $(".poiInfo").parent().parent().parent().css("box-shadow", "0 20px 90px rgba(0, 0, 0, 0.6)");
         }
     })(marker));
     allMarkers.push(marker);
     updateMapZoom();
 }
 
+//Removes a point from the map by name and updates the zoom
+function remPOIMapPointByName(name) {
+    for (var i = 0; i < allMarkers.length; i++) {
+        if (name == allMarkers[i].title) {
+            allMarkers[i].setMap(null);
+            allMarkers.splice(i, 1);
+            updateMapZoom();
+        }
+    }
+}
+
 //Automatically sets the zoom of the map to show all the points
 function updateMapZoom() {
+    var bound = new google.maps.LatLngBounds();
     for (var i = 0; i < allMarkers.length; i++) {
         console.log(i + " " + allMarkers[i].position);
         bound.extend(allMarkers[i].getPosition());
     }
-    map.fitBounds(bound);
-    // map.setZoom(map.getZoom() -1);
-    if (map.getZoom() > 15) {
-        map.setZoom(15);
+    if (allMarkers.length > 0) {
+        map.fitBounds(bound);
+		if (allMarkers.length == 1) {
+			 map.setZoom(12);
+		}
+    } else {
+        map.setCenter(new google.maps.LatLng(0, 0));
+        map.setZoom(1);
     }
 }
 

@@ -297,10 +297,15 @@ $(function() {
         autoOpen: false,
         resizable: false,
         //height: $(window).height() * .9,
-        width: $(window).width() * .85,
+        width: $(window).width() * .95,
         height: 'auto',
         modal: true,
         open: function(event, ui) {
+			var dests = [];
+			$($('table .dest td:first-child')).each(function() {
+				  dests.push($(this).text());
+		  	});
+			setupMap(dests);
             $('.ui-widget-overlay').bind('click', function() {
                 console.log("click");
                 $("#dialog-finalize").dialog("close");
