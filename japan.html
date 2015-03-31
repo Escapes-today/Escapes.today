@@ -15,11 +15,13 @@
 <link rel='stylesheet' href='fonts/fonts.css'>
 <link rel="stylesheet" href="data/main.css">
 <link rel="stylesheet" href="data/vertical_slider.css">
+<link rel="stylesheet" href="addons/superslides/dist/stylesheets/custom.css">
 <link rel="stylesheet" href="addons/font-awesome-4.2.0/css/font-awesome.min.css">
 <link href="addons/jquery-ui-1.11.2/jquery-ui.css" rel="stylesheet">
 </head>
 
 <body>
+<div class="wrapper" style="background: rgb(61, 121, 176);">
 <!--Heading-->
 
 <header id="header" style="width: 100%; height: 300px;"> <img src="assets/img/Japan/japan_b.jpg" style="height:300px;width:100%;background:rgb(220,232, 243);" alt="Italy Image"> 
@@ -188,7 +190,10 @@
       <i  style="clear:both; width:100%; display: block;"></i> </div>
     <!--End of Points of Interest-->
     
-    <div class="btns" style="text-align:center;"> <a class="btnd" id="dealsbtn">View Travel Deals</a> </div>
+    <div class="btns" style="text-align:center;"> 
+    <a class="btnd" id="dealsbtn">View Travel Deals</a> 
+     <a class="btnd" id="flightsbtn">View Flights</a>
+     </div>
     
     <!--Beginning of Travel Deals-->
     
@@ -246,6 +251,99 @@
             </div>
           </div>
         </li>
+      </ul>
+    </div>
+    
+     <!--Flights-->
+    
+    <div class="flightsbox slidein">
+      <ul class="flights">
+        
+        <!--United-->
+       <li class="dragignoreDefault">
+          <div class="shadowbox">
+            <div class="poi"> <i class="addRemove fa fa-plus" style="font-size:22px"></i> <img class="max" src="assets/img/FlightLogo/united_org.jpg" alt="United Airlines">
+              <div class="cover max">
+                <div class="description">
+                  <h2>United Airlines</h2>
+                  <h4>To - Rome, Italy</h4>
+                  <p class="info">This flight will have layovers.  Depending on your time of year that you are booking these tickets, the prices will be variable, as well as where you layover at and how long you will have to wait for your layover. United has been providing flights since 1926.  Their Boeing aircrafts will fly you to your destination with ease, comfort, and speed. </p>
+                  
+                  <!--Pricing for Class-->
+                  
+                  <div class="options"> <span>Seating: </span>
+                    <select name="perd" class="dragignore">
+                      <option value="7500">First @ $7,200</option>
+                      <option value="7000">Business @ $4,300</option>
+                      <option value="2000" selected="selected">Economy @ $2,000</option>
+                    </select>
+                    <br>
+                    <span>Number of Seats: </span>
+                    <input type="number" name="numd" min="1" max="20" value="1" class="dragignore">
+                  </div>
+                  <span class="price rating" style="left: 10px; right:auto"> $2000-$7500 </span> 
+                  
+                  <!--Rating-->
+                  
+                  <div class="rating"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-half-o"></i> <i class="fa fa-star-o"></i> </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li> 
+
+        
+        <!--American Airlines-->
+        <li class="dragignoreDefault">
+          <div class="shadowbox">
+            <div class="poi"> <i class="addRemove fa fa-plus" style="font-size:22px"></i> <img class="max" src="assets/img/FlightLogo/american_org.png" alt="American Airlines">
+              <div class="cover max">
+                <div class="description">
+                  <h2>American Airlines</h2>
+                  <h4>To - Rome, Italy</h4>
+                  <p class="info">This flight will have layovers.  Depending on your time of year that you are booking these tickets, the prices will be variable, as well as where you layover at and how long you will have to wait for your layover. American Airlines has been proudly serving in international flights since American Airlines is a member of the oneworld airline alliance. </p>
+                  
+                  <!--Pricing for Class-->
+                  
+                  <div class="options"> <span>Seating: </span>
+                    <select name="perd" class="dragignore">
+                      <option value="5300">First @ $17,000</option>
+                      <option value="3800">Business @ $6,000</option>
+                      <option value="1800" selected="selected">Economy @ $2,000</option>
+                    </select>
+                    <br>
+                    <span>Number of Seats: </span>
+                    <input type="number" name="numd" min="1" max="20" value="1" class="dragignore">
+                  </div>
+                  <span class="price rating" style="left: 10px; right:auto"> $2,000-$17,000 </span> 
+                  
+                  <!--Rating-->
+                  
+                  <div class="rating"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-half-o"></i> <i class="fa fa-star-o"></i> </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li> 
+        
+        <!--Fronteir Airlines-->
+        
+         <li>
+          <div class="shadowbox">
+            <div class="poi"> <i class="addRemove fa fa-plus" style="font-size:22px"></i> <img class="max" src="assets/img/FlightLogo/frontier_org.jpg" alt="Fronteir Airlines">
+              <div class="cover max">
+                <div class="description">
+                  <h2>Fronteir Airlines</h2>
+                  <h4>To - Rome, Italy</h4>
+                  <p class="info">This flight has multiple layovers but has a reduced cost.  Fronteir airlines does not offer different classes of seating. Depending on your time of year that you are booking these tickets, the prices will be variable, as well as where you layover at and how long you will have to wait for your layover. </p>
+                  <span class="price rating" style="left: 10px; right:auto"> $3,000 </span>
+                  <div class="rating"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        
       </ul>
     </div>
     
@@ -323,12 +421,12 @@
       </div>
     </div>
   </div>
-  </div>
 </main>
-
+   <div class="push"></div>
+      </div>
 <!--Footer-->
 
-<footer id="footer" style="position: static;"> <a href="https://github.com/Escapes-today/Escapes.today" target="_blank" style="left: 10px;position:relative; top: 4px"> <img src="assets/img/GitHub/lightb_logo.png" style="height: 15px;" alt="GitHub" /> <img src="assets/img/GitHub/lightb_octo.png" style="height: 15px" alt="GitHub logo" /> </a> <a href="index.html" style="position: relative;float: right;top: 6px;right:10px"><img src="assets/img/Logos/logoSmall.png" style="height: 20px" alt="Escapes Logo" /></a> </footer>
+<footer id="footer" style="position: initial;"> <a href="https://github.com/Escapes-today/Escapes.today" style="left: 10px;position:relative; top: 4px"> <img src="assets/img/GitHub/lightb_logo.png" style="height: 15px;" alt="GitHub" /> <img src="assets/img/GitHub/lightb_octo.png" style="height: 15px" alt="GitHub logo" /> </a> <a href="index.html" style="position: relative;float: right;top: 6px;right:10px"><img src="assets/img/Logos/logoSmall.png" style="height: 20px" alt="Escapes Logo" /></a> </footer>
 
 <!-- jQuery Scripts --> 
 <script src="addons/jquery/jquery-1.11.1.min.js"></script> 

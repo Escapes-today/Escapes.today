@@ -83,7 +83,7 @@
 }
 /* File orig  */
 
-.showcase, .destination, .deals, .traveltips {
+.showcase, .destination, .deals, .flights, .traveltips {
 	min-height: 500px;
 	list-style-type: none;
 	margin: 0;
@@ -103,13 +103,13 @@
 	max-height: 437px;
 	height: 437px;
 }
-.showcase, .dealbox, .makeplan, .tipbox {
+.showcase, .flightsbox, .dealbox, .makeplan, .tipbox {
 	background: rgb(220, 232, 243);
 	padding-bottom: 20px;
 	border-radius: 5px;
 	box-shadow: inset 5px 5px 20px #555;
 }
-.makeplan, .dealbox, .tipbox {
+.makeplan, .dealbox, .tipbox, .flightsbox {
 	display: inline-block;
 	margin-bottom: 20px;
 	min-height: 300px;
@@ -124,7 +124,12 @@
 	min-height: 340px;
 	margin-top: 20px;
 }
-.showcase > li, .deals > li, .traveltips > li {
+
+.flights {
+	min-height: 340px;
+	margin-top: 20px;
+}
+.showcase > li, .flights > li, .deals > li, .traveltips > li {
 	min-height: 300px;
 	margin: 3px 3px 3px 0;
 	padding: 1px;
