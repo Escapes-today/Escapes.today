@@ -36,6 +36,12 @@ $(function() {
             var price = ($(poi).find(".price").text());
             add(name, price);
             $(".addRemove").change();
+			$('.destination').slimScroll({
+        		height: '457px',
+				size: '8px',
+				alwaysVisible: true
+    		}); 
+			$('.destination').css("height","457px");
         },
         remove: function(event, ui) {
             var poi = $(ui.item).children(".shadowbox").children(".poi");
@@ -46,20 +52,21 @@ $(function() {
             $(".addRemove").change();
         },
         start: function() {
-            $(this).css("overflow-x", "visible");
+			$(this).css("overflow-x", "visible");
             $(this).css("overflow-y", "visible");
+			$('.destination').slimScroll({destroy: true});
+			$('.destination').css("height","457px");
         },
         stop: function() {
-            $(this).css("overflow-x", "hidden");
+           	$(this).css("overflow-x", "hidden");
+			$('.destination').slimScroll({
+        		height: '457px',
+				size: '8px',
+				alwaysVisible: true
+    		}); 
+			$('.destination').css("height","457px");
         }
     });
-
-    //	 .slimScroll({
-    //      alwaysVisible: true,
-    //      railVisible: true,
-    //	  height: 437
-    //  	});
-
     //$(".destination").disableSelection();
     $('.deals .shadowbox .poi').addClass('small');
     $('#dealsbtn').click(function() {
