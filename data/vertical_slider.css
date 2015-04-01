@@ -95,8 +95,8 @@
 .destination {
 	position: relative;
 	top: 0;
-	width: 100%;
-	max-width: 100%;
+	width: 300px;
+	min-width: 300px;
 	overflow-x: hidden;
 	overflow-y: auto;
 	max-height: 437px;

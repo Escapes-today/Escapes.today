@@ -64,15 +64,21 @@
 
           //if its the right poi
           if (name.length > 0 && name.indexOf(dest) > -1) {
-              poi.removeClass("preview");
-              $(this).appendTo($(".showcase"));
+			poi.removeClass("preview");
+			if(poi.hasClass("flight")){
+				$(this).appendTo($(".flights"));
+				
+			}else{
+				$(this).appendTo($(".showcase"));
+			}
           }
       });
 
 
       $(".destination").trigger("sortupdate");
       $(".showcase").trigger("sortupdate");
-
+      $(".flights").trigger("sortupdate");
+	  setupScroll();
 
       updateCosts();
   }
@@ -143,6 +149,7 @@
   function clear() {
 	$($('table .dest td:first-child')).each(function() {
 		remove($(this).text());
+		remPOIMapPointByName($(this).text());
 	});
 	updateCosts();
   }
