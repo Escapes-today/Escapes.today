@@ -36,6 +36,13 @@ var infowindow;
         [-95.83870768130205, 1.6329237669546603, 3.9700000000000006]
     ]]
 ];*/
+/*var locations = [
+    ['Dunn\'s River Falls Tour', 18.414842, -77.134855, 'assets/img/Jamaica/duns_poi.jpg'],
+    ['Blue Mountains Bike Tour', 18.411795, -77.088664, 'assets/img/Jamaica/bluemt_poi.jpg'],
+    ['Doctor\'s Cave Beach', 18.486684, -77.928892, 'assets/img/Jamaica/Doccave_poi.jpg'],
+    ['Terra Nova Hotel', 18.019137, -76.792485, 'assets/img/Jamaica/tnova_poi.jpg'],
+    ['Boone Hall Oasis Restaurant', 17.992731, -76.792012, 'assets/img/Jamaica/bhall_poi.jpg']
+];*/
 
 var allMarkers = [];
 
@@ -81,9 +88,9 @@ function addPOIMapPoint(lat, lng, name, image, info) {
             var html;
             //If it has street view information
             if (info != null) {
-                html = '<div class="poiInfo" style="width:300px;padding-left:20px;"><h2 style="padding:10px;text-align:center">' + name + '</h2><img src="' + image + '" style="height:100%;width:100%"><div class="btns" style="float:right;text-align: center;width: 100%;"> <a class="btn" href="javascript:showStreetView([[' + info[0] + '],[' + info[1] + ']])" style="   margin-left: 0;   text-align: left;">Eye View<i class="fa fa-eye" style="    margin-left: 12px;    font-size: 17px;"></i></a><a class="btn" href="javascript:remove(\'' + name + '\')" style="    text-align: right;    margin-left: 48px;">Remove Item</a></div></div>';
+                html = '<div class="poiInfo" style="width:300px;padding-left:20px;"><h2 style="padding:10px;text-align:center">' + name + '</h2><img src="' + image + '"style="height:100%;width:100%"><div class="btns" style="float:right;text-align: center;width: 100%;"><a class="btn" href="javascript:showStreetView([[' + info[0] + '],[' + info[1] + ']])" style="   margin-left: 0;text-align: left;">Eye View<i class="fa fa-eye" style="margin-left: 12px;font-size: 17px;"></i></a><a class="btn" href=\'javascript:remove("' + name.replace(/'/g, "&#39;") + '")\' style="text-align: right;margin-left: 48px;">Remove Item</a></div></div>';
             } else {
-				html = '<div class="poiInfo" style="width:300px;padding-left:20px;"><h2 style="padding:10px;text-align:center">' + name + '</h2><img src="' + image + '" style="height:100%;width:100%"><div class="btns" style="float:right;text-align: center;width: 100%;"> <a class="btn" href="javascript:remove(\'' + name + '\')" style="    text-align: right;    margin-left: 0px;">Remove Item</a></div></div>';
+				html = '<div class="poiInfo" style="width:300px;padding-left:20px;"><h2 style="padding:10px;text-align:center">' + name + '</h2><img src="' + image + '"style="height:100%;width:100%"><div class="btns" style="float:right;text-align: center;width: 100%;"><a class="btn" href=\'javascript:remove("' + name.replace(/'/g, "&#39;") + '")\' style="text-align: right;    margin-left: 0px;">Remove Item</a></div></div>';
             }
             infowindow.setContent($(html).get(0));
             infowindow.open(map, marker);
