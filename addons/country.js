@@ -98,7 +98,7 @@ $(function() {
 			$('.destination, .slimScrollDiv').css("height","457px");
         }, 
 		sortupdate: function(event, ui) {
-			console.log("dsfa");	
+			// console.log("dsfa");	
 		}
     });
 
@@ -287,7 +287,7 @@ $(document).on("change", ".options .dragignore", function() {
     var price = ($(poi).find(".price").text());
     updatePrice(name, price);
 
-    console.log(cpn * nights);
+    // console.log(cpn * nights);
 });
 
 
@@ -323,7 +323,7 @@ $(function() {
                 var divState = $parent.hasClass('open') ? 'hide' : 'show';
                 $(this).attr('title', divState + ' divigation');
                 setTimeout(function() {
-                    console.log('timeout set');
+                    // console.log('timeout set');
                     $('#menuToggle > span').toggleClass('divClosed').toggleClass('divOpen');
                 }, 200);
                 e.preventDefault();
@@ -346,7 +346,7 @@ $(function() {
 		  	});
 			setupMap(dests);
             $('.ui-widget-overlay').bind('click', function() {
-                console.log("click");
+                // console.log("click");
                 $("#dialog-finalize").dialog("close");
             });
             $("body").css('overflow', 'hidden');
@@ -384,7 +384,7 @@ $(function() {
         modal: true,
         open: function(event, ui) {
             $('.ui-widget-overlay').bind('click', function() {
-                console.log("click");
+                // console.log("click");
                 $("#dialog-checkout").dialog("close");
             });
             $("body").css('overflow', 'hidden');

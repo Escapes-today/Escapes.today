@@ -52,7 +52,7 @@
       //Remove name in table
       $($('table .dest').children()).each(function() {
           if ($(this).length > 0 && $(this).text().indexOf(dest) > -1) {
-              console.log($(this).parents('tr'));
+              // console.log($(this).parents('tr'));
               $(this).parents('tr').remove();
           }
       });
@@ -136,9 +136,9 @@
           });
 
           if (deals.sort().join(',') === buypois.sort().join(',')) {
-              console.log("a ok");
+              // console.log("a ok");
           } else {
-              console.log("not ok");
+              // console.log("not ok");
               $(trOfPkg).remove();
 
           }

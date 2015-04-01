@@ -118,7 +118,7 @@ function remPOIMapPointByName(name) {
 function updateMapZoom() {
     var bound = new google.maps.LatLngBounds();
     for (var i = 0; i < allMarkers.length; i++) {
-        console.log(i + " " + allMarkers[i].position);
+        // console.log(i + " " + allMarkers[i].position);
         bound.extend(allMarkers[i].getPosition());
     }
     if (allMarkers.length > 0) {
