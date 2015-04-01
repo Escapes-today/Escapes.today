@@ -361,7 +361,7 @@ $(function() {
             "Clear Cart": function() {
                 $("#clear").trigger("click");
             },
-            Cancel: function() {
+            "Close": function() {
                 $(this).dialog("close");
             }
         }
