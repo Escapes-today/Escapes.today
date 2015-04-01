@@ -487,7 +487,7 @@ $(function() {
 		//Fire old event handler
         $(this).change();
       }
-    });
+    }).removeAttr("type");
 	 $("select").selectmenu({
 		change: function (event, data) {
 			//Set up default value and disable it
@@ -505,7 +505,7 @@ $(function() {
 			$(this).parents(".poi").removeClass("lock");
 		},
 	});
-	$(".ui-menu,.ui-selectmenu-button, [type=number]").css("font-size","12px");
+	$(".ui-menu,.ui-selectmenu-button, .ui-spinner").css("font-size","12px").css("float","right");
 	$(".ui-selectmenu-button").css("width", $(".ui-selectmenu-button").width() + 20);
 });
 	function setupScroll(){

@@ -13,7 +13,12 @@ margin: 0 auto -30px;
 .footer, .push {
 height: 30px;
 }
-
+.break {
+	width:100%;
+	clear:both;
+	height:1px;
+	display: block;
+}
 
 #slides {
   position: relative;
