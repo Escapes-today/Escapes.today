@@ -424,4 +424,29 @@ $(function() {
             }
         }
     }).disableSelection();
+	$( "[type=number]" ).spinner({
+      spin: function( event, ui ) {
+		//Fire old event handler
+        $(this).change();
+      }
+    });
+	 $("select").selectmenu({
+		change: function (event, data) {
+			//Set up default value and disable it
+			if ($(this).children(".defVal").length) {
+				$(this).children(".defVal").attr("disabled", true); // any other selector as you wish
+				$(this).selectmenu("refresh");
+			}
+			//Fire old event handler
+			$(this).change();
+		},
+		open: function (event, ui) {
+			$(this).parents(".poi").addClass("lock");
+		},
+		close: function (event, ui) {
+			$(this).parents(".poi").removeClass("lock");
+		},
+	});
+	$(".ui-menu,.ui-selectmenu-button, [type=number]").css("font-size","12px");
+	$(".ui-selectmenu-button").css("width", $(".ui-selectmenu-button").width() + 20);
 });

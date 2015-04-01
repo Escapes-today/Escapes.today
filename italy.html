@@ -147,10 +147,11 @@
                   <!--Pricing for Hotel-->
                   
                   <div class="options"> <span>Room: </span>
-                    <select name="perd" class="dragignore">
+                    <select name="perd" class="dragignore room">
+                      <option value="130" selected="selected" class="defVal">Please select room type...</option>
                       <option value="220">Presidential @ $220</option>
                       <option value="175">Deluxe @ $175</option>
-                      <option value="130" selected="selected">Standard @ $130</option>
+                      <option value="130">Standard @ $130</option>
                     </select>
                     <br>
                     <span>Number of nights: </span>
@@ -339,8 +340,8 @@
                   
                   <!--Pricing for Class-->
                   
-                  <div class="options"> <span>Seating: </span>
-                    <select name="perd" class="dragignore">
+                  <div class="options" style="font-size: 9px;"> <span>Seating: </span>
+                    <select name="perd" class="dragignore" >
                       <option value="5300">First @ $5,300</option>
                       <option value="3800">Business @ $3,8000</option>
                       <option value="1800" selected="selected">Economy @ $1,800</option>
@@ -477,6 +478,7 @@
 <script src="addons/country.js"></script> 
 <script src="addons/scrollbar/jquery.slimscroll.min.js"></script> 
 <script>
+
 	$.simpleWeather({
         location: 'Rome, Italy',
         woeid: '',
