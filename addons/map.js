@@ -14,28 +14,28 @@ var infowindow;
 			pitch
 			zoom		
 */
-var locations = [
-    ['Imperial Palace Tour', 35.685177, 139.752790, 'assets/img/Italy/milan_poi.jpg', [
+/*var locations = [
+    ['Imperial Palace Tour', 35.685177, 139.752790, 'assets/img/Japan/palace_poi.jpg', [
         [35.688692, 139.75214900000003],
         [-22.780781060801058, 11.262987736104488, 0.6699999999999999]
     ]],
-    ['Mount Fuji Bike Tour', 35.360560, 138.727752, 'assets/img/Italy/trevi_poi.jpg', [
+    ['Mount Fuji Bike Tour', 35.360560, 138.727752, 'assets/img/Japan/fuji_poi.jpg', [
         [ 35.360565, 138.72778100000005],
         [115.0601968682149, 15.232870499796768, 1]
     ]],
-    ['Kōtoku-in Tour', 35.316694, 139.536154, 'assets/img/Italy/pisa_poi.jpg', [
+    ['Kōtoku-in Tour', 35.316694, 139.536154, 'assets/img/Japan/buddha_poi.jpg', [
         [35.316692, 139.53570000000002],
         [11.990795936962162, 28.117036097369198, 1.33]
     ]],
-    ['Imperial Hotel', 41.918833, 12.446494, 'assets/img/Italy/LaPergola_poi.jpg', [
-        [41.918825, 12.445901000000049],
-        [94.46519433298454, 20.98201249691098, 0.3299999999999999]
+    ['Imperial Hotel', 35.672128, 139.758915, 'assets/img/Japan/ihotel_poi.jpg', [
+        [35.672377, 139.759542],
+        [-160.7673847840265, 33.43804737459682, 0.6599999999999999]
     ]],
-    ['Nippon Rent-a-Car', 41.899192, 12.4773742, 'assets/img/Italy/albergo_poi.jpg', [
-        [41.899197, 12.476933000000031],
-        [-98.5602501893209, 8.056225356480065, 1.33]
+    ['Yasuda Sushi Bar', 35.665924, 139.720408, 'assets/img/Japan/yasdua_poi.jpg', [
+        [ 35.665971, 139.72056900000007],
+        [-95.83870768130205, 1.6329237669546603, 3.9700000000000006]
     ]]
-];
+];*/
 
 var allMarkers = [];
 
