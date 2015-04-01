@@ -47,6 +47,8 @@
   });
 
   function remove(dest) {
+	  //Remove from map
+	  remPOIMapPointByName(dest);
       //Remove name in table
       $($('table .dest').children()).each(function() {
           if ($(this).length > 0 && $(this).text().indexOf(dest) > -1) {
@@ -62,15 +64,21 @@
 
           //if its the right poi
           if (name.length > 0 && name.indexOf(dest) > -1) {
-              poi.removeClass("preview");
-              $(this).appendTo($(".showcase"));
+			poi.removeClass("preview");
+			if(poi.hasClass("flight")){
+				$(this).appendTo($(".flights"));
+				
+			}else{
+				$(this).appendTo($(".showcase"));
+			}
           }
       });
 
 
       $(".destination").trigger("sortupdate");
       $(".showcase").trigger("sortupdate");
-
+      $(".flights").trigger("sortupdate");
+	  setupScroll();
 
       updateCosts();
   }
@@ -139,8 +147,9 @@
 
 
   function clear() {
-      $($('table .dest').children()).each(function() {
-          $(this).parents('tr').remove();
-      });
-      updateCosts();
+	$($('table .dest td:first-child')).each(function() {
+		remove($(this).text());
+		remPOIMapPointByName($(this).text());
+	});
+	updateCosts();
   }

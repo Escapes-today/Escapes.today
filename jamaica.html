@@ -15,14 +15,16 @@
 <link rel='stylesheet' href='fonts/fonts.css'>
 <link rel="stylesheet" href="data/main.css">
 <link rel="stylesheet" href="data/vertical_slider.css">
+<link rel="stylesheet" href="addons/superslides/dist/stylesheets/custom.css">
 <link rel="stylesheet" href="addons/font-awesome-4.2.0/css/font-awesome.min.css">
 <link href="addons/jquery-ui-1.11.2/jquery-ui.css" rel="stylesheet">
 </head>
 
 <body>
+<div class="wrapper" style="background: rgb(61, 121, 176);">
 <!--Heading-->
 
-<header id="header" style="width: 100%; height: 300px;"> <img src="assets/img/jamaica/jamaica_b.jpg" style="height:300px;width:100%;background:rgb(220,232, 243);" alt="Italy Image"> 
+<header id="header" style="width: 100%; height: 300px;"> <img src="assets/img/Jamaica/jamaica_b.jpg" style="height:300px;width:100%;background:rgb(220,232, 243);" alt="Jamaica Image"> 
   
   <!--Navigation Bar-->
   
@@ -122,7 +124,7 @@
         </li>
         <li class="dragignoreDefault">
           <div class="shadowbox">
-            <div class="poi"> <i class="addRemove fa fa-plus" style="font-size:22px"></i> <img class="max" src="assets/img/Jamaica/tnova_poi.jpg" alt="Terra Nove Hotel">
+            <div class="poi"> <i class="addRemove fa fa-plus" style="font-size:22px"></i> <img class="max" src="assets/img/Jamaica/tnova_poi.jpg" alt="Terra Nova Hotel">
               <div class="cover max" style="position:absolute;">
                 <div class="description">
                   <h2>Terra Nova Hotel</h2>
@@ -130,11 +132,12 @@
                   <p class="info">The Terra Nova Hotel is one of the best hotels to stay at.  It's food is delicious and their bar is upbeat.  Enjoy watching bartenders bottle juggle as they make your drinks with a smile.</p>
                   <div class="options"> <span>Room: </span>
                     <select name="perd" class="dragignore">
+                      <option value="130" selected="selected" class="defVal">Please select room type...</option>
                       <option value="250">Presidental @ $250</option>
                       <option value="200">Deluxe @ $200</option>
-                      <option value="190" selected="selected">Standard @ $190</option>
+                      <option value="190">Standard @ $190</option>
                     </select>
-                    <br>
+                    <span class="break"></span>
                     <span>Number of nights: </span>
                     <input type="number" name="numd" min="1" max="20" value="1" class="dragignore">
                   </div>
@@ -170,7 +173,7 @@
     
     <!--End of Points of Interest-->
     
-    <div class="btns" style="text-align:center;"> <a class="btnd" id="dealsbtn">View Travel Deals</a> </div>
+    <div class="btns" style="text-align:center;"> <a class="btnd" id="dealsbtn">View Travel Deals</a> <a class="btnd" id="flightsbtn">View Flights</a> </div>
     
     <!--Beginning of Travel Deals-->
     
@@ -229,9 +232,131 @@
             </div>
           </div>
         </li>
+        
+        <!--Escapes Package-->
+        
+        <li>
+          <div class="shadowbox">
+            <div class="poi"> <img class="max" src="assets/img/Logos/logoglobe.gif" alt="Escapes Package">
+              <div class="cover max">
+                <div class="description">
+                  <h2>Escape Package</h2>
+                  <h4>For the true explorers</h4>
+                  <p class="info">The Escapes Package offers all points of interest we offer at Escapes Today.</p>
+                  <ol style="margin-left: 20px;">
+                    <li>Dunn's River Falls Tour</li>
+                    <li>Blue Mountains Bike Tour</li>
+                    <li>Doctor's Cave Beach</li>
+                    <li>Boone Hall Oasis Restaurant</li>
+                    <li>Terra Nova Hotel</li>
+                    <li>Enterprise</li>
+                  </ol>
+                  <br>
+                  Savings:<span  class="savings" style="color: #0F0">$250.00</span> <span class="price rating" style="left: 10px; right:auto">$330-$2500</span>
+                  <div class="rating">
+                    <div class="btns" style="text-align:right;padding-bottom: 0px;"> <a class="btn addDeal">Get Deal</a> </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
       </ul>
     </div>
     
+    <!--Flights-->
+    
+    <div class="flightsbox slidein">
+      <ul class="flights">
+        
+        <!--United-->
+       <li class="dragignoreDefault">
+          <div class="shadowbox">
+            <div class="poi"> <i class="addRemove fa fa-plus" style="font-size:22px"></i> <img class="max" src="assets/img/FlightLogo/united_poi.jpg" alt="United Airlines">
+              <div class="cover max">
+                <div class="description">
+                  <h2>United Airlines</h2>
+                  <h4>To - Miami, Florida</h4>
+                  <p class="info">This flight will have layovers. United has been providing flights since 1926.  Their Boeing aircrafts will fly you to your destination with ease, comfort, and speed.  You will arrive at the Miami International Airport.  Your flight will last a maxiumum of 8 hours.  From here you will board boat to The Port of Montego Bay.</p>
+                  
+                  <!--Pricing for Class-->
+                  
+                  <div class="options"> <span>Seating: </span>
+                    <select name="perd" class="dragignore">
+                      <option value="130" selected="selected" class="defVal">Please select seating type...</option>
+                      <option value="900">First @ $900</option>
+                      <option value="750">Business @ $750</option>
+                      <option value="425">Economy @ $425</option>
+                    </select>
+                    <span class="break"></span>
+                    <span>Number of Seats: </span>
+                    <input type="number" name="numd" min="1" max="20" value="1" class="dragignore">
+                  </div>
+                  <span class="price rating" style="left: 10px; right:auto"> $425</span> 
+                  
+                  <!--Rating-->
+                  
+                  <div class="rating"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-half-o"></i> <i class="fa fa-star-o"></i> </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li> 
+
+        
+        <!--American Airlines-->
+        <li class="dragignoreDefault">
+          <div class="shadowbox">
+            <div class="poi"> <i class="addRemove fa fa-plus" style="font-size:22px"></i> <img class="max" src="assets/img/FlightLogo/american_poi.png" alt="American Airlines">
+              <div class="cover max">
+                <div class="description">
+                  <h2>American Airlines</h2>
+                  <h4>To - Miami, Florida</h4>
+                  <p class="info">This flight will have layovers.  You will arrive at the Miami International Airport.  Your flight will last a maxiumum of 8 hours.  From here you will board boat to The Port of Montego Bay. </p>
+                  
+                  <!--Pricing for Class-->
+                  
+                  <div class="options"> <span>Seating: </span>
+                    <select name="perd" class="dragignore">
+                      <option value="130" selected="selected" class="defVal">Please select seating type...</option>
+                      <option value="2300">First @ $800</option>
+                      <option value="2000">Business @ $600</option>
+                      <option value="1400">Economy @ $400</option>
+                    </select>
+                    <span class="break"></span>
+                    <span>Number of Seats: </span>
+                    <input type="number" name="numd" min="1" max="20" value="1" class="dragignore">
+                  </div>
+                  <span class="price rating" style="left: 10px; right:auto"> $400 </span> 
+                  
+                  <!--Rating-->
+                  
+                  <div class="rating"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-half-o"></i> <i class="fa fa-star-o"></i> </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li> 
+        
+        <!--Fronteir Airlines-->
+        
+         <li>
+          <div class="shadowbox">
+            <div class="poi"> <i class="addRemove fa fa-plus" style="font-size:22px"></i> <img class="max" src="assets/img/FlightLogo/frontier_poi.jpg" alt="Fronteir Airlines">
+              <div class="cover max">
+                <div class="description">
+                  <h2>Fronteir Airlines</h2>
+                  <h4>To - Miami, Florida</h4>
+                  <p class="info">This flight has multiple layovers but has a reduced cost.  Frontier airlines does not offer different classes of seating. Depending on your time of year that you are booking these tickets, the prices will be variable.  Frontier, being the cheapest of the airlines Escapes today supports, will allow to fly to your destination with savings.  Frontier was established in 1994 and is dedicated to ultra-low costs. </p>
+                  <span class="price rating" style="left: 10px; right:auto"> $350 </span>
+                  <div class="rating"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+    </ul>
+    </div>
     <!--Forms-->
     
     <div class="dialogs"> 
@@ -262,7 +387,7 @@
       </div>
       <!-- Travel Plan Form-->
       <div id="dialog-finalize" title="Travel Plan">
-        <table style="width: 65%;border: 0px;cellpadding:5px;font-size: 1.3em; margin: 0 auto;">
+         <table style="width: 40%;border: 0px;cellpadding:5px;font-size: 1.0em; margin: 0 auto;float:left;  padding-right: 20px;">
           <caption style="font-size:2em;font-weight:bold;margin-top: 100px;">
           Travel Plan
           </caption>
@@ -297,6 +422,7 @@
             <td></td>
           </tr>
         </table>
+        <div id="map" style="width: 59.8%; height: 500px;margin-left: 20px;"></div>
       </div>
       <div id="dialog-interactiveError" title="Point of Interest Error">
         <h4>Please change the properties of this POI before adding to the Travel Plan. </h4>
@@ -304,18 +430,23 @@
       <div id="dialog-clearCart" title="Clear Cart?">
         <h4>Are you sure you want to clear the cart?</h4>
       </div>
+      <div id="dialog-noItems" title="Cart Error">
+        <h4>There are no items in your cart. Add items to your travel plan today!</h4>
+      </div>
     </div>
   </div>
-  </div>
 </main>
-
+   <div class="push"></div>
+      </div>
 <!--Footer-->
 
-<footer id="footer" style="position: static;"> <a href="https://github.com/Escapes-today/Escapes.today" target="_blank" style="left: 10px;position:relative; top: 4px"> <img src="assets/img/GitHub/lightb_logo.png" style="height: 15px;" alt="GitHub" /> <img src="assets/img/GitHub/lightb_octo.png" style="height: 15px" alt="GitHub logo" /> </a> <a href="index.html" style="position: relative;float: right;top: 6px;right:10px"><img src="assets/img/Logos/logoSmall.png" style="height: 20px" alt="Escapes Logo" /></a> </footer>
+<footer id="footer" style="position: initial;"> <a href="https://github.com/Escapes-today/Escapes.today" style="left: 10px;position:relative; top: 4px"> <img src="assets/img/GitHub/lightb_logo.png" style="height: 15px;" alt="GitHub" /> <img src="assets/img/GitHub/lightb_octo.png" style="height: 15px" alt="GitHub logo" /> </a> <a href="index.html" style="position: relative;float: right;top: 6px;right:10px"><img src="assets/img/Logos/logoSmall.png" style="height: 20px" alt="Escapes Logo" /></a> </footer>
 
 <!-- jQuery Scripts --> 
 <script src="addons/jquery/jquery-1.11.1.min.js"></script> 
-<script src="addons/jquery-ui-1.11.2/jquery-ui.min.js"></script> 
+<script src="addons/jquery-ui-1.11.2/jquery-ui.min.js"></script>
+<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBtaG3B9hCShJlR_QZDJPUbv3diEJpnWL4&sensor=false&libraries=places" type="text/javascript"></script>
+<script src="addons/map.js"></script>
 <!-- Weather Scripts --> 
 <script src="addons/simpleweather/jquery.simpleWeather.min.js"></script> 
 <script src="data/weather.js"></script> 
@@ -333,6 +464,8 @@
             $("#weather").html('<p>' + error + '</p>');
         }
     });
+	//Jamacia location data
+locations = $.parseJSON('[["Dunn\'s River Falls Tour",18.414842,-77.134855,"assets/img/Jamaica/duns_poi.jpg"],["Blue Mountains Bike Tour",18.411795,-77.088664,"assets/img/Jamaica/bluemt_poi.jpg"],["Doctor\'s Cave Beach",18.486684,-77.928892,"assets/img/Jamaica/Doccave_poi.jpg"],["Terra Nova Hotel",18.019137,-76.792485,"assets/img/Jamaica/tnova_poi.jpg"],["Boone Hall Oasis Restaurant",17.992731,-76.792012,"assets/img/Jamaica/bhall_poi.jpg"]]');
 </script>
 </body>
 </html>
