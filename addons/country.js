@@ -66,7 +66,9 @@ $(function() {
 			$('.destination').slimScroll({
         		height: '457px',
 				size: '8px',
-				alwaysVisible: true
+				alwaysVisible: true,
+				color: '#1A3275',
+				railOpacity: 0.8
     		}); 
 			$('.destination').css("height","457px");
         },
@@ -89,7 +91,9 @@ $(function() {
 			$('.destination').slimScroll({
         		height: '457px',
 				size: '8px',
-				alwaysVisible: true
+				alwaysVisible: true,
+				color: '#1A3275',
+				railOpacity: 0.8
     		}); 
 			$('.destination, .slimScrollDiv').css("height","457px");
         }, 
@@ -513,7 +517,9 @@ $(function() {
 			$('.destination').slimScroll({
         		height: '457px',
 				size: '8px',
-				alwaysVisible: true
+				alwaysVisible: true,
+				color: '#1A3275',
+				railOpacity: 0.8
     		}); 
 			$('.destination, .slimScrollDiv').css("height","457px");	
 	}
