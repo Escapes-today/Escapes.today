@@ -147,12 +147,13 @@
                   <!--Pricing for Hotel-->
                   
                   <div class="options"> <span>Room: </span>
-                    <select name="perd" class="dragignore">
+                    <select name="perd" class="dragignore room">
+                      <option value="130" selected="selected" class="defVal">Please select room type...</option>
                       <option value="220">Presidential @ $220</option>
                       <option value="175">Deluxe @ $175</option>
-                      <option value="130" selected="selected">Standard @ $130</option>
+                      <option value="130">Standard @ $130</option>
                     </select>
-                    <br>
+                    <span class="break"></span>
                     <span>Number of nights: </span>
                     <input type="number" name="numd" min="1" max="20" value="1" class="dragignore">
                   </div>
@@ -307,11 +308,12 @@
                   
                   <div class="options"> <span>Seating: </span>
                     <select name="perd" class="dragignore">
+                      <option value="130" selected="selected" class="defVal">Please select seating type...</option>
                       <option value="7500">First @ $7,500</option>
                       <option value="7000">Business @ $7,000</option>
                       <option value="2000" selected="selected">Economy @ $2,000</option>
                     </select>
-                    <br>
+                    <span class="break"></span>
                     <span>Number of Seats: </span>
                     <input type="number" name="numd" min="1" max="20" value="1" class="dragignore">
                   </div>
@@ -341,11 +343,12 @@
                   
                   <div class="options"> <span>Seating: </span>
                     <select name="perd" class="dragignore">
+                      <option value="130" selected="selected" class="defVal">Please select seating type...</option>
                       <option value="5300">First @ $5,300</option>
                       <option value="3800">Business @ $3,8000</option>
                       <option value="1800" selected="selected">Economy @ $1,800</option>
                     </select>
-                    <br>
+                    <span class="break"></span>
                     <span>Number of Seats: </span>
                     <input type="number" name="numd" min="1" max="20" value="1" class="dragignore">
                   </div>
@@ -370,7 +373,7 @@
                   <h2>Frontier Airlines</h2>
                   <h4>To - Rome, Italy</h4>
                   <p class="info">This flight has multiple layovers but has a reduced cost.  Frontier airlines does not offer different classes of seating. Depending on your time of year that you are booking these tickets, the prices will be variable.  Frontier, being the cheapest of the airlines Escapes today supports, will allow to fly to your destination with savings.  Frontier was established in 1994 and is dedicated to ultra-low costs.</p>
-                  <span class="price rating" style="left: 10px; right:auto"> $$1400-1800 </span>
+                  <span class="price rating" style="left: 10px; right:auto"> $1400-1800 </span>
                   <div class="rating"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> </div>
                 </div>
               </div>
@@ -454,6 +457,9 @@
       <div id="dialog-clearCart" title="Clear Cart?">
         <h4>Are you sure you want to clear the cart?</h4>
       </div>
+      <div id="dialog-noItems" title="Cart Error">
+        <h4>There are no items in your cart. Add items to your travel plan today!</h4>
+      </div>
     </div>
   </div>
 
@@ -477,6 +483,7 @@
 <script src="addons/country.js"></script> 
 <script src="addons/scrollbar/jquery.slimscroll.min.js"></script> 
 <script>
+
 	$.simpleWeather({
         location: 'Rome, Italy',
         woeid: '',

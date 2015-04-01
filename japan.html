@@ -145,11 +145,12 @@
                   
                   <div class="options"> <span>Room: </span>
                     <select name="perd" class="dragignore">
+                      <option value="130" selected="selected" class="defVal">Please select room type...</option>
                       <option value="500">Presidential @ $500</option>
                       <option value="350">Deluxe @ $350</option>
                       <option value="150" selected="selected">Standard @ $150</option>
                     </select>
-                    <br>
+                    <span class="break"></span>
                     <span>Number of nights: </span>
                     <input type="number" name="numd" min="1" max="20" value="1" class="dragignore">
                   </div>
@@ -303,11 +304,12 @@
                   
                   <div class="options"> <span>Seating: </span>
                     <select name="perd" class="dragignore">
+                      <option value="130" selected="selected" class="defVal">Please select seating type...</option>
                       <option value="7500">First @ $7,200</option>
                       <option value="7000">Business @ $4,300</option>
                       <option value="2000" selected="selected">Economy @ $2,000</option>
                     </select>
-                    <br>
+                    <span class="break"></span>
                     <span>Number of Seats: </span>
                     <input type="number" name="numd" min="1" max="20" value="1" class="dragignore">
                   </div>
@@ -337,11 +339,12 @@
                   
                   <div class="options"> <span>Seating: </span>
                     <select name="perd" class="dragignore">
+                      <option value="130" selected="selected" class="defVal">Please select seating type...</option>
                       <option value="5300">First @ $17,000</option>
                       <option value="3800">Business @ $6,000</option>
                       <option value="1800" selected="selected">Economy @ $2,000</option>
                     </select>
-                    <br>
+                    <span class="break"></span>
                     <span>Number of Seats: </span>
                     <input type="number" name="numd" min="1" max="20" value="1" class="dragignore">
                   </div>
@@ -450,6 +453,9 @@
       <div id="dialog-clearCart" title="Clear Cart?">
         <h4>Are you sure you want to clear the cart?</h4>
       </div>
+      <div id="dialog-noItems" title="Cart Error">
+        <h4>There are no items in your cart. Add items to your travel plan today!</h4>
+      </div>
     </div>
   </div>
 </main>
@@ -481,6 +487,8 @@
             $("#weather").html('<p>' + error + '</p>');
         }
     });
+	//Japan location data
+	locations = $.parseJSON('[["Imperial Palace Tour",35.685177,139.75279,"assets/img/Japan/palace_poi.jpg",[[35.688692,139.75214900000003],[-22.780781060801058,11.262987736104488,0.6699999999999999]]],["Mount Fuji Bike Tour",35.36056,138.727752,"assets/img/Japan/fuji_poi.jpg",[[35.360565,138.72778100000005],[115.0601968682149,15.232870499796768,1]]],["Kōtoku-in Tour",35.316694,139.536154,"assets/img/Japan/buddha_poi.jpg",[[35.316692,139.53570000000002],[11.990795936962162,28.117036097369198,1.33]]],["Imperial Hotel",35.672128,139.758915,"assets/img/Japan/ihotel_poi.jpg",[[35.672377,139.759542],[-160.7673847840265,33.43804737459682,0.6599999999999999]]],["Yasuda Sushi Bar",35.665924,139.720408,"assets/img/Japan/yasdua_poi.jpg",[[35.665971,139.72056900000007],[-95.83870768130205,1.6329237669546603,3.9700000000000006]]]]');
 </script>
 </body>
 </html>

@@ -7,10 +7,37 @@ $(function() {
         start: function() {
             $(".miniCart").addClass("open");
             $(".locations").addClass('shiftLocations');
-        }
+        },
+		receive: function(event, ui) {
+			var poi = $(ui.item).children(".shadowbox").children(".poi");
+			if(poi.hasClass("flight")){
+				var name = ($(poi).find("h2").text());
+				$(ui.item).appendTo($(".flights"));
+				$(".addRemove").change();
+				$(".destination, .showcase, .flights").trigger("sortupdate");
+				setupScroll();
+			}
+		}
+    });
+	 $(".flights").sortable({
+        connectWith: ".destination",
+        containment: "#products",
+        cancel: ".addRemove, .dragignore, .dragignoreDefault",
+        scroll: true,
+        start: function(event, ui) {
+			var poi = $(ui.item).children(".shadowbox").children(".poi");
+			//poi.removeClass("small");
+			//poi.find(".cover").removeClass("max");
+            $(".miniCart").addClass("open");
+            $(".locations").addClass('shiftLocations');
+        },
+		remove: function(event, ui) {
+			var poi = $(ui.item).children(".shadowbox").children(".poi");
+			//poi.removeClass("small");
+		}
     });
     //Slide out the makeplan div when user drags a POI
-    $(".showcase").on("click, mousedown", "li", function(e) {
+    $(".showcase, .flights").on("click, mousedown", "li", function(e) {
         //If the target click is not going to an interactive area 
         if ($(e.target).parents('.options').length <= 0) {
             //And the it is interactive
@@ -22,7 +49,7 @@ $(function() {
     });
     $(".showcase").disableSelection();
     $(".destination").sortable({
-        connectWith: ".showcase",
+        connectWith: ".showcase, .flights",
         containment: "#products",
         scroll: true,
         cancel: ".addRemove, .dragignore",
@@ -36,6 +63,12 @@ $(function() {
             var price = ($(poi).find(".price").text());
             add(name, price);
             $(".addRemove").change();
+			$('.destination').slimScroll({
+        		height: '457px',
+				size: '8px',
+				alwaysVisible: true
+    		}); 
+			$('.destination').css("height","457px");
         },
         remove: function(event, ui) {
             var poi = $(ui.item).children(".shadowbox").children(".poi");
@@ -46,19 +79,24 @@ $(function() {
             $(".addRemove").change();
         },
         start: function() {
-            $(this).css("overflow-x", "visible");
+			$(this).css("overflow-x", "visible");
             $(this).css("overflow-y", "visible");
+			$('.destination').slimScroll({destroy: true});
+			$('.destination, .slimScrollDiv').css("height","457px");
         },
         stop: function() {
-            $(this).css("overflow-x", "hidden");
-        }
+           	$(this).css("overflow-x", "hidden");
+			$('.destination').slimScroll({
+        		height: '457px',
+				size: '8px',
+				alwaysVisible: true
+    		}); 
+			$('.destination, .slimScrollDiv').css("height","457px");
+        }, 
+		sortupdate: function(event, ui) {
+			console.log("dsfa");	
+		}
     });
-
-    //	 .slimScroll({
-    //      alwaysVisible: true,
-    //      railVisible: true,
-    //	  height: 437
-    //  	});
 
     //$(".destination").disableSelection();
     $('.deals .shadowbox .poi').addClass('small');
@@ -71,7 +109,7 @@ $(function() {
         }
     });
 	
-	 $('.flights .shadowbox .poi').addClass('small');
+	$('.flights .shadowbox .poi').addClass('flight');
     $('#flightsbtn').click(function() {
         $('.flightsbox').toggleClass('slidein');
         if (!$('.flightsbox').hasClass('slidein')) {
@@ -118,6 +156,7 @@ $(function() {
             $(".addRemove").change();
             $(".destination").trigger("sortupdate");
             $(".showcase").trigger("sortupdate");
+			setupScroll();
         } else {
 
             var li = $(this).parent(".poi").parent(".shadowbox").parent("li");
@@ -133,6 +172,7 @@ $(function() {
             var name = ($(poi).find("h2").text());
             var price = ($(poi).find(".price").text());
             add(name, price);
+			setupScroll();
             $(".addRemove").change();
 
             $(".miniCart").addClass("open");
@@ -165,6 +205,7 @@ $(function() {
                     add(name, price);
                     $(".addRemove").change();
                     $(".destination, .showcase").trigger("sortupdate");
+					setupScroll();
 					$(".miniCart").addClass("open");
             		$(".locations").addClass('shiftLocations');
                 }
@@ -179,12 +220,6 @@ $(function() {
     function clearDialog(callback, e) {
         clearCart.dialog("option", "buttons", {
             "Yes": function() {
-                $(".destination").children().each(function() {
-                    $(this).children(".shadowbox").children(".poi").removeClass("preview");
-                    $(this).appendTo($(".showcase"))
-                });
-                $(".destination").trigger("sortupdate");
-                $(".showcase").trigger("sortupdate");
                 clear();
                 $(".fa-times").trigger("change");
                 $(this).dialog("close");
@@ -317,7 +352,11 @@ $(function() {
         },
         buttons: {
             "Check Out": function() {
-                $(checkout).dialog("open");
+				if($(this).children("table").find(".dest").length > 0){
+                	$(checkout).dialog("open");
+				} else {
+					$(noItems).dialog("open");
+				}
             },
             "Clear Cart": function() {
                 $("#clear").trigger("click");
@@ -415,6 +454,7 @@ $(function() {
                 });
                 $(".destination").trigger("sortupdate");
                 $(".showcase").trigger("sortupdate");
+				setupScroll();
                 clear();
                 $(".fa-times").trigger("change");
                 $(this).dialog("close");
@@ -424,4 +464,56 @@ $(function() {
             }
         }
     }).disableSelection();
+	    noItems = $("#dialog-noItems").dialog({
+        autoOpen: false,
+        resizable: false,
+        width: 'auto',
+        height: 'auto',
+        position: {
+            my: 'center',
+            at: 'center',
+            of: window
+        },
+        modal: true,
+        buttons: {
+            "Okay": function() {
+                 $(this).dialog("close");
+				 $(dialog).dialog("close");
+            }          
+        }
+    }).disableSelection();
+	$( "[type=number]" ).spinner({
+      spin: function( event, ui ) {
+		//Fire old event handler
+        $(this).change();
+      }
+    }).removeAttr("type");
+	 $("select").selectmenu({
+		change: function (event, data) {
+			//Set up default value and disable it
+			if ($(this).children(".defVal").length) {
+				$(this).children(".defVal").attr("disabled", true); // any other selector as you wish
+				$(this).selectmenu("refresh");
+			}
+			//Fire old event handler
+			$(this).change();
+		},
+		open: function (event, ui) {
+			$(this).parents(".poi").addClass("lock");
+		},
+		close: function (event, ui) {
+			$(this).parents(".poi").removeClass("lock");
+		},
+	});
+	$(".ui-menu,.ui-selectmenu-button, .ui-spinner").css("font-size","12px").css("float","right");
+	$(".ui-selectmenu-button").css("width", $(".ui-selectmenu-button").width() + 20);
 });
+	function setupScroll(){
+			$('.destination').slimScroll({destroy: true});
+			$('.destination').slimScroll({
+        		height: '457px',
+				size: '8px',
+				alwaysVisible: true
+    		}); 
+			$('.destination, .slimScrollDiv').css("height","457px");	
+	}

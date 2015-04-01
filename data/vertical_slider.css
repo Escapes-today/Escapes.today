@@ -13,7 +13,7 @@
 	-webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, .6);
 	text-align: left;
 }
-.poi:hover .cover {
+.poi:hover .cover, .poi.lock .cover {
 	-webkit-transition: all 0.2s cubic-bezier(.99, .99, 0, .61);
 	-moz-transition: all 0.2s cubic-bezier(.99, .99, 0, .61);
 	-ms-transition: all 0.2s cubic-bezier(.99, .99, 0, .61);
@@ -29,7 +29,7 @@
 .poi .cover.max {
 	position: absolute;
 }
-.poi:hover .cover .rating {
+.poi:hover .cover .rating, .poi.lock .cover .rating {
 	position: absolute;
 	bottom: 30px;
 	top: auto;
@@ -59,7 +59,7 @@
 	-ms-transition: all 0.2s cubic-bezier(.99, .99, 0, .61);
 	color: white;
 }
-.poi:hover .cover .info {
+.poi:hover .cover .info, .poi.lock .cover .info {
 	display: block;
 	color: rgba(255, 255, 255, 1);
 	-webkit-transition: all 0.2s cubic-bezier(.99, .99, 0, .61);
@@ -95,8 +95,8 @@
 .destination {
 	position: relative;
 	top: 0;
-	width: 100%;
-	max-width: 100%;
+	width: 300px;
+	min-width: 300px;
 	overflow-x: hidden;
 	overflow-y: auto;
 	max-height: 437px;
